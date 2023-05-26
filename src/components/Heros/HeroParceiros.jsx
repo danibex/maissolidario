@@ -31,7 +31,7 @@ const Breakpoints = {
 export default function Parceiros() {
 return(
     <div className="w-[100%] flex justify-center items-center">
-    <div className="w-[100%] bg-slate-100 py-4 px-0 text-center">
+    <div className="w-[100%] bg-slate-100 py-4 px-0 text-center h-[370px]">
         <h1 className="text-3xl font-bold mb-3 text-green-700">Faculdades com bolsa de estudo</h1>
         <Swiper
         modules={[Navigation, Pagination, A11y]}
