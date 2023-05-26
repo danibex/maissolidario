@@ -1,10 +1,24 @@
-import escudoUniverso from "@/assets/img/Universoescudo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+import Universo from "@/assets/img/Parceiros/Universo.png"
+
 export const parceiros = [
     {
         id: 1,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
-        URLescudo: escudoUniverso,
+        URLescudo: Universo,
         link: ""
     },
     {
