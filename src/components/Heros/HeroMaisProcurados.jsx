@@ -51,6 +51,7 @@ export default function MaisProcurados() {
                 </div>
             </div>
             
+            <button>
             <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
                 <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
                     <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
@@ -66,7 +67,8 @@ export default function MaisProcurados() {
                     <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
                 </div>
             </div>
-            
+            </button>
+
             <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
                 <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
                     <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
