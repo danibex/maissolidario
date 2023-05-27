@@ -43,7 +43,7 @@ return(
         breakpoints={Breakpoints}
         loop={true}
         autoplay={
-        {delay: 1000, // Tempo entre cada rolagem
+        {delay: 3000, // Tempo entre cada rolagem
         disableOnInteraction: false // Permitir rolagem manual sem interrupção
         }}
         >
