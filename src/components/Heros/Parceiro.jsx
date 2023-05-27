@@ -9,7 +9,7 @@ export default function Parceiro(props) {
         <Image src={props.URLescudo} alt="Escudo" />
       </div>
      
-      <div className="mb-2 pb-1">
+      <div className="mb-2 pb-1 text-lg text-green-600 font-bold">
         <div>{props.porcentagemMaxima}</div>
         <div>{props.menorPreco}</div>
       </div> 

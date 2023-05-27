@@ -11,10 +11,10 @@ export default function MaisProcurado(props) {
             <hr className="w-[90%]"/>
         </div>
         <div className="p-3 flex flex-col justify-center items-center">
-            <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-            <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-            <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-            <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
+            <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">{props.precoCheio}</p></div>
+            <div className="text-xl font-bold text-green-600">{props.porcentagemDesconto}</div>
+            <div className="text-2xl font-bold text-green-700">{props.valorComDesconto}</div>
+            <div className="text-lg font-medium text-orange-500">{props.salarioMedio}</div>
         </div>
     </div>
     )
