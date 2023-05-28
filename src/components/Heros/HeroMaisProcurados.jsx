@@ -2,12 +2,17 @@ import Image from "next/image"
 import direito from "@/assets/img/direito.jpg"
 import { useState } from "react"
 import {PrincipaisCursosPresenciais} from "../../data/PrincipaisCursosPresenciais"
+import {PrincipaisCursosEad} from "../../data/PrincipaisCursosEad"
+
 
 export default function MaisProcurados() {
     let [painel, setPainel] = useState(false)
     function alternarPainel(alternar) {
         setPainel(alternar)
     }
+    console.log(PrincipaisCursosEad)
+    console.log(PrincipaisCursosPresenciais)
+
     return(
     <div className={`w-[100%] bg-green-400 py-4 px-6 text-center flex flex-col justify-center items-center`}>
             <h1 className="text-3xl font-bold text-blue-800">Em dúvida sobre qual curso fazer?</h1>
@@ -15,19 +20,25 @@ export default function MaisProcurados() {
         
 		<div className="w-[100%]">
             <div className="w-[100%] bg-slate-100 rounded-xl my-3 shadow-md py-4 px-10 flex flex-col justify-center items-center">
-            <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-row items-center justify-center border p-0 border-blue-700 rounded-full">
+                
                 <button className={`
                 hover:bg-blue-600 hover:text-white active:bg-blue-700 
-                rounded-l-3xl p-2 mx-0 my-2 text-2xl font-medium text-blue-600 
-                border-y border-l border-r-[0.5px] border-blue-600`}
+                rounded-3xl p-2 text-2xl font-medium text-blue-600 
+                ${painel ? '' : 'bg-blue-700 text-white'}
+                m-1
+                `}
                 onClick={() => alternarPainel(false)}
                 >
                     Presenciais
                 </button>
                 <button className={`
                 hover:bg-blue-600 hover:text-white active:bg-blue-700 
-                rounded-r-3xl p-2 mx-0 my-2 text-2xl font-medium text-blue-600 
-                border-y border-r border-l-[0.5px]  border-blue-600 whitespace-nowrap`}
+                rounded-3xl p-2 m-1 text-2xl font-medium text-blue-600 
+                whitespace-nowrap
+                ${painel ? 'bg-blue-700 text-white' : ''}
+                
+                `}
                 onClick={() => alternarPainel(true)}
                 >
                     A distância
@@ -36,7 +47,7 @@ export default function MaisProcurados() {
         {/* Presencial */}
         <div className={`flex gap-3 flex-wrap justify-center items-center mt-2`}>
 			
-        <div className={`${painel ? 'hidden' : 'false'} flex gap-3 flex-wrap justify-center items-center mt-2`}>
+        <div className={`${painel ? 'hidden' : 'flex'} flex gap-3 flex-wrap justify-center items-center mt-2`}>
             
 
             <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">

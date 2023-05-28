@@ -33,7 +33,7 @@ class Parceiro {
     new Parceiro(6, "Bolsas de até 80%", "A partir de R$ 399,00", CPET, ""),
     new Parceiro(7, "Bolsas de até 80%", "A partir de R$ 399,00", DimensaoMax, ""),
     new Parceiro(8, "Bolsas de até 80%", "A partir de R$ 399,00", EduTec, ""),
-    new Parceiro(9, "Bolsas de até 80%", "A partir de R$ 399,00", Fatec, ""),
+    new Parceiro(9, "Bolsas de até 80%", "A partir de R$ 165,00", Fatec, ""),
     new Parceiro(10, "Bolsas de até 80%", "A partir de R$ 399,00", SantissimoSacramento, ""),
     new Parceiro(11, "Bolsas de até 80%", "A partir de R$ 399,00", Unex, ""),
     new Parceiro(12, "Bolsas de até 80%", "A partir de R$ 399,00", UniESPG, ""),

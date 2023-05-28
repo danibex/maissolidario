@@ -16,7 +16,7 @@ export default function Hero(props) {
                     bg-gradient-to-br to-green-400 via-green-500 from-green-600
                     rounded-t-xl p-2 mt-0 w-[100%] flex justify-center items-center text-center
                     text-4xl text-white font-semibold
-                    `}>Solicitar o contato de um consultor:</h1> 
+                    `}>Solicite contato de um consultor:</h1> 
                     <form className={`flex flex-col justify-center my-3 w-[90%]`}> 
                         <InputForm tipo="text" dica="Nome"/>
                         <InputForm tipo="text" dica="E-mail"/>

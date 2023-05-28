@@ -7,13 +7,12 @@ class Curso {
         this.valorComDesconto = valorComDesconto;
         this.salarioMedio = salarioMedio;
         this.url = url;
-        this.width = width;
     }
 }
   
   const direito = require("@/assets/img/direito.jpg");
   
-  export const PrincipaisCursosPresenciais = [
+  export const PrincipaisCursosEad = [
     new Curso(1, "Direito", 1223.64, 62.5, 460, 4537.62, direito),
     new Curso(2, "Direito", 1223.64, 62.5, 460, 4537.62, direito),
     new Curso(3, "Direito", 1223.64, 62.5, 460, 4537.62, direito),

@@ -51,12 +51,12 @@ return(
             {parceiros.map(parceiro => {
                 return(
                 <SwiperSlide key={parceiro.id}>
-                <div>
+                <button>
                     <Parceiro URLescudo={parceiro.URLescudo} 
                     porcentagemMaxima={parceiro.porcentagemMaxima} 
                     menorPreco={parceiro.menorPreco} 
                     link={parceiro.link}/>
-                </div>
+                </button>
                 </SwiperSlide>
                 )
             })}
