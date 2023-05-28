@@ -8,7 +8,6 @@ export default function MaisProcurados() {
     function alternarPainel(alternar) {
         setPainel(alternar)
     }
-    console.log(PrincipaisCursosPresenciais)
     return(
     <div className={`w-[100%] bg-green-400 py-4 px-6 text-center flex flex-col justify-center items-center`}>
             <h1 className="text-3xl font-bold text-blue-800">Em dúvida sobre qual curso fazer?</h1>

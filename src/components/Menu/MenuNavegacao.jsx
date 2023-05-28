@@ -15,7 +15,7 @@ import {
   } from '@tabler/icons-react';
 
 
-export default function menuNavegacao(props) {
+export default function MenuNavegacao(props) {
     let autenticado = false
     const [toggle, setToggle] = useState(false)
     const toggleMenu = () => {
