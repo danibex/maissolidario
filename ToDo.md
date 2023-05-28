@@ -1,7 +1,7 @@
-# Toggle Menu Responsive Mobile (pegar de ecommerceburguer)
-# Atualizar preço/porcentagem parceiros
-# Swiper condicional Responsive Mobile Principais Cursos
+# (Done) Toggle Menu Responsive Mobile (pegar de ecommerceburguer) 
+# () Atualizar preço/porcentagem parceiros
 # Função Map consumir dados ficticios principais cursos
+# Swiper condicional Responsive Mobile Principais Cursos
 # Atualizar nome/imagem/desconto... principais cursos
 # Card Notícias fazer
 # Card notícias Swiper automático infinito
@@ -12,3 +12,6 @@
 # Depoimentos card com foto redonda e texto simples educamaisbrasil chatgpt
 # Botão zap fixo
 # Footer (pegar de site principal)
+
+# Refatorar
+    1. mais procurados

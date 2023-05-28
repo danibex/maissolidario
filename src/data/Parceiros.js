@@ -11,13 +11,14 @@ import SantissimoSacramento from "@/assets/img/Parceiros/SantissimoSacramento.pn
 import Unex from "@/assets/img/Parceiros/Unex.png"
 import UniESPG from "@/assets/img/Parceiros/UniESPG.png"
 import UniFatecie from "@/assets/img/Parceiros/UniFatecie.png"
-import Uniftc from "@/assets/img/Parceiros/Universo.png"
+import Uniftc from "@/assets/img/Parceiros/Uniftc.png"
 
 export const parceiros = [
     {
         id: 1,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Universo,
         link: ""
     },
@@ -25,6 +26,7 @@ export const parceiros = [
         id: 2,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Atualiza,
         link: ""
     },
@@ -32,6 +34,7 @@ export const parceiros = [
         id: 3,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Batista,
         link: ""
     },
@@ -39,6 +42,7 @@ export const parceiros = [
         id: 4,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Cairu,
         link: ""
     },
@@ -46,6 +50,7 @@ export const parceiros = [
         id: 5,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: ColegioAcademico,
         link: ""
     },
@@ -60,6 +65,7 @@ export const parceiros = [
         id: 7,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: DimensaoMax,
         link: ""
     },
@@ -67,6 +73,7 @@ export const parceiros = [
         id: 8,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: EduTec,
         link: ""
     },
@@ -74,6 +81,7 @@ export const parceiros = [
         id: 9,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Fatec,
         link: ""
     },
@@ -81,6 +89,7 @@ export const parceiros = [
         id: 10,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: SantissimoSacramento,
         link: ""
     },
@@ -88,6 +97,7 @@ export const parceiros = [
         id: 11,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Unex,
         link: ""
     },
@@ -95,6 +105,7 @@ export const parceiros = [
         id: 12,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: UniESPG,
         link: ""
     },
@@ -102,6 +113,7 @@ export const parceiros = [
         id: 13,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: UniFatecie,
         link: ""
     },
@@ -109,6 +121,7 @@ export const parceiros = [
         id: 14,
         porcentagemMaxima: "Bolsas de até 80%",
         menorPreco: "A partir de R$ 399,00",
+        width: "",
         URLescudo: Uniftc,
         link: ""
     }

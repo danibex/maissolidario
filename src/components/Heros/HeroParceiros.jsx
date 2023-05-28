@@ -43,7 +43,7 @@ return(
         breakpoints={Breakpoints}
         loop={true}
         autoplay={
-        {delay: 3000, // Tempo entre cada rolagem
+        {delay: 40000, // Tempo entre cada rolagem
         disableOnInteraction: false // Permitir rolagem manual sem interrupção
         }}
         >
@@ -51,7 +51,7 @@ return(
             {parceiros.map(parceiro => {
                 return(
                 <SwiperSlide key={parceiro.id}>
-                <div className="h-[350px]">
+                <div>
                     <Parceiro URLescudo={parceiro.URLescudo} 
                     porcentagemMaxima={parceiro.porcentagemMaxima} 
                     menorPreco={parceiro.menorPreco} 
