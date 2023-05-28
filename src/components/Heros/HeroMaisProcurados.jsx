@@ -3,6 +3,7 @@ import direito from "@/assets/img/direito.jpg"
 import { useState } from "react"
 import {PrincipaisCursosPresenciais} from "../../data/PrincipaisCursosPresenciais"
 import {PrincipaisCursosEad} from "../../data/PrincipaisCursosEad"
+import MaisProcurado from "./MaisProcurado"
 
 
 export default function MaisProcurados() {
@@ -44,131 +45,26 @@ export default function MaisProcurados() {
                     A distância
                 </button>
             </div>
-        {/* Presencial */}
         <div className={`flex gap-3 flex-wrap justify-center items-center mt-2`}>
-			
-        <div className={`${painel ? 'hidden' : 'flex'} flex gap-3 flex-wrap justify-center items-center mt-2`}>
-            
+            {/* Presencial */}
+            <div className={`${painel ? 'hidden' : 'flex'} flex gap-3 flex-wrap justify-center items-center mt-2`}>
+                {PrincipaisCursosPresenciais.map((curso) => {
+                    return(
+                        <MaisProcurado key={curso.id} url={curso.url} nome={curso.nomeDoCurso} precoCheio={curso.precoCheio} porcentagemDesconto={curso.porcentagemDesconto} valorComDesconto={curso.valorComDesconto} salarioMedio={curso.salarioMedio}/>
+                    )
+                })}
+            </div>
+            {/* Fim Presencial */}
 
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-            
-            <button>
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-            </button>
-
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-            
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-            
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-            
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Direito</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>
-        </div>
-        {/* Fim Presencial */}
-
-        {/* EAD */}
+            {/* EAD */}
         <div className={`gap-3 flex-wrap justify-center items-center mt-2  ${painel ? 'flex' : 'hidden'} `}>
-            <div className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
-                <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
-                    <Image src={direito} alt="" width={250} className="rounded-t-lg"/>
-                    <div className="text-2xl font-medium">Teste</div>
-                </div>
-                <div className="flex justify-center items-center">
-                    <hr className="w-[90%]"/>
-                </div>
-                <div className="p-3 flex flex-col justify-center items-center">
-                    <div className="flex flex-row justify-center items-center"><p className="line-through text-lg text-red-600">R$ 2.000,00</p></div>
-                    <div className="text-xl font-bold text-green-600">Desconto de 80%</div>
-                    <div className="text-2xl font-bold text-green-700">R$ 399,00</div>
-                    <div className="text-lg font-medium text-orange-500">Salário Médio: R$ 4.537,62</div>
-                </div>
-            </div>   
+                {PrincipaisCursosEad.map((curso) => {
+                    return(
+                        <MaisProcurado key={curso.id} url={curso.url} nome={curso.nomeDoCurso} precoCheio={curso.precoCheio} porcentagemDesconto={curso.porcentagemDesconto} valorComDesconto={curso.valorComDesconto} salarioMedio={curso.salarioMedio}/>
+                    )
+                })}
         </div>
-        {/* Fim EAD */}
+            {/* Fim EAD */}
         </div>
     </div>
         </div>
