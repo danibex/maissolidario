@@ -1,5 +1,3 @@
-import Image from "next/image"
-import direito from "@/assets/img/direito.jpg"
 import { useState } from "react"
 import {PrincipaisCursosPresenciais} from "../../data/PrincipaisCursosPresenciais"
 import {PrincipaisCursosEad} from "../../data/PrincipaisCursosEad"
