@@ -83,11 +83,11 @@ export default function Parceiros() {
             }}
           >
             <div className="flex justify-center items-center">
-              {PrincipaisCursosPresenciais.map((curso) => {
+              {PrincipaisCursosPresenciais.map((curso, index) => {
                 return (
+                  <div key={index}>
                   <SwiperSlide>
                     <MaisProcurado
-                    key={curso.id}
                       url={curso.url}
                       nome={curso.nomeDoCurso}
                       precoCheio={curso.precoCheio}
@@ -96,6 +96,7 @@ export default function Parceiros() {
                       salarioMedio={curso.salarioMedio}
                     />
                   </SwiperSlide>
+                  </div>
                 );
               })}
             </div>
@@ -117,9 +118,9 @@ export default function Parceiros() {
             <div className="flex justify-center items-center">
               {PrincipaisCursosEad.map((curso) => {
                 return (
+                  <div key={index}>
                   <SwiperSlide>
                     <MaisProcurado
-                    key={curso.id}
                       url={curso.url}
                       nome={curso.nomeDoCurso}
                       precoCheio={curso.precoCheio}
@@ -128,6 +129,7 @@ export default function Parceiros() {
                       salarioMedio={curso.salarioMedio}
                     />
                   </SwiperSlide>
+                  </div>
                 );
               })}
             </div>
