@@ -8,23 +8,21 @@ class Parceiro {
         this.width = width;
     }
 }
-  
-  const Universo = require("@/assets/img/Parceiros/Universo.png");
-  const Atualiza = require("@/assets/img/Parceiros/Atualiza.png");
-  const Batista = require("@/assets/img/Parceiros/Batista.png");
-  const Cairu = require("@/assets/img/Parceiros/Cairu.png");
-  const ColegioAcademico = require("@/assets/img/Parceiros/ColegioAcademico.png");
-  const CPET = require("@/assets/img/Parceiros/CPET.png");
-  const DimensaoMax = require("@/assets/img/Parceiros/DimensaoMax.png");
-  const EduTec = require("@/assets/img/Parceiros/EduTec.png");
-  const Fatec = require("@/assets/img/Parceiros/Fatec.png");
-  const SantissimoSacramento = require("@/assets/img/Parceiros/SantissimoSacramento.png");
-  const Unex = require("@/assets/img/Parceiros/Unex.png");
-  const UniESPG = require("@/assets/img/Parceiros/UniESPG.png");
-  const UniFatecie = require("@/assets/img/Parceiros/UniFatecie.png");
-  const Uniftc = require("@/assets/img/Parceiros/Uniftc.png");
-  
-  export const parceiros = [
+const Universo = require("@/assets/img/Parceiros/Universo.png");
+const Atualiza = require("@/assets/img/Parceiros/Atualiza.png");
+const Batista = require("@/assets/img/Parceiros/Batista.png");
+const Cairu = require("@/assets/img/Parceiros/Cairu.png");
+const ColegioAcademico = require("@/assets/img/Parceiros/ColegioAcademico.png");
+const CPET = require("@/assets/img/Parceiros/CPET.png");
+const DimensaoMax = require("@/assets/img/Parceiros/DimensaoMax.png");
+const EduTec = require("@/assets/img/Parceiros/EduTec.png");
+const Fatec = require("@/assets/img/Parceiros/Fatec.png");
+const SantissimoSacramento = require("@/assets/img/Parceiros/SantissimoSacramento.png");
+const Unex = require("@/assets/img/Parceiros/Unex.png");
+const UniESPG = require("@/assets/img/Parceiros/UniESPG.png");
+const UniFatecie = require("@/assets/img/Parceiros/UniFatecie.png");
+const Uniftc = require("@/assets/img/Parceiros/Uniftc.png");
+export const parceiros = [
     new Parceiro(1, "Bolsas de até 80%", "A partir de R$ 399,00", Universo, ""),
     new Parceiro(13, "Bolsas de até 80%", "A partir de R$ 399,00", UniFatecie, ""),
     new Parceiro(14, "Bolsas de até 80%", "A partir de R$ 399,00", Uniftc, ""),
