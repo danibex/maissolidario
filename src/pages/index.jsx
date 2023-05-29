@@ -5,13 +5,14 @@ import whatsapp from '@/assets/img/whatsappLogo.png'
 import HeroMaisProcurados from '@/components/Heros/HeroMaisProcurados'
 import PrincipaisNoticias from '@/components/Heros/PrincipaisNoticias'
 import Image from 'next/image'
+import HeroSobre from '../components/Heros/HeroSobre'
 export default function Home() {
   return (
     <div className='h-full w-full'>
       <MenuNavegacao>
         <HeroPrincipal/>
-        <p>O programa Mais Solidário Bolsas de Estudos oferece bolsas de estudo para estudantes de baixa renda, permitindo que tenham acesso à educação de qualidade e oportunidades de desenvolvimento.</p>
         <HeroParceiros/>
+        <HeroSobre inverter/>
         <HeroMaisProcurados/>
         <PrincipaisNoticias/>
         <p>Depoimentos: https://www.educamaisbrasil.com.br/</p>
