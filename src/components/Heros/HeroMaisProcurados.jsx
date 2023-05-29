@@ -116,7 +116,7 @@ export default function Parceiros() {
             }}
           >
             <div className="flex justify-center items-center">
-              {PrincipaisCursosEad.map((curso) => {
+              {PrincipaisCursosEad.map((curso, index) => {
                 return (
                   <div key={index}>
                   <SwiperSlide>

@@ -13,7 +13,6 @@ export default function Home() {
         <HeroParceiros/>
         <HeroMaisProcurados/>
         <PrincipaisNoticias/>
-
         <p>Depoimentos: https://www.educamaisbrasil.com.br/</p>
         <button className='fixed right-8 bottom-5 z-10'>
           <Image src={whatsapp} width={70} alt='Logo Whatsapp'/>
