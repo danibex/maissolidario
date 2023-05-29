@@ -12,7 +12,7 @@ class Curso {
   
   const direito = require("@/assets/img/Cursos/direito.png");
   const administracao = require("@/assets/img/Cursos/administracao.png");
-  const enfermagem = require("@/assets/img/Cursos/enfermagem.jpg");
+  const enfermagem = require("@/assets/img/Cursos/enfermagem.png");
 
   // id, nome do curso, preco cheio, porcentagem desconto, valor com desconto, salario, url
   export const PrincipaisCursosPresenciais = [
