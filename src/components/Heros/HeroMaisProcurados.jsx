@@ -87,6 +87,7 @@ export default function Parceiros() {
                 return (
                   <SwiperSlide>
                     <MaisProcurado
+                    key={curso.id}
                       url={curso.url}
                       nome={curso.nomeDoCurso}
                       precoCheio={curso.precoCheio}
@@ -118,6 +119,7 @@ export default function Parceiros() {
                 return (
                   <SwiperSlide>
                     <MaisProcurado
+                    key={curso.id}
                       url={curso.url}
                       nome={curso.nomeDoCurso}
                       precoCheio={curso.precoCheio}
