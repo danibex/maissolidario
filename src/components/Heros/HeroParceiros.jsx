@@ -33,12 +33,12 @@ const Breakpoints = {
 export default function Parceiros() {
 return(
     <div className="w-[100%] flex justify-center items-center">
-    <div className="w-[100%] bg-slate-100 py-4 px-0 text-center h-[370px]">
+    <div className="w-[100%] bg-slate-100 py-4 px-0 text-center h-[370px] shadow-lg">
         <h1 className="text-3xl font-bold mb-3 text-blue-800">Faculdades com bolsa de estudo</h1>
         <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={20}
-        slidesPerView={5}
+        slidesPerView={4}
         navigation
         breakpoints={Breakpoints}
         loop={true}
@@ -47,7 +47,7 @@ return(
         disableOnInteraction: false // Permitir rolagem manual sem interrupção
         }}
         >
-        <div className="flex flex-row gap-8 justify-center items-center">
+        <div className="flex flex-row justify-center items-center">
             {parceiros.map(parceiro => {
                 return(
                 <SwiperSlide key={parceiro.id}>
@@ -60,7 +60,7 @@ return(
                 </SwiperSlide>
                 )
             })}
-            </div>
+          </div>
         </Swiper>
     </div>
     </div>

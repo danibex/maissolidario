@@ -1,66 +1,143 @@
-import { useState } from "react"
-import {PrincipaisCursosPresenciais} from "../../data/PrincipaisCursosPresenciais"
-import {PrincipaisCursosEad} from "../../data/PrincipaisCursosEad"
-import MaisProcurado from "./MaisProcurado"
-export default function MaisProcurados() {
-let [painel, setPainel] = useState(false)
-function alternarPainel(alternar) {
-    setPainel(alternar)
-}
-    return(
-    <div className={`w-[100%] bg-green-400 py-4 px-6 text-center flex flex-col justify-center items-center`}>
-            <h1 className="text-3xl font-bold text-blue-800">Em dúvida sobre qual curso fazer?</h1>
-        
-        
-		<div className="w-[100%]">
-            <div className="w-[100%] bg-slate-100 rounded-xl my-3 shadow-md py-4 px-10 flex flex-col justify-center items-center">
-            <div className="flex flex-row items-center justify-center border p-0 border-blue-700 rounded-full">
-                
-                <button className={`
+import { useState } from "react";
+import { PrincipaisCursosPresenciais } from "../../data/PrincipaisCursosPresenciais";
+import { PrincipaisCursosEad } from "../../data/PrincipaisCursosEad";
+import MaisProcurado from "./MaisProcurado";
+import { IconChevronsRight } from '@tabler/icons-react';
+// import Swiper core and required modules
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+
+const Breakpoints = {
+  0: {
+    slidesPerView: 1,
+  },
+  500: {
+    slidesPerView: 2,
+  },
+  790: {
+    slidesPerView: 3,
+  },
+  1024: {
+    slidesPerView: 4,
+  },
+  1480: {
+    slidesPerView: 5,
+  },
+};
+
+export default function Parceiros() {
+  const [painel, setPainel] = useState(false);
+
+  function alternarPainel(alternar) {
+    setPainel(alternar);
+  }
+
+  return (
+    <>
+      <div className="w-[100%] pt-2 pb-8 bg-green-400">
+        <div className="flex flex-col justify-center items-center w-[100%] py-4">
+          <h1 className="text-3xl font-bold text-blue-800 mb-4">Em dúvida sobre qual curso fazer?</h1>
+          <div className="w-[300px] flex items-center justify-center border p-0 border-blue-700 bg-slate-100 rounded-full">
+            <button
+              className={`
                 hover:bg-blue-600 hover:text-white active:bg-blue-700 
                 rounded-3xl p-2 text-2xl font-medium text-blue-600 
-                ${painel ? '' : 'bg-blue-700 text-white'}
+                ${painel ? "" : "bg-blue-700 text-white"}
                 m-1
                 `}
-                onClick={() => alternarPainel(false)}
-                >
-                    Presenciais
-                </button>
-                <button className={`
+              onClick={() => alternarPainel(false)}
+            >
+              Presenciais
+            </button>
+            <button
+              className={`
                 hover:bg-blue-600 hover:text-white active:bg-blue-700 
                 rounded-3xl p-2 m-1 text-2xl font-medium text-blue-600 
                 whitespace-nowrap
-                ${painel ? 'bg-blue-700 text-white' : ''}
+                ${painel ? "bg-blue-700 text-white" : ""}
                 
                 `}
-                onClick={() => alternarPainel(true)}
-                >
-                    A distância
-                </button>
-            </div>
-        <div className={`flex gap-3 flex-wrap justify-center items-center mt-2`}>
-            {/* Presencial */}
-            <div className={`${painel ? 'hidden' : 'flex'} flex gap-3 flex-wrap justify-center items-center mt-2`}>
-                {PrincipaisCursosPresenciais.map((curso) => {
-                    return(
-                        <MaisProcurado key={curso.id} url={curso.url} nome={curso.nomeDoCurso} precoCheio={curso.precoCheio} porcentagemDesconto={curso.porcentagemDesconto} valorComDesconto={curso.valorComDesconto} salarioMedio={curso.salarioMedio}/>
-                    )
-                })}
-            </div>
-            {/* Fim Presencial */}
+              onClick={() => alternarPainel(true)}
+            >
+              A distância
+            </button>
+          </div>
+        </div>
 
-            {/* EAD */}
-        <div className={`gap-3 flex-wrap justify-center items-center mt-2  ${painel ? 'flex' : 'hidden'} `}>
-                {PrincipaisCursosEad.map((curso) => {
-                    return(
-                        <MaisProcurado key={curso.id} url={curso.url} nome={curso.nomeDoCurso} precoCheio={curso.precoCheio} porcentagemDesconto={curso.porcentagemDesconto} valorComDesconto={curso.valorComDesconto} salarioMedio={curso.salarioMedio}/>
-                    )
-                })}
+        <div className={`${painel ? "hidden" : "flex"} justify-center items-center mt-2`}>
+          <Swiper
+            modules={[Navigation, Pagination, A11y, Autoplay]}
+            spaceBetween={10}
+            breakpoints={Breakpoints}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false
+            }}
+          >
+            <div className="flex justify-center items-center">
+              {PrincipaisCursosPresenciais.map((curso) => {
+                return (
+                  <SwiperSlide>
+                    <MaisProcurado
+                      url={curso.url}
+                      nome={curso.nomeDoCurso}
+                      precoCheio={curso.precoCheio}
+                      porcentagemDesconto={curso.porcentagemDesconto}
+                      valorComDesconto={curso.valorComDesconto}
+                      salarioMedio={curso.salarioMedio}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </div>
+          </Swiper>
         </div>
-            {/* Fim EAD */}
+
+        <div className={`${painel ? "flex" : "hidden"} justify-center items-center mt-2`}>
+          <Swiper
+            modules={[Navigation, Pagination, A11y, Autoplay]}
+            spaceBetween={10}
+            breakpoints={Breakpoints}
+            loop={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false
+            }}
+          >
+            <div className="flex justify-center items-center">
+              {PrincipaisCursosEad.map((curso) => {
+                return (
+                  <SwiperSlide>
+                    <MaisProcurado
+                      url={curso.url}
+                      nome={curso.nomeDoCurso}
+                      precoCheio={curso.precoCheio}
+                      porcentagemDesconto={curso.porcentagemDesconto}
+                      valorComDesconto={curso.valorComDesconto}
+                      salarioMedio={curso.salarioMedio}
+                    />
+                  </SwiperSlide>
+                );
+              })}
+            </div>
+          </Swiper>
         </div>
-    </div>
+
+        <div className="flex justify-center items-center mt-8">
+          <button className="active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
+            <IconChevronsRight/>
+            Todos os Cursos
+          </button>
         </div>
-    </div>
-    )
+
+      </div>
+    </>
+  );
 }

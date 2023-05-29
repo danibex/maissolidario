@@ -1,7 +1,7 @@
 import Image from "next/image"
 export default function MaisProcurado(props) {
     return(
-    <button className="w-[250px] h-[345px] bg-white justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
+    <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3">
         {/*url, width, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio*/}
         <div className="rounded-t-lg mx-0 px-0 mt-0 pt-0 mb-1">
             <Image alt="" src={props.url} width={250} className="rounded-t-lg"/>
