@@ -76,6 +76,7 @@ export default function Parceiros() {
             spaceBetween={10}
             breakpoints={Breakpoints}
             loop={true}
+            navigation
             autoplay={{
               delay: 3000,
               disableOnInteraction: false
@@ -106,6 +107,7 @@ export default function Parceiros() {
             spaceBetween={10}
             breakpoints={Breakpoints}
             loop={true}
+            navigation
             autoplay={{
               delay: 3000,
               disableOnInteraction: false
@@ -131,9 +133,9 @@ export default function Parceiros() {
         </div>
 
         <div className="flex justify-center items-center mt-8">
-          <button className="active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
-            <IconChevronsRight/>
+          <button className="flex flex-row justify-center items-center active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
             Todos os Cursos
+            <IconChevronsRight className="ml-2" size={35}/>
           </button>
         </div>
 
