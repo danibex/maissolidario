@@ -1,9 +1,9 @@
 export default function PrincipaisNoticias() {
     return(
-        <div className="bg-slate-100 w-[100%] h-auto p-4 shadow-lg">
-            <h1>Últimas Novidades</h1>
+        <div className="bg-green-500 w-[100%] h-auto p-4 shadow-lg">
+            <h1 className="text-3xl font-bold mb-4 text-blue-800">Últimas Novidades</h1>
             <div>
-                <div className="w-[250px] h-[345px] justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
+                <div className="bg-slate-100 w-[250px] h-[345px] justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg ">
                 {/*url, width, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio*/}
                     <div className="rounded-md mx-1 my-1">
                         Imagem Vai aqui
