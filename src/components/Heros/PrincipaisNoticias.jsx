@@ -1,6 +1,6 @@
 export default function PrincipaisNoticias() {
     return(
-        <div className="bg-slate-100 w-[100%] h-auto p-4">
+        <div className="bg-slate-100 w-[100%] h-auto p-4 shadow-lg">
             <h1>Últimas Novidades</h1>
             <div>
                 <div className="w-[250px] h-[345px] justify-between flex flex-col border border-spacing-1 rounded-lg pb-3 shadow-lg">
