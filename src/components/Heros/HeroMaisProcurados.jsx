@@ -42,7 +42,7 @@ export default function Parceiros() {
     <>
       <div className="w-[100%] pt-2 pb-8 bg-green-400">
         <div className="flex flex-col justify-center items-center w-[100%] py-4">
-          <h1 className="text-3xl font-bold text-blue-800 mb-4">Em dúvida sobre qual curso fazer?</h1>
+          <h1 className="text-3xl font-bold text-blue-800 mb-4">Cursos Top 10:</h1>
           <div className="w-[300px] flex items-center justify-center border p-0 border-blue-500 bg-slate-100 rounded-full">
             <button
               className={`
@@ -138,7 +138,7 @@ export default function Parceiros() {
 
         <div className="flex justify-center items-center mt-8">
           <button className="flex flex-row justify-center items-center active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
-            Todos os Cursos
+            Consulte Mais
             <IconChevronsRight className="ml-2" size={35}/>
           </button>
         </div>

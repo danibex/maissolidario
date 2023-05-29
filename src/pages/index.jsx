@@ -10,6 +10,7 @@ export default function Home() {
     <div className='h-full w-full'>
       <MenuNavegacao>
         <HeroPrincipal/>
+        <p>O programa Mais Solidário Bolsas de Estudos oferece bolsas de estudo para estudantes de baixa renda, permitindo que tenham acesso à educação de qualidade e oportunidades de desenvolvimento.</p>
         <HeroParceiros/>
         <HeroMaisProcurados/>
         <PrincipaisNoticias/>

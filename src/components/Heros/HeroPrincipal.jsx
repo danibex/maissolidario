@@ -10,13 +10,16 @@ export default function Hero(props) {
     return(
     <div className={`${style.fundo} w-full p-3 m-0 h-auto`}>
         <div className={`p-4 rounded-lg justify-center items-center flex flex-col sm:flex-row w-full ${props.inverter ? 'flex-row-reverse' : ''}`}>
+            <HeroBase className="pr-3">
+                <iframe className="rounded-xl" width="560" height="315" src="https://www.youtube.com/embed/lM8v8Tf2PIw" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+            </HeroBase>
             <HeroBase>
                 <div className="shadow-xl mb-5 flex flex-col justify-center items-center rounded-xl w-[90%] sm:w-[80%] bg-slate-200">
                     <h1 className={`
                     bg-gradient-to-br to-green-400 via-green-500 from-green-600
                     rounded-t-xl p-2 mt-0 w-[100%] flex justify-center items-center text-center
                     text-4xl text-white font-semibold
-                    `}>Solicite contato de um consultor:</h1> 
+                    `}>Preencha Aqui<br/>Garanta sua Bolsa <br/> Agora Mesmo!</h1> 
                     <form className={`flex flex-col justify-center my-3 w-[90%]`}> 
                         <InputForm tipo="text" dica="Nome"/>
                         <InputForm tipo="text" dica="E-mail"/>
@@ -32,9 +35,6 @@ export default function Hero(props) {
                         </div>
                     </form>
                 </div>
-            </HeroBase>
-            <HeroBase className="pr-3">
-                <iframe className="rounded-xl" width="560" height="315" src="https://www.youtube.com/embed/lM8v8Tf2PIw" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
             </HeroBase>
         </div>
     </div>
