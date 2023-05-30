@@ -70,7 +70,7 @@ export default function Parceiros() {
           </div>
         </div>
 
-        <div className={`${painel ? "hidden" : "flex"} justify-center items-center mt-2`}>
+        <div className={`w-[100%] ${painel ? "hidden" : "flex"} justify-center items-center mt-2`}>
           <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
             spaceBetween={10}
@@ -82,11 +82,12 @@ export default function Parceiros() {
               disableOnInteraction: false
             }}
           >
-            <div className="flex justify-center items-center">
+            <div className="w-[100%] flex justify-center items-center">
               {PrincipaisCursosPresenciais.map((curso, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="w-[100%]">
                   <SwiperSlide>
+                  <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado
                       url={curso.url}
                       nome={curso.nomeDoCurso}
@@ -95,6 +96,7 @@ export default function Parceiros() {
                       valorComDesconto={curso.valorComDesconto}
                       salarioMedio={curso.salarioMedio}
                     />
+                    </button>
                   </SwiperSlide>
                   </div>
                 );
@@ -103,7 +105,7 @@ export default function Parceiros() {
           </Swiper>
         </div>
 
-        <div className={`${painel ? "flex" : "hidden"} justify-center items-center mt-2`}>
+        <div className={`w-[100%] ${painel ? "flex" : "hidden"} justify-center items-center mt-2`}>
           <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
             spaceBetween={10}
@@ -115,11 +117,12 @@ export default function Parceiros() {
               disableOnInteraction: false
             }}
           >
-            <div className="flex justify-center items-center">
+            <div className="w-[100%] flex justify-center items-center">
               {PrincipaisCursosEad.map((curso, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className="w-[100%]">
                   <SwiperSlide>
+                  <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado
                       url={curso.url}
                       nome={curso.nomeDoCurso}
@@ -128,6 +131,7 @@ export default function Parceiros() {
                       valorComDesconto={curso.valorComDesconto}
                       salarioMedio={curso.salarioMedio}
                     />
+                  </button>
                   </SwiperSlide>
                   </div>
                 );

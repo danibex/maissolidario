@@ -22,6 +22,7 @@ const Unex = require("@/assets/img/Parceiros/Unex.png");
 const UniESPG = require("@/assets/img/Parceiros/UniESPG.png");
 const UniFatecie = require("@/assets/img/Parceiros/UniFatecie.png");
 const Uniftc = require("@/assets/img/Parceiros/Uniftc.png");
+
 export const parceiros = [
     new Parceiro(1, "Bolsas de até 80%", "A partir de R$ 399,00", Universo, ""),
     new Parceiro(13, "Bolsas de até 80%", "A partir de R$ 399,00", UniFatecie, ""),

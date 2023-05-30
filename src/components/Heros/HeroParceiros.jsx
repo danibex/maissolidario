@@ -51,7 +51,7 @@ return(
             {parceiros.map(parceiro => {
                 return(
                 <SwiperSlide key={parceiro.id}>
-                <button>
+                <button className="hover:opacity-80 active:opacity-70">
                     <Parceiro URLescudo={parceiro.URLescudo} 
                     porcentagemMaxima={parceiro.porcentagemMaxima} 
                     menorPreco={parceiro.menorPreco} 
