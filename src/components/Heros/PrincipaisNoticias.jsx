@@ -14,20 +14,20 @@ export default function PrincipaisNoticias() {
         0: {
           slidesPerView: 1,
         },
-        500: {
+        600: {
           slidesPerView: 2,
         },
-        790: {
+        800: {
           slidesPerView: 3,
         },
-        1024: {
+        1250: {
           slidesPerView: 4,
         },
       };
     return(
     <div className="bg-green-500 w-[100%] h-auto p-4 shadow-lg">
         <h1 className="text-3xl font-bold mb-4 text-blue-800">Últimas Novidades</h1>
-        <div className="w-[100%] flex justify-center items-center">
+        <div className="w-[100%] flex justify-center items-center gap-5">
         <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
             spaceBetween={20}
@@ -39,7 +39,7 @@ export default function PrincipaisNoticias() {
               disableOnInteraction: false
             }}
           >
-        <div className="flex items-center justify-center">  
+        <div className="flex items-center justify-center gap-2">  
             {noticias.map((noticia, index) => {
                 return(
                 <SwiperSlide>

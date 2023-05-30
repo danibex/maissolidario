@@ -39,8 +39,7 @@ export default function Parceiros() {
   }
 
   return (
-    <>
-      <div className="w-[100%] pt-2 pb-8 bg-slate-100 shadow-2xl">
+      <div className="w-[100%] pt-2 pb-8 bg-slate-100 shadow-xl">
         <div className="flex flex-col justify-center items-center w-[100%] py-4">
           <h1 className="text-3xl font-bold text-blue-800 mb-4">Cursos Top 10:</h1>
           <div className="w-[290px] flex items-center justify-center border p-0 border-blue-500 bg-slate-100 rounded-full">
@@ -148,6 +147,6 @@ export default function Parceiros() {
         </div>
 
       </div>
-    </>
+  
   );
 }
