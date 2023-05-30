@@ -13,8 +13,9 @@ export default function Home() {
       <MenuNavegacao>
         <HeroPrincipal/>
         <HeroParceiros/>
-        <HeroSobre inverter/>
+        <HeroSobre/>
         <HeroMaisProcurados/>
+        Principais Perguntas FAQ
         <PrincipaisNoticias/>
         {/*<p>Depoimentos: https://www.educamaisbrasil.com.br/</p> */}
         <HeroDepoimentos/>

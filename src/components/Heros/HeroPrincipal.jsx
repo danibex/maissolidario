@@ -10,7 +10,7 @@ export default function Hero(props) {
     }
     return(
     <div className={`${style.fundo} w-full p-3 m-0 h-auto`}>
-        <div className={`p-4 rounded-lg justify-center items-center flex flex-col sm:flex-row w-full ${props.inverter ? 'flex-row-reverse' : ''}`}>
+        <div className={`p-4 rounded-lg justify-center items-center flex flex-col w-full sm:flex-row-reverse`}>
             <HeroBase className="mb-10">
                 <Image src={maissolidario} className="rounded-xl"/>
                 {/*<iframe className="rounded-xl" width="560" height="315" src="https://www.youtube.com/embed/lM8v8Tf2PIw" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>*/}
