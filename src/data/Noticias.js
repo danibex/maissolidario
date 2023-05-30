@@ -8,7 +8,7 @@ class Noticia {
     }
 }
 
-import estudanteDiploma from "../assets/img/Noticias/estudanteDiploma.jpg"
+import estudanteDiploma from "../assets/img/Noticias/estudanteDiploma.png"
 
 export const noticias = [
     new Noticia(

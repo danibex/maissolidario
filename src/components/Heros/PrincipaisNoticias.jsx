@@ -43,7 +43,7 @@ export default function PrincipaisNoticias() {
             {noticias.map((noticia, index) => {
                 return(
                 <SwiperSlide>
-                    <Noticia src={noticia.urlImage} key={noticia.id} titulo={noticia.titulo} resumoNoticia={noticia.resumo} /> 
+                    <Noticia key={index} src={noticia.urlImage} titulo={noticia.titulo} resumoNoticia={noticia.resumo} /> 
                 </SwiperSlide>
                 )
             })}
