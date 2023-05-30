@@ -5,12 +5,12 @@
 # (Done)Swiper automático infinito parceiros
 
 # (Done)Botão zap fixo
-# Atualizar nome/imagem/desconto... principais cursos
+# (Done)Atualizar nome/imagem/desconto... principais cursos
 
 # (Done)Criar banco de dados fictios para notícias
-# Card Notícias fazer
-# Card notícias Swiper automático infinito
-# Botão para acessar blog através das notícias (embaixo no meio)
+# (Done)Card Notícias fazer
+# (Done)Card notícias Swiper automático infinito
+# ()Botão para acessar blog através das notícias (embaixo no meio)
 # Função map para rederizar notícias
 # Depoimentos card com foto redonda e texto simples educamaisbrasil chatgpt
 # Footer (pegar de site principal)
