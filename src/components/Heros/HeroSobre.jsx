@@ -9,7 +9,7 @@ return(
             <p className="text-3xl text-blue-600 font-semibold">O programa Mais Solidário Bolsas de Estudos oferece bolsas de estudo para estudantes de baixa renda, permitindo que tenham acesso à educação de qualidade e oportunidades de desenvolvimento.</p>
         </HeroBase>
         <HeroBase className="m-2">  
-            <Image src={estudante} className="rounded-xl"/>
+            <Image src={estudante} className="rounded-xl" alt="Estudante apontando para texto"/>
         </HeroBase>
     </div>
 </div>

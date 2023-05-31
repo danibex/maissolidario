@@ -41,13 +41,18 @@ export default function PrincipaisNoticias() {
             }}
           >
         <div className="flex items-center justify-center gap-2">  
-            {noticias.map((noticia, index) => {
-                return(
-                <SwiperSlide>
-                    <Noticia key={index} src={noticia.urlImage} titulo={noticia.titulo} resumoNoticia={noticia.resumo} /> 
-                </SwiperSlide>
-                )
-            })}
+          {noticias.map((noticia, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <Noticia
+              key={index}
+              src={noticia.urlImage}
+              titulo={noticia.titulo}
+              resumoNoticia={noticia.resumo}
+              />
+            </SwiperSlide>
+          );
+          })}
         </div>
         </Swiper>
         </div>
