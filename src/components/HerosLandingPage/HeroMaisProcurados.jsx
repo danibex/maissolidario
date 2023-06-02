@@ -85,7 +85,7 @@ export default function Parceiros() {
             <div className="w-[100%] flex justify-center items-center">
               {PrincipaisCursosPresenciais.map((curso, index) => {
                 return (
-                  <div key={index} className="w-[100%]">
+                  <div key={index} className="w-[100%] flex items-center justify-center">
                   <SwiperSlide>
                   <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado

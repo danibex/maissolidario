@@ -9,6 +9,7 @@ class Noticia {
 }
 
 import estudanteDiploma from "../assets/img/Noticias/estudanteDiploma.png"
+import alunosMaisVelhos from "../assets/img/Noticias/alunosMaisVelhos.png"
 
 export const noticias = [
     new Noticia(
@@ -19,14 +20,14 @@ export const noticias = [
         ""),
     new Noticia(
         2, 
-        estudanteDiploma, 
-        "Bolsas de Estudos Transformadoras no Nordeste", 
-        "Startup Baiana Mais Solidário gera mais de 1 milhão e meio de reais em Economia...", 
+        alunosMaisVelhos, 
+        "Nunca é Tarde para entrar para a faculdade", 
+        "A procura de uma graduação entre oessoas maduras após 40 anos aumentam significativamente....", 
         ""),
     new Noticia(
         3, 
         estudanteDiploma, 
-        "Bolsas de Estudos Transformadoras no Nordeste", 
+        "Superando Limitações financeiras", 
         "Startup Baiana Mais Solidário gera mais de 1 milhão e meio de reais em Economia...", 
         ""),
     new Noticia(

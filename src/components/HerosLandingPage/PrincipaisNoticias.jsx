@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { IconNews } from '@tabler/icons-react';
-import Link from "next/link";
+import Link from "next/link"; 
 export default function PrincipaisNoticias() {
     const Breakpoints = {
         0: {
@@ -29,10 +29,11 @@ export default function PrincipaisNoticias() {
     return(
     <div className="bg-green-400 w-[100%] h-auto p-4 shadow-lg">
         <h1 className="text-3xl font-bold mb-4 text-blue-800">Últimas Novidades</h1>
-        <div className="w-[100%] flex justify-center items-center gap-5">
+        <div className="w-[100%] flex justify-center items-center gap-5 text-center">
         <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
-            spaceBetween={20}
+            spaceBetween={1}
+            slidesPerView={3}
             breakpoints={Breakpoints}
             loop={false}
             navigation
@@ -41,10 +42,11 @@ export default function PrincipaisNoticias() {
               disableOnInteraction: false
             }}
           >
-        <div className="flex items-center justify-center gap-2">  
+        <div className="swiper-slide flex items-center justify-center">  
           {noticias.map((noticia, index) => {
           return (
-            <SwiperSlide key={index}>
+            <div className="swiper-slide">
+            <SwiperSlide key={index} >
               <Noticia
               key={index}
               src={noticia.urlImage}
@@ -52,6 +54,7 @@ export default function PrincipaisNoticias() {
               resumoNoticia={noticia.resumo}
               />
             </SwiperSlide>
+            </div>
           );
           })}
         </div>
