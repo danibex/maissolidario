@@ -29,24 +29,24 @@ export default function MenuNavegacao(props) {
                 `}>
                     <div className='flex flex-row justify-between items-center w-[100%] sm:w-auto'>
                         <Link href="/"><Image alt="" width={150} src={logo}/></Link>
-                        <div className='sm:hidden flex'>
-                            <button onClick={() => {toggleMenu()}}>{toggle ? <IconX/> : <IconMenu2/>}</button>
+                        <div className='sm:hidden flex mr-5'>
+                            <button onClick={() => {toggleMenu()}}>{toggle ? <IconX size={40}/> : <IconMenu2 size={40}/>}</button>
                         </div>
                     </div>
                 <div className={`${toggle ? "flex" : "hidden" } w-[100%] flex-col sm:flex sm:flex-row justify-center items-center`}>
                     <div className='w-[100%] flex flex-col sm:flex-row justify-center items-center'>
                         <div className='w-[100%] flex flex-col sm:flex-row my-3 justify-center items-center'>
-                            <Link href="/bolsas"><BotaoMenu href="bolsas"><IconSchool className='mr-1'/>Bolsas</BotaoMenu></Link>
-                            <BotaoMenu><IconCertificate className='mr-1'/> Teste Vocacional</BotaoMenu>
-                            <BotaoMenu><IconNews className='mr-1'/> Blog</BotaoMenu>   
+                            <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/bolsas"><BotaoMenu><IconSchool className='mr-1'/>Bolsas</BotaoMenu></Link>
+                            <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1'/> Teste Vocacional</BotaoMenu></Link>
+                            <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1'/> Blog</BotaoMenu></Link>   
                         </div>
                         <div className={`flex flex-row ${autenticado?'hidden':'flex'}`}>
-                            <button className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
+                            <Link href="/login" className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
                                 <IconUser className='mr-1'/>Entrar
-                            </button>
-                            <button className="border border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center">
+                            </Link>
+                            <Link href="/registro" className="border border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center">
                                 <IconUserPlus className="mr-1"/>Cadastro
-                            </button>
+                            </Link>
                         </div>
                         <div className={`${autenticado?'flex':'hidden'}`}>
                             <button className={`

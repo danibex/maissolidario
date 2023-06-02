@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import { IconNews } from '@tabler/icons-react';
+import Link from "next/link";
 export default function PrincipaisNoticias() {
     const Breakpoints = {
         0: {
@@ -57,7 +58,7 @@ export default function PrincipaisNoticias() {
         </Swiper>
         </div>
         <div className="flex justify-center items-center my-10">
-        <button className="p-3 flex flex-row bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-lg text-white font-medium text-xl justify-center items-center"><IconNews className="mr-1"/>Mais Notícias</button>
+        <Link href="/blog" className="p-3 flex flex-row bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-lg text-white font-medium text-xl justify-center items-center"><IconNews className="mr-1"/>Mais Notícias</Link>
         </div>
     </div>
     )

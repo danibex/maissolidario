@@ -12,6 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
+import Link from "next/link";
 
 const Breakpoints = {
   0: {
@@ -140,10 +141,10 @@ export default function Parceiros() {
         </div>
 
         <div className="flex justify-center items-center mt-8">
-          <button className="flex flex-row justify-center items-center active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
+          <Link href="/bolsas" className="flex flex-row justify-center items-center active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
             Consulte Mais
             <IconChevronsRight className="ml-2" size={35}/>
-          </button>
+          </Link>
         </div>
 
       </div>
