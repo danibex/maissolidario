@@ -1,12 +1,12 @@
 import MenuNavegacao from '@/components/Menu/MenuNavegacao'
-import HeroPrincipal from '@/components/Heros/HeroPrincipal'
-import HeroParceiros from '@/components/Heros/HeroParceiros'
+import HeroPrincipal from '@/components/HerosLandingPage/HeroPrincipal'
+import HeroParceiros from '@/components/HerosLandingPage/HeroParceiros'
 import whatsapp from '@/assets/img/whatsappLogo.png'
-import HeroMaisProcurados from '@/components/Heros/HeroMaisProcurados'
-import PrincipaisNoticias from '@/components/Heros/PrincipaisNoticias'
+import HeroMaisProcurados from '@/components/HerosLandingPage/HeroMaisProcurados'
+import PrincipaisNoticias from '@/components/HerosLandingPage/PrincipaisNoticias'
 import Image from 'next/image'
-import HeroSobre from '../components/Heros/HeroSobre'
-import HeroDepoimentos from '../components/Heros/HeroDepoimentos'
+import HeroSobre from '../components/HerosLandingPage/HeroSobre'
+import HeroDepoimentos from '../components/HerosLandingPage/HeroDepoimentos'
 export default function Home() {
   return (
     <div className='h-full w-full'>
@@ -15,9 +15,9 @@ export default function Home() {
         <HeroParceiros/>
         <HeroSobre/>
         <HeroMaisProcurados/>
-        Principais Perguntas FAQ
+        {/*Principais Perguntas FAQ*/}
         <PrincipaisNoticias/>
-        {/*<p>Depoimentos: https://www.educamaisbrasil.com.br/</p> */}
+        {/*Depoimentos: https://www.educamaisbrasil.com.br*/}
         <HeroDepoimentos/>
         <button className='fixed right-8 bottom-5 z-10'>
           <Image src={whatsapp} width={70} alt='Logo Whatsapp'/>

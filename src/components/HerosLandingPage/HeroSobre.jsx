@@ -1,4 +1,4 @@
-import HeroBase from "../Heros/HeroBase"
+import HeroBase from "./HeroBase"
 import Image from "next/image"
 import estudante from "@/assets/img/estudante.png"
 export default function HeroSobre(props) {
