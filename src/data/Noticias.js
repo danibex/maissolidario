@@ -10,6 +10,8 @@ class Noticia {
 
 import estudanteDiploma from "../assets/img/Noticias/estudanteDiploma.png"
 import alunosMaisVelhos from "../assets/img/Noticias/alunosMaisVelhos.png"
+import superacao from "../assets/img/Noticias/superacao.png"
+import alunoNotebook from "../assets/img/Noticias/alunoNotebook.png"
 
 export const noticias = [
     new Noticia(
@@ -26,15 +28,15 @@ export const noticias = [
         ""),
     new Noticia(
         3, 
-        estudanteDiploma, 
+        superacao, 
         "Superando Limitações financeiras", 
-        "Startup Baiana Mais Solidário gera mais de 1 milhão e meio de reais em Economia...", 
+        "Como o programa Mais Solidário, ajudam a superar limitações financeiras na busca por educação, mudando vidas...", 
         ""),
     new Noticia(
         4, 
-        estudanteDiploma, 
-        "Bolsas de Estudos Transformadoras no Nordeste", 
-        "Startup Baiana Mais Solidário gera mais de 1 milhão e meio de reais em Economia...", 
+        alunoNotebook, 
+        "Mudando o Seu Destino Com Uma Bolsa de Estudos", 
+        "Bolsas de estudos podem transformar vidas, oferecendo ajuda financeira e oportunidades de mobilidade social....", 
         ""),
 ];
   
