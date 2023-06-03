@@ -30,7 +30,7 @@ export const noticias = [
         3, 
         superacao, 
         "Superando Limitações financeiras", 
-        "Como o programa Mais Solidário, ajudam a superar limitações financeiras na busca por educação, mudando vidas...", 
+        "Como o programa Mais Solidário, ajuda a superar limitações financeiras na busca por educação, mudando vidas...", 
         ""),
     new Noticia(
         4, 

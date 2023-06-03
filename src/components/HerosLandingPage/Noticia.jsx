@@ -6,7 +6,7 @@ export default function Noticia(props) {
         <div className="rounded-md h-[40%] mx-0 mt-5 mb-1 flex justify-center items-center">
             <Image className="h-[90%]" src={props.src} alt="Principal notícia"/>
         </div>
-        <div className="gap-2 p-3 h-[60%] flex flex-col justify-start items-start text-left">
+        <div className="gap-2 p-3 h-[60%] flex flex-col justify-center items-start text-left">
             <h1 className="text-xl font-bold text-left w-[100%] h-[40%]">{props.titulo}</h1>
             <p className="w-[100%] h-[60%]">{props.resumoNoticia}<button className="text-blue-600 hover:underline">Ler tudo</button></p>
         </div>
