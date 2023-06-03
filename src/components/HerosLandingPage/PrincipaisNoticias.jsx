@@ -45,7 +45,7 @@ export default function PrincipaisNoticias() {
         <div className="swiper-slide flex items-center justify-center">  
           {noticias.map((noticia, index) => {
           return (
-            <SwiperSlide key={index} >
+            <SwiperSlide key={index} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
               <Noticia
               key={index}
               src={noticia.urlImage}

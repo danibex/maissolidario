@@ -86,7 +86,7 @@ export default function Parceiros() {
               {PrincipaisCursosPresenciais.map((curso, index) => {
                 return (
                   <div key={index} className="w-[100%] flex items-center justify-center">
-                  <SwiperSlide>
+                  <SwiperSlide style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                   <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado
                       url={curso.url}
@@ -108,7 +108,8 @@ export default function Parceiros() {
         <div className={`w-[100%] ${painel ? "flex" : "hidden"} justify-center items-center mt-2`}>
           <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
-            spaceBetween={10}
+            spaceBetween={1}
+            slidesPerView={3}
             breakpoints={Breakpoints}
             loop={false}
             navigation
@@ -117,12 +118,11 @@ export default function Parceiros() {
               disableOnInteraction: false
             }}
           >
-            <div className="w-[100%] flex justify-center items-center">
+            <div className="swiper-slide flex items-center justify-center">  
               {PrincipaisCursosEad.map((curso, index) => {
                 return (
-                  <div key={index} className="w-[100%]">
-                  <SwiperSlide>
-                  <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
+                  <SwiperSlide key={index} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                  <button  className="items-center shadow-xl w-[250px] h-[345px] bg-white justify-center flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado
                       url={curso.url}
                       nome={curso.nomeDoCurso}
@@ -133,7 +133,6 @@ export default function Parceiros() {
                     />
                   </button>
                   </SwiperSlide>
-                  </div>
                 );
               })}
             </div>
