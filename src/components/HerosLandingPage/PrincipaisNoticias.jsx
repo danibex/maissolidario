@@ -45,7 +45,6 @@ export default function PrincipaisNoticias() {
         <div className="swiper-slide flex items-center justify-center">  
           {noticias.map((noticia, index) => {
           return (
-            <div className="swiper-slide">
             <SwiperSlide key={index} >
               <Noticia
               key={index}
@@ -54,7 +53,6 @@ export default function PrincipaisNoticias() {
               resumoNoticia={noticia.resumo}
               />
             </SwiperSlide>
-            </div>
           );
           })}
         </div>
