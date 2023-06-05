@@ -7,7 +7,6 @@ import PrincipaisNoticias from '@/components/HerosLandingPage/PrincipaisNoticias
 import Image from 'next/image'
 import HeroSobre from '../components/HerosLandingPage/HeroSobre'
 import HeroDepoimentos from '../components/HerosLandingPage/HeroDepoimentos'
-import HeroFAQ from '@/components/HerosLandingPage/HeroFAQ'
 import Footer from '@/components/Footer/Footer'
 export default function Home() {
   return (

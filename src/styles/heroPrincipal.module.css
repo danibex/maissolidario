@@ -18,4 +18,9 @@
     opacity: 0.9; /* Defina o nível de opacidade desejado (valor entre 0 e 1) */
     z-index: -1; /* Adicione essa propriedade para posicionar o pseudo-elemento abaixo dos elementos filhos */
   }
-  
+  .fundoBolsa {
+    background-image: url('../assets/img/fundotopoverao.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
