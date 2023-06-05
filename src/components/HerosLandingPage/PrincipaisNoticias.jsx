@@ -1,5 +1,5 @@
 import Noticia from "./Noticia"
-import { noticias } from "@/data/Noticias"
+import { noticias } from "@/pages/api/data/PaginaPrincipal/Noticias"
 // import Swiper core and required modules
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';

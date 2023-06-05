@@ -36,7 +36,7 @@ export default function MenuNavegacao(props) {
                 <div className={`${toggle ? "flex" : "hidden" } w-[100%] flex-col sm:flex sm:flex-row justify-center items-center`}>
                     <div className='w-[100%] flex flex-col sm:flex-row justify-center items-center'>
                         <div className='w-[100%] flex flex-col sm:flex-row my-3 justify-center items-center'>
-                            <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/bolsas"><BotaoMenu><IconSchool className='mr-1'/>Bolsas</BotaoMenu></Link>
+                            <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/bolsas/graduacao"><BotaoMenu><IconSchool className='mr-1'/>Bolsas</BotaoMenu></Link>
                             <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1'/> Teste Vocacional</BotaoMenu></Link>
                             <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1'/> Blog</BotaoMenu></Link>   
                         </div>

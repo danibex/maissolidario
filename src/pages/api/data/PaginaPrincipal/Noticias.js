@@ -8,10 +8,10 @@ class Noticia {
     }
 }
 
-import estudanteDiploma from "../assets/img/Noticias/estudanteDiploma.png"
-import alunosMaisVelhos from "../assets/img/Noticias/alunosMaisVelhos.png"
-import superacao from "../assets/img/Noticias/superacao.png"
-import alunoNotebook from "../assets/img/Noticias/alunoNotebook.png"
+import estudanteDiploma from "@/assets/img/Noticias/estudanteDiploma.png"
+import alunosMaisVelhos from "@/assets/img/Noticias/alunosMaisVelhos.png"
+import superacao from "@/assets/img/Noticias/superacao.png"
+import alunoNotebook from "@/assets/img/Noticias/alunoNotebook.png"
 
 export const noticias = [
     new Noticia(

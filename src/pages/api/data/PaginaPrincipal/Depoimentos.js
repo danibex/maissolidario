@@ -8,9 +8,9 @@ class Noticia {
     }
 }
 
-import anaSilva from "../assets/img/Depoimentos/anaSilva.png"
-import carlosMendes from "../assets/img/Depoimentos/carlosMendes.png"
-import lucasSouza from "../assets/img/Depoimentos/lucasSouza.png"
+import anaSilva from "@/assets/img/Depoimentos/anaSilva.png"
+import carlosMendes from "@/assets/img/Depoimentos/carlosMendes.png"
+import lucasSouza from "@/assets/img/Depoimentos/lucasSouza.png"
 
 export const depoimentos = [
     new Noticia(

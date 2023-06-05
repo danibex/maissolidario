@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { PrincipaisCursosPresenciais } from "../../data/PrincipaisCursosPresenciais";
-import { PrincipaisCursosEad } from "../../data/PrincipaisCursosEad";
+import { PrincipaisCursosPresenciais } from "@/pages/api/data/PaginaPrincipal/PrincipaisCursosPresenciais";
+import { PrincipaisCursosEad } from "@/pages/api/data/PaginaPrincipal/PrincipaisCursosEad";
 import MaisProcurado from "./MaisProcurado";
 import { IconChevronsRight } from '@tabler/icons-react';
 // import Swiper core and required modules

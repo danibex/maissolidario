@@ -10,7 +10,7 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 
 
-import {parceiros} from "@/data/Parceiros"
+import {parceiros} from "@/pages/api/data/PaginaPrincipal/Parceiros"
 
 const Breakpoints = {
     0: {
