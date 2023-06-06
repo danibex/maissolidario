@@ -2,13 +2,12 @@ import MenuNavegacao from "@/components/Menu/MenuNavegacao"
 import CabecalhoFiltro from "@/components/HerosBolsas/CabecalhoFiltro"
 import Filtro from "@/components/HerosBolsas/Filtro"
 import Footer from "@/components/Footer/Footer"
-
-export default function Bolsas(props) {
+import style from "@/styles/heroPrincipal.module.css"
+export default function Bolsas() {
     return(
       <MenuNavegacao>
-        <CabecalhoFiltro colegio >
+        <CabecalhoFiltro colegio fundo={style.fundoBolsaColegio}>
             <Filtro/>
-            Colégio 
         </CabecalhoFiltro>
         <Footer/> 
       </MenuNavegacao>

@@ -18,9 +18,31 @@
     opacity: 0.9; /* Defina o nível de opacidade desejado (valor entre 0 e 1) */
     z-index: -1; /* Adicione essa propriedade para posicionar o pseudo-elemento abaixo dos elementos filhos */
   }
-  .fundoBolsa {
-    background-image: url('../assets/img/fundotopoverao.png');
+  .fundoBolsaGraduacao {
+    background-image: url('../assets/img/Ecommerce/BackgroundGraduacao.png');
     background-repeat: no-repeat;
+    
+    background-size: cover;
+    z-index: -1;
+  }
+  .fundoBolsaPos {
+    background-image: url('../assets/img/Ecommerce/BackgroundPos.png');
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    z-index: -1;
+  }
+  .fundoBolsaTecnico {
+    background-image: url('../assets/img/Ecommerce/BackgroundTecnico.png');
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    z-index: -1;
+  }
+  .fundoBolsaColegio {
+    background-image: url('../assets/img/Ecommerce/BackgroundColegio.png');
+    background-repeat: no-repeat;
+  
     background-size: cover;
     z-index: -1;
   }
