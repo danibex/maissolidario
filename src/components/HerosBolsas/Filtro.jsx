@@ -1,6 +1,6 @@
 export default function Filtro(props){
 return(
-<div className="flex-row w-full border-blue-800 border h-[100px] rounded-b-xl flex justify-between items-center">
+<div className="flex-row w-full h-[100px] rounded-b-xl flex justify-between items-center">
     <div className="flex flex-row justify-around w-[100%]">
         <div className="flex flex-col justify-center items-center">
             <p className="mb-2 text-lg font-semibold">Nome do Curso:</p>
