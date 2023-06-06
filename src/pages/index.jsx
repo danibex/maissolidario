@@ -8,18 +8,19 @@ import Image from 'next/image'
 import HeroSobre from '../components/HerosLandingPage/HeroSobre'
 import HeroDepoimentos from '../components/HerosLandingPage/HeroDepoimentos'
 import Footer from '@/components/Footer/Footer'
+import Head from 'next/head'
 export default function Home() {
   return (
     <div className='h-full w-full'>
       <MenuNavegacao>
+      <Head>
+        <title>Mais Solidário</title>
+      </Head>
         <HeroPrincipal/>
         <HeroParceiros/>
         <HeroSobre/>
         <HeroMaisProcurados/>
-        {/*<HeroFAQ/>*/}
-        {/*Principais Perguntas FAQ*/}
         <PrincipaisNoticias/>
-        {/*Depoimentos: https://www.educamaisbrasil.com.br*/}
         <HeroDepoimentos/>
         <Footer/>
         <button className='fixed right-8 bottom-5 z-10'>
