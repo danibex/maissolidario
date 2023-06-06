@@ -12,7 +12,8 @@ import {
   IconBackpack,
   IconMenu2,
   IconX,
-  IconChevronDown
+  IconChevronDown,
+  IconHome2
 } from '@tabler/icons-react';
 import BotaoMenuBolsas from './BotaoMenuBolsas';
 
@@ -44,6 +45,7 @@ export default function MenuNavegacao(props) {
         <div className={`${toggle ? "flex" : "hidden"} w-[100%] flex-col sm:flex sm:flex-row justify-center items-center`}>
           <div className='w-[100%] flex flex-col sm:flex-row justify-center items-center'>
             <div className='w-[100%] flex flex-col sm:flex-row my-3 justify-center items-center'>
+                <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/"><BotaoMenu><IconHome2 className='mr-1' />Início</BotaoMenu></Link>
               <div className='w-[100%] sm:w-auto flex flex-col justify-center items-center'>
                 <div className='flex flex-col text-center self-center w-[100%] sm:w-auto'>
                 <div className='w-[100%] flex justify-center items-center'>    
