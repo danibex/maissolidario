@@ -5,6 +5,8 @@ import Footer from "@/components/Footer/Footer"
 import style from "@/styles/heroPrincipal.module.css"
 import ItemFiltro from "@/components/HerosBolsas/ItemFiltro"
 import { IconSearch } from "@tabler/icons-react"
+import CursosEcommerce from "@/components/HerosBolsas/CursosEcommerce"
+import CardCurso from "@/components/HerosBolsas/CardCurso"
 export default function Bolsas() {
 return(
 <MenuNavegacao>
@@ -42,6 +44,17 @@ return(
       </div>
     </Filtro>
   </CabecalhoFiltro>
+  <CursosEcommerce>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+    <CardCurso/>
+  </CursosEcommerce>
 <Footer/> 
 </MenuNavegacao>
 )

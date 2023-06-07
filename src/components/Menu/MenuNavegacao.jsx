@@ -34,25 +34,25 @@ export default function MenuNavegacao(props) {
   return (
     <div>
       <div className={`
-        flex sm:flex-row flex-col justify-between items-center p-4 border-b-2 border-green-100 shadow-lg
+        flex md:flex-row flex-col justify-between items-center p-4 border-b-2 border-green-100 shadow-lg
       `}>
-        <div className='flex flex-row justify-between items-center w-[100%] sm:w-auto'>
+        <div className='flex flex-row justify-between items-center w-[100%] md:w-auto'>
           <Link href="/"><Image alt="" width={150} src={logo} /></Link>
-          <div className='sm:hidden flex mr-5'>
+          <div className='md:hidden flex mr-5'>
             <button onClick={() => { toggleMenu() }}>{toggle ? <IconX size={40} /> : <IconMenu2 size={40} />}</button>
           </div>
         </div>
-        <div className={`${toggle ? "flex" : "hidden"} w-[100%] flex-col sm:flex sm:flex-row justify-center items-center`}>
-          <div className='w-[100%] flex flex-col sm:flex-row justify-center items-center'>
-            <div className='w-[100%] flex flex-col sm:flex-row my-3 justify-center items-center'>
-                <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/"><BotaoMenu><IconHome2 className='mr-1' />Início</BotaoMenu></Link>
-              <div className='w-[100%] sm:w-auto flex flex-col justify-center items-center'>
-                <div className='flex flex-col text-center self-center w-[100%] sm:w-auto'>
+        <div className={`${toggle ? "flex" : "hidden"} w-[100%] flex-col md:flex md:flex-row justify-center items-center`}>
+          <div className='w-[100%] flex flex-col md:flex-row justify-center items-center'>
+            <div className='w-[100%] flex flex-col md:flex-row my-3 justify-center items-center'>
+                <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/"><BotaoMenu><IconHome2 className='mr-1' />Início</BotaoMenu></Link>
+              <div className='w-[100%] md:w-auto flex flex-col justify-center items-center'>
+                <div className='flex flex-col text-center self-center w-[100%] md:w-auto'>
                 <div className='w-[100%] flex justify-center items-center'>    
                     <button 
                     onClick={toggleBolsasDropdown}
-                    className={`sm:w-auto w-[50%] my-2 
-                    sm:my-0 bg-blue-400 hover:bg-blue-500
+                    className={`md:w-auto w-[50%] my-2 
+                    md:my-0 bg-blue-400 hover:bg-blue-500
                     active:bg-blue-600 p-2 rounded-lg text-white 
                     font-medium mx-1 flex flex-row justify-center items-center`} 
                     >
@@ -61,7 +61,7 @@ export default function MenuNavegacao(props) {
                     </button>
                 </div>
                 <div className='flex w-[100%] justify-center items-start'>
-                  <div className={`${toggleBolsas ? "absolute" : "hidden"} flex flex-col justify-center items-center w-[50%]  mt-2 py-2 sm:w-[200px] bg-white rounded-lg shadow-lg z-10`}>
+                  <div className={`${toggleBolsas ? "absolute" : "hidden"} flex flex-col justify-center items-center w-[50%]  mt-2 py-2 md:w-[200px] bg-white rounded-lg shadow-lg z-10`}>
                     <BotaoMenuBolsas href="/bolsas/graduacao">Graduação</BotaoMenuBolsas>
                     <BotaoMenuBolsas href="/bolsas/pos-graduacao">Pós-Graduação</BotaoMenuBolsas>
                     <BotaoMenuBolsas href="/bolsas/tecnico">Técnico</BotaoMenuBolsas>
@@ -71,8 +71,8 @@ export default function MenuNavegacao(props) {
                 </div>
                 </div>
               </div>
-              <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1' /> Teste Vocacional</BotaoMenu></Link>
-              <Link className='w-[100%] sm:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1' /> Blog</BotaoMenu></Link>
+              <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1' /> Teste Vocacional</BotaoMenu></Link>
+              <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1' /> Blog</BotaoMenu></Link>
             </div>
             <div className={`flex flex-row ${autenticado ? 'hidden' : 'flex'}`}>
               <Link href="/login" className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
