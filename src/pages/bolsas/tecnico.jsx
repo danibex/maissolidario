@@ -4,6 +4,7 @@ import Filtro from "@/components/HerosBolsas/Filtro"
 import Footer from "@/components/Footer/Footer"
 import style from "@/styles/heroPrincipal.module.css"
 import ItemFiltro from "@/components/HerosBolsas/ItemFiltro"
+import { IconSearch } from "@tabler/icons-react"
 export default function Bolsas() {
     return(
       <MenuNavegacao>
@@ -37,7 +38,7 @@ export default function Bolsas() {
           <option value="EAD">EAD</option>
       </ItemFiltro>
       <div className="flex justify-center items-center">
-          <button className="p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold">Procurar</button>
+          <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
       </div>
     </Filtro>
         </CabecalhoFiltro>

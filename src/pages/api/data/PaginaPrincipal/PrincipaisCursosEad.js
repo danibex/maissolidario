@@ -1,5 +1,5 @@
 class Curso {
-constructor(id, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio, url, width = "") {
+constructor(id, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio, url) {
   this.id = id;
   this.nomeDoCurso = nomeDoCurso;
   this.precoCheio = precoCheio;
