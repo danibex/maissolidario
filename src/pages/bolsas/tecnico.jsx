@@ -64,7 +64,7 @@ return(
     <BotaoPaginacao className="py-2 pr-1 pl-4">Próximo<IconChevronsRight size={30}/></BotaoPaginacao>
   </div>
 <Footer/>
-<BotaoWhatsapp/> 
+<BotaoWhatsapp/>   
 </MenuNavegacao>
 )
 }
