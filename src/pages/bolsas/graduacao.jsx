@@ -4,9 +4,13 @@ import Filtro from "@/components/HerosBolsas/Filtro"
 import Footer from "@/components/Footer/Footer"
 import style from "@/styles/heroPrincipal.module.css"
 import ItemFiltro from "@/components/HerosBolsas/ItemFiltro"
-import { IconSearch } from "@tabler/icons-react"
+import { IconSearch, IconChevronsRight, IconChevronsLeft } from "@tabler/icons-react"
+import BotaoPaginacao from "@/components/HerosBolsas/BotaoPaginacao"
 import CursosEcommerce from "@/components/HerosBolsas/CursosEcommerce"
 import CardCurso from "@/components/HerosBolsas/CardCurso"
+
+import odonto from "../../assets/img/Cursos/odontologia.png"
+
 export default function Bolsas() {
 return(
 <MenuNavegacao>
@@ -45,16 +49,21 @@ return(
     </Filtro>
   </CabecalhoFiltro>
   <CursosEcommerce>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
-    <CardCurso/>
+    {/* url, nome, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio */}
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
+    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
   </CursosEcommerce>
+  <div className="text-xl font-medium flex flex-row items-center justify-center w-full bg-slate-100 pb-8 pt-4">
+    <BotaoPaginacao className="py-2 pl-1 pr-4"><IconChevronsLeft size={30}/>Anterior</BotaoPaginacao>
+    <BotaoPaginacao className="py-2 pr-1 pl-4">Próximo<IconChevronsRight size={30}/></BotaoPaginacao>
+  </div>
 <Footer/> 
 </MenuNavegacao>
 )

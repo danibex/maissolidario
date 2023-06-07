@@ -3,7 +3,7 @@ import Slider from "./Slider";
 import Image from "next/image";
 export default function CabecalhoFiltro(props) {
 return (
-<div className={`${props.fundo} flex flex-col justify-center items-center py-8`}>
+<div className={`${props.fundo} flex flex-col justify-center items-center py-8 shadow-xl`}>
 {/* Fundo Personalizado */}
     <Slider>
         <Image src="" alt="Slide"/>{/* Atualizar src para props.src */}
