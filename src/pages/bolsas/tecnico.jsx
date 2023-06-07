@@ -45,7 +45,7 @@ return(
 </Filtro>
 </CabecalhoFiltro>
   <CursosEcommerce>
-  <CardCurso/>
+    <CardCurso/>
     <CardCurso/>
     <CardCurso/>
     <CardCurso/>
