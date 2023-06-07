@@ -15,11 +15,10 @@ return(
             <div className="h-[150px] flex flex-col justify-center items-center">
                 <h2 className="mb-2 text-xl font-bold">Bolsas de Estudo</h2>
                 <div className="flex flex-col justify-center items-center">
-                <Link href="/bolsas" className="hover:underline hover:text-slate-200 active:text-slate-400">Bolsas</Link>
-                <Link href="/bolsas" className="hover:underline hover:text-slate-200 active:text-slate-400">Graduação</Link>
-                <Link href="/bolsas" className="hover:underline hover:text-slate-200 active:text-slate-400">Pós-Graduação</Link>
-                <Link href="/bolsas" className="hover:underline hover:text-slate-200 active:text-slate-400">Técnico</Link>
-                <Link href="/bolsas" className="hover:underline hover:text-slate-200 active:text-slate-400">Colégio</Link>
+                <Link href="/bolsas/graduacao" className="hover:underline hover:text-slate-200 active:text-slate-400">Graduação</Link>
+                <Link href="/bolsas/pos-graduacao" className="hover:underline hover:text-slate-200 active:text-slate-400">Pós-Graduação</Link>
+                <Link href="/bolsas/tecnico" className="hover:underline hover:text-slate-200 active:text-slate-400">Técnico</Link>
+                <Link href="/bolsas/colegio" className="hover:underline hover:text-slate-200 active:text-slate-400">Colégio</Link>
                 </div> 
             </div>
             <div className="h-[150px] flex flex-col justify-center items-center">
