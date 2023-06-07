@@ -8,11 +8,34 @@ return(
         </div>
         <div className="flex flex-col justify-center items-center">
             <p className="mb-2 text-lg font-semibold">Faculdade (opcional):</p>
-            <input className="w-[150px] px-2 py-1 rounded-3xl text-center text-base" type="text"/>
+            <select name="Faculdade" className="w-[120px] h-[35px] rounded-2xl text-center">
+                <option value="UNIFTC">UNIFTC</option>
+                <option value="Universo Salvador">Universo Salvador</option>
+                <option value="UNIFATECIE">UNIFATECIE</option>
+                <option value="Faculdade Santíssimo">Faculdade Santíssimo</option>
+                <option value="FATEC">FATEC</option>
+                <option value="Colégio Acadêmico">Colégio Acadêmico</option>
+                <option value="EAD">EAD</option>
+                <option value="EAD">EAD</option>
+                <option value="EAD">EAD</option>
+                <option value="EAD">EAD</option>
+                <option value="EAD">EAD</option>
+                <option value="EAD">EAD</option>
+            </select>
         </div>
         <div className="flex flex-col justify-center items-center">
             <p className="mb-2 text-lg font-semibold">Cidade:</p>
-            <input className="w-[150px] px-2 py-1 rounded-3xl text-center text-base" type="text"/>
+            <select name="Cidade" className="w-[170px] h-[35px] rounded-2xl text-center">
+                <option value="Alagoinhas">Alagoinhas</option>
+                <option value="Feira de Santana">Feira de Santana</option>
+                <option value="Jequié">Jequié</option>
+                <option value="Juazeiro">Juazeiro</option>
+                <option value="Itabuna">Itabuna</option>
+                <option value="Lauro de Freitas">Lauro de Freitas</option>
+                <option value="Petrolina">Petrolina</option>
+                <option value="Salvador">Salvador</option>
+                <option value="Vitória da Conquista">Vitória da Conquista</option>
+            </select>
         </div>
         <div className="flex flex-col justify-center items-center">
             <p className="mb-2 text-lg font-semibold">Modalidade:</p>
