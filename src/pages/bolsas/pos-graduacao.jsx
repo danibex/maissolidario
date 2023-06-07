@@ -9,6 +9,7 @@ import BotaoPaginacao from "@/components/HerosBolsas/BotaoPaginacao"
 import CursosEcommerce from "@/components/HerosBolsas/CursosEcommerce"
 import CardCurso from "@/components/HerosBolsas/CardCurso"
 import odonto from "../../assets/img/Cursos/odontologia.png"
+import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 export default function Bolsas() {
 return(
 <MenuNavegacao>
@@ -63,6 +64,7 @@ return(
     <BotaoPaginacao className="py-2 pr-1 pl-4">Próximo<IconChevronsRight size={30}/></BotaoPaginacao>
   </div>
 <Footer/> 
+<BotaoWhatsapp/>
 </MenuNavegacao>
 )
 }
