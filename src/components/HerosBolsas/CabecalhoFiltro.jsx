@@ -9,7 +9,7 @@ return (
         <Image src="" alt="Slide"/>{/* Atualizar src para props.src */}
     </Slider>
 <div className={`border h-fit w-[95%] rounded-2xl bg-slate-100`}>
-    <div className="flex flex-row justify-around bg-green-400 rounded-t-2xl">
+    <div className="flex flex-col md:flex-row justify-center items-center md:justify-around bg-green-400 rounded-t-2xl">
     <BotaoFiltro active={props.graduacao} href="/bolsas/graduacao">
         Graduação
     </BotaoFiltro>

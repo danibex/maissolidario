@@ -41,7 +41,7 @@ return(
       <option value="Presencial">Presencial</option>
       <option value="EAD">EAD</option>
   </ItemFiltro>
-  <div className="flex justify-center items-center">
+  <div className="flex justify-center items-center my-2 mr-4">
       <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
   </div>
 </Filtro>
