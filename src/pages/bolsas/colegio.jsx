@@ -36,7 +36,6 @@ return(
     </Filtro>
   </CabecalhoFiltro>
   <CursosEcommerce>
-  <div class="grid md:grid-cols-3 grid-cols-2 gap-4">
     <CardCurso/>
     <CardCurso/>
     <CardCurso/>
@@ -46,8 +45,6 @@ return(
     <CardCurso/>
     <CardCurso/>
     <CardCurso/>
-  </div>
-
   </CursosEcommerce>
 <Footer/> 
 </MenuNavegacao>

@@ -1,4 +1,3 @@
-import style from "@/styles/heroPrincipal.module.css"
 import BotaoFiltro from "./BotaoFiltro"
 import Slider from "./Slider";
 import Image from "next/image";
