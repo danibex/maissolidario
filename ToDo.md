@@ -10,10 +10,44 @@
 # (Done)Criar banco de dados fictios para notícias
 # (Done)Card Notícias fazer
 # (Done)Card notícias Swiper automático infinito
-# ()Botão para acessar blog através das notícias (embaixo no meio)
-# Função map para rederizar notícias
-# Depoimentos card com foto redonda e texto simples educamaisbrasil chatgpt
-# Footer (pegar de site principal)
+# (Done)Botão para acessar blog através das notícias (embaixo no meio)
+# (Done)Função map para rederizar notícias
+# (Done)Depoimentos card com foto redonda e texto simples educamaisbrasil chatgpt
+# (Done)Footer (pegar de site principal)
+
+
+# Entidades
+* Parceiros
+* Bolsas
+    * Parceiro
+    * Estado
+    * Cidado
+    * ID
+    * Modalidade
+    * Nome ou Curso
+    * Nível
+    * Preço cheio
+    * Porcentagem desconto
+    * Valor com desconto
+* Usuários
+    * ID
+    * Nome
+    * Sobrenome
+    * Email
+    * Idade
+    * Compra
+    * Telefone
+    * Cidade
+    * Estado
+    * Rua
+    * Bairro 
+    * Numero casa
+    * CPF
+    * CEP
+* Compra
+    * Bolsa
+
+
 
 # Refatorar
     1. mais procurados

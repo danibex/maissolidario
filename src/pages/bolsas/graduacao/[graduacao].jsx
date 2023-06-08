@@ -34,18 +34,22 @@ return(
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
     <Filtro>
       <ItemFiltro titulo="Nome do Curso:" selectNome="Curso">
+        <option value="Todos">Todos</option>
         <option value="Direito">Direito</option>
         <option value="Enfermagem">Enfermagem</option>
       </ItemFiltro>
-      <ItemFiltro titulo="Faculdade (opcional):" selectNome="Faculdade">
+      <ItemFiltro titulo="Faculdade:" selectNome="Faculdade">
+        <option value="Todas">Todas</option>
         <option value="UNIFTC">UNIFTC</option>
         <option value="Universo Salvador">Universo Salvador</option>
         <option value="UNIFATECIE">UNIFATECIE</option>
         <option value="Faculdade Santíssimo">Faculdade Santíssimo</option>
         <option value="FATEC">FATEC</option>
         <option value="Colégio Acadêmico">Colégio Acadêmico</option>
+        <option value="+Edutec">+Edutec</option>
       </ItemFiltro>
       <ItemFiltro titulo="Cidade:" selectNome="Cidade">
+        <option value="Todas">Todas</option>
         <option value="Alagoinhas">Alagoinhas</option>
         <option value="Feira de Santana">Feira de Santana</option>
         <option value="Jequié">Jequié</option>
@@ -57,6 +61,7 @@ return(
         <option value="Vitória da Conquista">Vitória da Conquista</option>
       </ItemFiltro>
       <ItemFiltro titulo="Modalidade" selectNome="Modalidade">
+          <option value="Todas">Todas</option>
           <option value="Presencial">Presencial</option>
           <option value="EAD">EAD</option>
       </ItemFiltro>
