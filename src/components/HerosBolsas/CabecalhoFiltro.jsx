@@ -10,16 +10,16 @@ return (
     </Slider>
 <div className={`border h-fit w-[95%] rounded-2xl bg-slate-100`}>
     <div className="flex flex-col md:flex-row justify-center items-center md:justify-around bg-green-400 rounded-t-2xl">
-    <BotaoFiltro active={props.graduacao} href="/bolsas/graduacao">
+    <BotaoFiltro active={props.graduacao} href="/bolsas/graduacao/1">
         Graduação
     </BotaoFiltro>
-    <BotaoFiltro active={props.pos} href="/bolsas/pos-graduacao">
+    <BotaoFiltro active={props.pos} href="/bolsas/pos-graduacao/1">
         Pós-Graduação
     </BotaoFiltro>
-    <BotaoFiltro active={props.tecnico} href="/bolsas/tecnico">
+    <BotaoFiltro active={props.tecnico} href="/bolsas/tecnico/1">
         Técnico
     </BotaoFiltro>
-    <BotaoFiltro active={props.colegio} href="/bolsas/colegio">
+    <BotaoFiltro active={props.colegio} href="/bolsas/colegio/1">
         Colégio
     </BotaoFiltro>
     </div>

@@ -8,11 +8,27 @@ import { IconSearch, IconChevronsRight, IconChevronsLeft } from "@tabler/icons-r
 import BotaoPaginacao from "@/components/HerosBolsas/BotaoPaginacao"
 import CursosEcommerce from "@/components/HerosBolsas/CursosEcommerce"
 import CardCurso from "@/components/HerosBolsas/CardCurso"
-
-import odonto from "../../assets/img/Cursos/odontologia.png"
+import { useRouter } from 'next/router';
+import { useState, useEffect } from "react"
+import odonto from "@/assets/img/Cursos/odontologia.png"
 import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 
 export default function Bolsas() {
+  const router = useRouter();
+  const [paginacao, setPaginacao] = useState(1)
+
+  useEffect(() => {
+    router.push(`/bolsas/graduacao/${paginacao}`)
+  }, [paginacao])
+
+  function proximaPagina() {
+    setPaginacao(prevPaginacao => prevPaginacao + 1)
+  }
+
+  function paginaAnterior() {
+    setPaginacao(prevPaginacao => prevPaginacao - 1)
+  }
+
 return(
 <MenuNavegacao>
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
@@ -61,10 +77,22 @@ return(
     <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
     <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
   </CursosEcommerce>
-  <div className="text-xl font-medium flex flex-row items-center justify-center w-full bg-slate-100 pb-8 pt-4">
-    <BotaoPaginacao className="py-2 pl-1 pr-4"><IconChevronsLeft size={30}/>Anterior</BotaoPaginacao>
-    <BotaoPaginacao className="py-2 pr-1 pl-4">Próximo<IconChevronsRight size={30}/></BotaoPaginacao>
-  </div>
+  <div className="text-xl font-medium flex flex-row items-center justify-center w-full bg-slate-100 py-8">
+      {/* REFATORAR BOTÃO */}
+      <button 
+      onClick={paginaAnterior}
+      disabled={router.query.graduacao == 1 ? true : false} 
+      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.graduacao == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
+      >
+        <IconChevronsLeft size={30}/>Anterior
+      </button>
+      <button 
+      className={`py-2 pr-1 pl-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white hover:underline active:shadow-none shadow-xl`}
+      onClick={proximaPagina}
+      >
+        Próximo<IconChevronsRight size={30}/>
+      </button>
+    </div>
 <Footer/> 
 <BotaoWhatsapp/>
 </MenuNavegacao>
