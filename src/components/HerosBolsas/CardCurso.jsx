@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function CardCurso(props) {
 return(
 <Link
-href="/"
+href="/curso/1"
     class={`
          pb-4 rounded-xl bg-white
         flex flex-col justify-center items-center
