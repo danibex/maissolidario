@@ -50,14 +50,14 @@ return(
                 <button onClick={() => mostrarDescricao("conheca")} className={`font-medium active:shadow-none hover:text-white hover:bg-blue-500 text-blue-500 bg-white py-2 px-4 rounded-full shadow-xl text-base`}>Conheça a Universo</button>
             </div>
             <div className={``}>
-                <div className={`${activeSection == "sobre" ? "block" : "hidden"}`}>
-                    Sobre
+                <div className={`${activeSection == "sobre" ? "flex" : "hidden"} p-2 flex justify-center items-center`}>
+                    <p className="text-center">A UNIVERSO é uma instituição nacional, com a missão de promover a formação integral do homem, dando oportunidade de educação para todos, fundamentada em valores éticos e morais e compromissada com as responsabilidades sociais da comunidade.</p>
                 </div>
-                <div className={`${activeSection == "localizacao" ? "block" : "hidden"}`}>
-                    Localização
+                <div className={`${activeSection == "localizacao" ? "flex" : "hidden"} flex justify-center items-center`}>
+                    <iframe className="w-[100%] h-[300px]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1634.5806958963828!2d-38.4740161078204!3d-12.990391910875326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b47bf14dcdd%3A0x2750cc44b55f2a9c!2sUniverso%20Universidade%20Salgado%20de%20Oliveira%2C%20Universo%20Salvador!5e0!3m2!1spt-BR!2sbr!4v1686353731361!5m2!1spt-BR!2sbr" width="auto" height="auto" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div className={`${activeSection == "conheca" ? "block" : "hidden"}`}>
-                    Conheça a Universo
+                <div className={`${activeSection == "conheca" ? "flex" : "hidden"} flex justify-center items-center`}>
+                    <iframe className="w-[100%] h-[300px]" src="https://www.google.com/maps/embed?pb=!4v1686354031560!6m8!1m7!1s7ZC-5Mfy0cLkjkneH-cb_w!2m2!1d-12.99091461682069!2d-38.47377564015279!3f96.01900287863124!4f9.077255736359064!5f0.7820865974627469" width="auto" height="auto" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
