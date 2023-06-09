@@ -18,7 +18,7 @@ export default function Bolsas() {
   const [paginacao, setPaginacao] = useState(1)
 
   useEffect(() => {
-    router.push(`/bolsas/graduacao/${paginacao}`)
+    router.push(`/graduacao/${paginacao}`)
   }, [paginacao])
 
   function proximaPagina() {

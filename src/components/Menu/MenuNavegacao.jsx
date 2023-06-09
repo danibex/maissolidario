@@ -62,10 +62,10 @@ export default function MenuNavegacao(props) {
                 </div>
                 <div className='flex w-[100%] justify-center items-start'>
                   <div className={`${toggleBolsas ? "absolute" : "hidden"} flex flex-col justify-center items-center w-[50%]  mt-2 py-2 md:w-[200px] bg-white rounded-lg shadow-lg z-10`}>
-                    <BotaoMenuBolsas href="/bolsas/graduacao/1">Graduação</BotaoMenuBolsas>
-                    <BotaoMenuBolsas href="/bolsas/posgraduacao/1">Pós-Graduação</BotaoMenuBolsas>
-                    <BotaoMenuBolsas href="/bolsas/tecnico/1">Técnico</BotaoMenuBolsas>
-                    <BotaoMenuBolsas href="/bolsas/colegio/1">Colégio</BotaoMenuBolsas>
+                    <BotaoMenuBolsas href="/graduacao/1">Graduação</BotaoMenuBolsas>
+                    <BotaoMenuBolsas href="/posgraduacao/1">Pós-Graduação</BotaoMenuBolsas>
+                    <BotaoMenuBolsas href="/tecnico/1">Técnico</BotaoMenuBolsas>
+                    <BotaoMenuBolsas href="/colegio/1">Colégio</BotaoMenuBolsas>
                     
                   </div>
                 </div>

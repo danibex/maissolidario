@@ -17,7 +17,7 @@ export default function Bolsas() {
   const [paginacao, setPaginacao] = useState(1)
 
   useEffect(() => {
-    router.push(`/bolsas/tecnico/${paginacao}`)
+    router.push(`/posgraduacao/${paginacao}`)
   }, [paginacao])
 
   function proximaPagina() {
@@ -27,10 +27,9 @@ export default function Bolsas() {
   function paginaAnterior() {
     setPaginacao(prevPaginacao => prevPaginacao - 1)
   }
-
 return(
 <MenuNavegacao>
-<CabecalhoFiltro tecnico fundo={style.fundoBolsaTecnico}>
+<CabecalhoFiltro pos fundo={style.fundoBolsaPos}>
 <Filtro>
 <ItemFiltro titulo="Nome do Curso:" selectNome="Curso">
   <option value="Todos">Todos</option>
@@ -39,33 +38,18 @@ return(
 </ItemFiltro>
 <ItemFiltro titulo="Faculdade:" selectNome="Faculdade">
   <option value="Todas">Todas</option>
-  <option value="UNIFTC">UNIFTC</option>
-  <option value="Universo Salvador">Universo Salvador</option>
-  <option value="UNIFATECIE">UNIFATECIE</option>
-  <option value="Faculdade Santíssimo">Faculdade Santíssimo</option>
-  <option value="FATEC">FATEC</option>
-  <option value="Colégio Acadêmico">Colégio Acadêmico</option>
+  <option value="+Edutec">+Edutec</option>
 </ItemFiltro>
 <ItemFiltro titulo="Cidade:" selectNome="Cidade">
   <option value="Todas">Todas</option>
-  <option value="Alagoinhas">Alagoinhas</option>
-  <option value="Feira de Santana">Feira de Santana</option>
-  <option value="Jequié">Jequié</option>
-  <option value="Juazeiro">Juazeiro</option>
-  <option value="Itabuna">Itabuna</option>
-  <option value="Lauro de Freitas">Lauro de Freitas</option>
-  <option value="Petrolina">Petrolina</option>
-  <option value="Salvador">Salvador</option>
-  <option value="Vitória da Conquista">Vitória da Conquista</option>
 </ItemFiltro>
 <ItemFiltro titulo="Modalidade" selectNome="Modalidade">
     <option value="Todas">Todas</option>
-    <option value="Presencial">Presencial</option>
     <option value="EAD">EAD</option>
 </ItemFiltro>
-<div className="flex justify-center items-center my-2 mr-4">
+  <div className="flex justify-center items-center my-2 mr-4">
     <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
-</div>
+  </div>
 </Filtro>
 </CabecalhoFiltro>
   <CursosEcommerce>
@@ -84,8 +68,8 @@ return(
       {/* REFATORAR BOTÃO */}
       <button 
       onClick={paginaAnterior}
-      disabled={router.query.tecnico == 1 ? true : false} 
-      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.tecnico == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
+      disabled={router.query.posgraduacao == 1 ? true : false} 
+      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.posgraduacao == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
       >
         <IconChevronsLeft size={30}/>Anterior
       </button>
@@ -96,8 +80,8 @@ return(
         Próximo<IconChevronsRight size={30}/>
       </button>
   </div>
-<Footer/>
-<BotaoWhatsapp/>   
+<Footer/> 
+<BotaoWhatsapp/>
 </MenuNavegacao>
 )
 }
