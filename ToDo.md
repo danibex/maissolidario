@@ -21,16 +21,20 @@
     * ID
     * Nome
 * Bolsas
-    * Parceiro
-    * Estado
-    * Cidado
     * ID
-    * Modalidade
     * Nome ou Curso
+    * Parceiro
+    * Cidado
+    * Estado
+    * Modalidade
     * Nível
     * Preço cheio
     * Porcentagem desconto
     * Valor com desconto
+    * Duração
+    * Sobre
+    * Localização
+    * Turno
 * Usuários
     * ID
     * Nome
