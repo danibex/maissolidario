@@ -18,6 +18,8 @@
 
 # Entidades
 * Parceiros
+    * ID
+    * Nome
 * Bolsas
     * Parceiro
     * Estado
@@ -45,7 +47,10 @@
     * CPF
     * CEP
 * Compra
+    * ID
+    * Usuário 
     * Bolsa
+    * Data
 
 
 

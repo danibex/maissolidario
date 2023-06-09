@@ -13,7 +13,7 @@ return (
     <BotaoFiltro active={props.graduacao} href="/bolsas/graduacao/1">
         Graduação
     </BotaoFiltro>
-    <BotaoFiltro active={props.pos} href="/bolsas/pos-graduacao/1">
+    <BotaoFiltro active={props.pos} href="/bolsas/posgraduacao/1">
         Pós-Graduação
     </BotaoFiltro>
     <BotaoFiltro active={props.tecnico} href="/bolsas/tecnico/1">

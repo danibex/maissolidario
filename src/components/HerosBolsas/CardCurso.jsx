@@ -1,7 +1,10 @@
 import Image from "next/image"
+import Link from "next/link"
 export default function CardCurso(props) {
 return(
-<button class={`
+<Link
+href={props.link}
+    class={`
          pb-4 rounded-xl bg-white
         flex flex-col justify-center items-center
         shadow-xl hover:opacity-90 active:opacity-100
@@ -18,5 +21,5 @@ return(
         <p>Economize: R$ 800,00</p>
             <div className="text-lg font-medium text-orange-500 whitespace-nowrap">Salário Médio: R$ {props.salarioMedio},00</div>
         </div>
-</button> 
+</Link> 
 )}

@@ -17,7 +17,7 @@ export default function Bolsas() {
   const [paginacao, setPaginacao] = useState(1)
 
   useEffect(() => {
-    router.push(`/bolsas/pos-graduacao/${paginacao}`)
+    router.push(`/bolsas/posgraduacao/${paginacao}`)
   }, [paginacao])
 
   function proximaPagina() {
@@ -27,7 +27,6 @@ export default function Bolsas() {
   function paginaAnterior() {
     setPaginacao(prevPaginacao => prevPaginacao - 1)
   }
-
 return(
 <MenuNavegacao>
 <CabecalhoFiltro pos fundo={style.fundoBolsaPos}>
@@ -48,6 +47,9 @@ return(
     <option value="Todas">Todas</option>
     <option value="EAD">EAD</option>
 </ItemFiltro>
+  <div className="flex justify-center items-center my-2 mr-4">
+    <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
+  </div>
 </Filtro>
 </CabecalhoFiltro>
   <CursosEcommerce>
@@ -66,8 +68,8 @@ return(
       {/* REFATORAR BOTÃO */}
       <button 
       onClick={paginaAnterior}
-      disabled={router.query.tecnico == 1 ? true : false} 
-      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.tecnico == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
+      disabled={router.query.posgraduacao == 1 ? true : false} 
+      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.posgraduacao == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
       >
         <IconChevronsLeft size={30}/>Anterior
       </button>
