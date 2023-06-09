@@ -1,7 +1,8 @@
+import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 export default function Curso() {
 return(
-<div>
-    
-</div>
+<MenuNavegacao>
+
+</MenuNavegacao>
 )
 }
