@@ -70,16 +70,16 @@ return(
 </CabecalhoFiltro>
   <CursosEcommerce>
     {/* url, nome, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio */}
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-    <CardCurso url={odonto} nome="Odontologia" precoCheio="2.000" porcentagemDesconto="75" valorComDesconto="580" salarioMedio="4.000"/>
-  </CursosEcommerce>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+</CursosEcommerce>
   <div className="text-xl font-medium flex flex-row items-center justify-center w-full bg-slate-100 py-8">
       {/* REFATORAR BOTÃO */}
       <button 
