@@ -15,7 +15,8 @@ urlImage
 */
 export const colegios = [
     new Colegio(
-        1, "Ensino Infantil - G3 ao G5", 
+        1, 
+        "Ensino Infantil - G3 ao G5", 
         "Salvador", 
         "Modalidade", 
         "Especialização",
