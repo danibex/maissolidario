@@ -36,10 +36,10 @@
     * Localização
     * Turno
 * Usuários
-    * ID
+    * ID externo
+    * ID interno PostgreSQL
     * Nome Completo
     * Email
-    * Compra
     * Telefone
     * Cidade
     * Estado

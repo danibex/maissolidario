@@ -5,6 +5,7 @@ import Image from "next/image";
 import imagemOdonto from "@/assets/img/Cursos/odontologia.png"
 import imagemUniverso from "../../assets/img/Parceiros/Universo.png"
 import { useState } from "react";
+import { IconCash } from "@tabler/icons-react";
 export default function Curso() {
     const [activeSection, setActiveSection] = useState("conheca");
 
@@ -63,27 +64,27 @@ return(
         </div>
     </div>
     <div className={`flex flex-col p-4 border md:w-[40%] w-[90%] rounded-xl bg-white`}>
-        <div className="flex flex-row justify-between items-center text-xl text-blue-400 font-medium">
-            <p>Preço cheio:</p>
+        <div className="flex flex-row justify-between items-center text-base text-blue-400 font-medium">
+            <p>Mensalidade Integral:</p>
             <p className="line-through">R$ 2.200,00</p>
         </div>
-        <div className="flex flex-row justify-between items-center text-2xl text-green-500 font-semibold">
-            <p>Desconto:</p>
-            <p>80%</p>
+        <div className="flex flex-row justify-between items-center text-lg text-green-500 font-semibold">
+            <p>Desconto do mais solidário:</p>
+            <p>R$ -1.760,00</p>
         </div>
-        <div className="flex flex-row justify-between items-center text-3xl text-green-700 font-semibold">
-            <p>Valor:</p>
+        <div className="flex flex-row justify-between items-center text-xl text-green-700 font-semibold">
+            <p>Você pagará por mês:</p>
             <p>R$ 440,00</p>
         </div>
-        <div className="flex flex-row justify-between items-center text-xl  font-semibold">
+        <div className="flex flex-row justify-between items-center text-lg  font-semibold">
             <p>Economia Total: </p>
-            <p>R$ 84.480,00</p>
+            <p>R$ -84.480,00</p>
         </div>
         <div className="flex justify-center items-center">
             <hr className="w-[95%] mt-6"/>
         </div>
         <div className="mt-6 mb-4 flex justify-center items-center">
-            <button className="border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600">Garantir Esta Bolsa</button>
+            <button className="flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center"><IconCash className="mr-2"/>Garantir Esta Bolsa</button>
         </div>
     </div>
 </div>
