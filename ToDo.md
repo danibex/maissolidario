@@ -37,10 +37,8 @@
     * Turno
 * Usuários
     * ID
-    * Nome
-    * Sobrenome
+    * Nome Completo
     * Email
-    * Idade
     * Compra
     * Telefone
     * Cidade
