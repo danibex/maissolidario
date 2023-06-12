@@ -78,7 +78,7 @@ export default function MenuNavegacao(props) {
               <Link href="/login" className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
                 <IconUser className='mr-1' />Entrar
               </Link>
-              <Link href="/registro" className="border border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center">
+              <Link href="/registro" className={`border ${props.esconderRegistro ? "hidden" : "flex"} border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center`}>
                 <IconUserPlus className="mr-1" />Cadastro
               </Link>
             </div>

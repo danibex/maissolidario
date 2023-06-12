@@ -22,15 +22,15 @@ const educacaoFisica = require("@/assets/img/Cursos/educacaoFisica.png");
 const odontologia = require("@/assets/img/Cursos/odontologia.png");
   // id, nome do curso, preco cheio, porcentagem desconto, valor com desconto, salario, url
 export const PrincipaisCursosPresenciais = [
-  new Curso(1, "Direito", 1223.64, 80, 460, 4537.62, direito),
-  new Curso(2, "Adminisração", 1223.64, 80, 460, 4537.62, administracao),
-  new Curso(3, "Enfermagem", 1223.64, 80, 460, 4537.62, enfermagem),
-  new Curso(4, "Psicologia", 1223.64, 80, 460, 4537.62, psicologia),
-  new Curso(5, "Pedagogia", 1223.64, 80, 460, 4537.62, pedagogia),
-  new Curso(6, "Fisioterapia", 1223.64, 80, 460, 4537.62, fisioterapia),
-  new Curso(7, "Nutrição", 1223.64, 80, 460, 4537.62, nutricao),
-  new Curso(8, "Farmácia", 1223.64, 80, 460, 4537.62, farmacia),
-  new Curso(9, "Ciências Contábeis", 1223.64, 80, 460, 4537.62, contabeis),
-  new Curso(10, "Educação Física", 1223.64, 80, 460, 4537.62, educacaoFisica),
-  new Curso(10, "Odontologia", 1223.64, 80, 460, 4537.62, odontologia),
+  new Curso(1, "Direito", "1.223,64", 80, "440", "4.537", direito),
+  new Curso(2, "Adminisração", "1.223,64", 80, "440", "4.537", administracao),
+  new Curso(3, "Enfermagem", "1.223,64", 80, "440", "4.537", enfermagem),
+  new Curso(4, "Psicologia", "1.223,64", 80, "440", "4.537", psicologia),
+  new Curso(5, "Pedagogia", "1.223,64", 80, "440", "4.537", pedagogia),
+  new Curso(6, "Fisioterapia", "1.223,64", 80, "440", "4.537", fisioterapia),
+  new Curso(7, "Nutrição", "1.223,64", 80, "440", "4.537", nutricao),
+  new Curso(8, "Farmácia", "1.223,64", 80, "440", "4.537", farmacia),
+  new Curso(9, "Ciências Contábeis", "1.223,64", 80, "440", "4.537", contabeis),
+  new Curso(10, "Educação Física", "1.223,64", 80, "440", "4.537", educacaoFisica),
+  new Curso(10, "Odontologia", "1.223,64", 80, "440", "4.537", odontologia),
 ];

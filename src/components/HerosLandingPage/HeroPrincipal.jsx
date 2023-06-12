@@ -27,7 +27,7 @@ export default function Hero(props) {
                         <InputForm tipo="text" dica="E-mail"/>
                         <InputForm tipo="text" dica="Telefone"/>
                         <InputForm tipo="text" dica="Curso Desejado"/>
-                        <InputForm tipo="text" dica="Instituição de Ensino Desejada"/>
+                        <InputForm tipo="text" dica="Instituição de Ensino Desejada(opcional)"/>
                         <InputForm tipo="text" dica="Cidade"/>
                         <div className="w-[100%] flex justify-center items-center">
                             <button onClick={previnir} className="px-4 py-2 my-2 text-xl flex justify-center items-center w-[60%] rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">

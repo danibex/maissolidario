@@ -12,6 +12,7 @@
     "@tabler/core": "^1.0.0-beta19",
     "@tabler/icons-react": "^2.20.0",
     "autoprefixer": "10.4.14",
+    "body-parser": "^1.20.2",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "next": "13.4.3",
