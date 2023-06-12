@@ -3,38 +3,47 @@ import Footer from "@/components/Footer/Footer";
 import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 import { IconUserPlus } from "@tabler/icons-react";
 import { useState } from "react";
+import {Circles} from 'react-loader-spinner';
 
 export default function Registro(props) {
-function testando (e) {
-    e.preventDefault()
-    fetch('/api/asaas/cadastrarUsuario', {
-      method: 'POST',
-      body: JSON.stringify(usuario)
-    })
-    .then(resp =>  resp.json()) 
-        .then(data => { console.log(data)})
+    const [carregando, setCarregando] = useState(false);
+    
+    let novoUsuario = {
+        name: "",
+        email: "",
+        phone: "",
+        mobilePhone: "",
+        cpfCnpj: "",
+        postalCode: "",
+        address: "", // rua
+        addressNumber: "",
+        complement: "",
+        province: "",
+        externalReference: "",
+        notificationDisabled: false,
+        additionalEmails: "",
+        municipalInscription: "",
+        stateInscription: "",
+        observations: ""
+    };
+    const [usuario, setUsuario] = useState(novoUsuario)
+    
+    function cadastrar (e) {
+        setCarregando(true);
+        e.preventDefault()
+        fetch('/api/asaas/cadastrarUsuario', {
+            method: 'POST',
+            body: JSON.stringify(usuario)
+        })
+        .then(resp =>  resp.json()) 
+        .then(data => { console.log(data)}) 
+        .finally(() => {
+            setTimeout(() => {
+              setCarregando(false);
+            }, 1000); // Atraso de 2 segundos (2000 milissegundos)
+          })
 }
 
-var novoUsuario = {
-    name: "",
-    email: "",
-    phone: "",
-    mobilePhone: "",
-    cpfCnpj: "",
-    postalCode: "",
-    address: "", // rua
-    addressNumber: "",
-    complement: "",
-    province: "",
-    externalReference: "",
-    notificationDisabled: false,
-    additionalEmails: "",
-    municipalInscription: "",
-    stateInscription: "",
-    observations: ""
-  };
-
-const [usuario, setUsuario] = useState(novoUsuario)
 function atualizarNome(event) {
     setUsuario({...usuario, name: event.target.value})
 }
@@ -124,8 +133,16 @@ return(
                         onChange={atualizarNumero}
                         />
                 <div className="w-auto md:w-[100%] flex justify-center items-center">
-                    <button onClick={testando} className="px-4 py-2 my-2 text-xl flex justify-center items-center w-auto rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">
-                    <IconUserPlus className="mr-2"/>
+                    <button onClick={cadastrar} className="px-4 py-2 my-2 text-xl flex justify-center items-center w-auto rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">
+                    <IconUserPlus className={`mr-2 ${carregando ? "hidden" : " "}`}/>
+                    <div className={`mr-2 ${carregando ? "block" : "hidden"}`}>
+                    <Circles
+                    type="Puff"
+                    color="#4ade80"
+                    height={30}
+                    width={30}
+                    />
+                    </div>
                     Finalizar Cadastro
                     </button>
                 </div>
