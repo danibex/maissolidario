@@ -6,6 +6,7 @@ import imagemOdonto from "@/assets/img/Cursos/odontologia.png"
 import imagemUniverso from "../../assets/img/Parceiros/Universo.png"
 import { useState } from "react";
 import { IconCash } from "@tabler/icons-react";
+import { Circles } from "react-loader-spinner";
 export default function Curso() {
     const [activeSection, setActiveSection] = useState("conheca");
 
@@ -84,7 +85,19 @@ return(
             <hr className="w-[95%] mt-6"/>
         </div>
         <div className="mt-6 mb-4 flex justify-center items-center">
-            <button className="flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center"><IconCash className="mr-2"/>Garantir Esta Bolsa</button>
+            
+            <button className="flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                <IconCash className="mr-2"/>
+                <div>
+                    <Circles
+                        type="Puff"
+                        color="#4ade80"
+                        height={30}
+                        width={30}
+                        />
+                </div>
+                Garantir Esta Bolsa
+            </button>
         </div>
     </div>
 </div>
