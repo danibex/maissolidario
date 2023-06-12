@@ -21,7 +21,7 @@ export default async function criarUsuarioAsaas(req, res) {
       const dadosConsulta = await consultar.json();
       console.log(`Dados da consulta ${dadosConsulta}`)
       if(dadosConsulta.data.length >= 1) {
-        res.status(200).json({ resposta: "Usuário existente" });
+        res.status(200).json({ resposta: "Usuário existente", usuario: true });
       } else {
         const criar = await fetch(urlCriar, {
           method: 'POST',
@@ -37,7 +37,7 @@ export default async function criarUsuarioAsaas(req, res) {
       const data = await criar.json();
       console.log('Response:', data); 
       
-      res.status(200).json({ resposta: "Usuário não existe", resposta2: data });
+      res.status(200).json({ resposta: "Usuário não existe", resposta2: data, usuario: false });
     }
     
 
