@@ -133,7 +133,7 @@ return(
                         onChange={atualizarNumero}
                         />
                 <div className="w-auto md:w-[100%] flex justify-center items-center">
-                    <button onClick={cadastrar} className="px-4 py-2 my-2 text-xl flex justify-center items-center w-auto rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">
+                    <button onClick={cadastrar} className="w-[230px] h-[45px] px-4 py-2 my-2 text-xl flex flex-row justify-center items-center rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">
                     <IconUserPlus className={`mr-2 ${carregando ? "hidden" : " "}`}/>
                     <div className={`mr-2 ${carregando ? "block" : "hidden"}`}>
                     <Circles
@@ -143,7 +143,7 @@ return(
                     width={30}
                     />
                     </div>
-                    Finalizar Cadastro
+                    <p className={`${carregando ? "hidden" : " "} whitespace-nowrap`}>Finalizar Cadastro</p>
                     </button>
                 </div>
             </form>

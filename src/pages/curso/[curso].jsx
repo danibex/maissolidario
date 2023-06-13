@@ -9,9 +9,16 @@ import { IconCash } from "@tabler/icons-react";
 import { Circles } from "react-loader-spinner";
 export default function Curso() {
     const [activeSection, setActiveSection] = useState("conheca");
-
+    const [carregando, setCarregando] = useState(false)
     function mostrarDescricao(elemento) {
       setActiveSection(elemento);
+    }
+
+    function ativarSpinner() {
+        setCarregando(true)
+        setTimeout(() => {
+            setCarregando(false);
+          }, 2000); 
     }
 
 return(
@@ -86,9 +93,9 @@ return(
         </div>
         <div className="mt-6 mb-4 flex justify-center items-center">
             
-            <button className="flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
-                <IconCash className="mr-2"/>
-                <div>
+            <button onClick={ativarSpinner} className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                <IconCash className={`mr-2 ${carregando ? "hidden" : "block"}`}/>
+                <div className={`${carregando ? "block" : "hidden"}`}>
                     <Circles
                         type="Puff"
                         color="#4ade80"
@@ -96,9 +103,9 @@ return(
                         width={30}
                         />
                 </div>
-                Garantir Esta Bolsa
+                <p className={`${carregando ? "hidden" : "block"}`}>Garantir Esta Bolsa</p>
             </button>
-        </div>
+        </div> 
     </div>
 </div>
 <Footer/>
