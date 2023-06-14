@@ -47,7 +47,7 @@ export const AutenticacaoProvider = ({ children }) => {
   }
 
   return (
-    <AutenticacaoContext.Provider value={{ logar, signed: !!user, user, Sair }}>
+    <AutenticacaoContext.Provider value={{ logar, signed: !!user.uid, user, Sair }}>
       {children}
     </AutenticacaoContext.Provider>
   )

@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { AutenticacaoContext } from '@/contexts/AuthGoogle'
 import { IconUser, IconUserPlus } from '@tabler/icons-react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export default function Finalizar() {
   const { signed, user, Sair } = useContext(AutenticacaoContext)
   const router = useRouter()
-  console.log(user)
-  if(signed) {
+  if (signed) {
     return (
       <div>
         Pagina Privada<br/>
@@ -16,7 +16,8 @@ export default function Finalizar() {
       </div>
     )
   } else {
-    router.push("/")
-    return null
+    return(
+      <Link href="/">Inicio</Link>
+    )
   }
 }
