@@ -77,7 +77,7 @@ export default function MenuNavegacao(props) {
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1' /> Teste Vocacional</BotaoMenu></Link>
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1' /> Blog</BotaoMenu></Link>
             </div>
-            <div className={`flex flex-row ${signed ? 'flex ' : 'flex'}`}>
+            <div className={`flex flex-row ${signed ? 'hidden' : 'flex'}`}>
               <button onClick={() => logar()} className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
                 <IconUser className='mr-1' />Entrar
               </button>

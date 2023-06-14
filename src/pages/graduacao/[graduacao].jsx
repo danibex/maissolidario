@@ -16,8 +16,10 @@ import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 export default function Bolsas() {
   const router = useRouter();
   const [paginacao, setPaginacao] = useState(1)
-
-  useEffect(() => {
+/* 1. utilização (sem array recarrega a cada atualização) 
+2. chama a fução cada vez que o componente passado no array final for atualizado
+3. array vazio (roda a função apenas uma vez (geralmente utilizado para fazer chamadas ajax)) */
+  useEffect(() => { // chama a função cada vez que um componente que utiliza a paginação for atualizado
     router.push(`/graduacao/${paginacao}`)
   }, [paginacao])
 
