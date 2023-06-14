@@ -1,53 +1,54 @@
 import { createContext, useEffect, useState } from "react";
-import React from 'react'
-import {getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import React from 'react';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from '@/services/firebase/firebaseConfig';
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 const provider = new GoogleAuthProvider();
 
 export const AutenticacaoContext = createContext({})
 
-export const AutenticacaoProvider = ({children}) => {
-    const [user, setUser] = useState({})
-    useEffect(() => {
-        const loadStorageAuth = () => {
-            const sessionToken = sessionStorage.getItem("@AuthFirebase: token")
-            const sessionUser = sessionStorage.getItem("@AuthFirebase: user")
-            if(sessionToken && sessionUser) {
-                setUser(sessionUser)
-            }
-        }
-        loadStorageAuth()
-    }, [])
-// Login com o Google
-    const auth = getAuth(app);
-    function logar() {
+export const AutenticacaoProvider = ({ children }) => {
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const loadStorageAuth = () => {
+      const sessionToken = sessionStorage.getItem("@AuthFirebase: token")
+      const sessionUser = sessionStorage.getItem("@AuthFirebase: user")
+      if (sessionToken && sessionUser) {
+        setUser(sessionUser)
+      }
+    }
+    loadStorageAuth()
+  }, [])
+
+  const auth = getAuth(app);
+  const router = useRouter();
+
+  function logar() {
     signInWithPopup(auth, provider)
-        .then((result) => {
+      .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
         setUser(user)
         sessionStorage.setItem("@AuthFirebase: token", token)
         sessionStorage.setItem("@AuthFirebase: user", JSON.stringify(user))
-        }).catch((error) => {
+      }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        });
-    }
-// Final Login com Google
-// Sair
-const router = useRouter()
-function Sair() {
+      });
+  }
+
+  function Sair() {
     sessionStorage.clear()
-    setUser(null)
+    setUser("")
     router.push(`/`)
-}
-    return(
-        <AutenticacaoContext.Provider value={{logar, signed: !!user, user, Sair}}>
-           {children} 
-        </AutenticacaoContext.Provider>
-    )
+  }
+
+  return (
+    <AutenticacaoContext.Provider value={{ logar, signed: !!user, user, Sair }}>
+      {children}
+    </AutenticacaoContext.Provider>
+  )
 }
