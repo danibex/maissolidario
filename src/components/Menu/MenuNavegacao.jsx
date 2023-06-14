@@ -29,11 +29,9 @@ export default function MenuNavegacao(props) {
   function toggleBolsasDropdown(event) {
     event.preventDefault();
     setToggleBolsas(!toggleBolsas);
-    console.log(toggleBolsas);
   }
 
   const {logar, signed, user} = useContext(AutenticacaoContext)
-  console.log(user)
   return (
     <div>
       <div className={`
