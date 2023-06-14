@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import React from 'react'
 import {getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from '@/services/firebase/firebaseConfig';
+import { Router, useRouter } from "next/router";
 const provider = new GoogleAuthProvider();
 
 export const AutenticacaoContext = createContext({})
@@ -37,9 +38,15 @@ export const AutenticacaoProvider = ({children}) => {
         });
     }
 // Final Login com Google
-
+// Sair
+const router = useRouter()
+function Sair() {
+    sessionStorage.clear()
+    setUser(null)
+    router.push(`/`)
+}
     return(
-        <AutenticacaoContext.Provider value={{logar, signed: !!user, user: user}}>
+        <AutenticacaoContext.Provider value={{logar, signed: !!user, user, Sair}}>
            {children} 
         </AutenticacaoContext.Provider>
     )

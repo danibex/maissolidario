@@ -86,11 +86,13 @@ export default function MenuNavegacao(props) {
               </button>
             </div>
             <div className={`${signed ? 'flex' : 'hidden'}`}>
-              <button className={`
+              <button onClick={() => logar()}
+              className={`
                 flex flex-row justify-center items-center
                 px-2 py-3 rounded-lg text-lg
                 bg-green-500 hover:bg-green-600 active:bg-green-700 text-white mx-2 font-bold
-              `}>
+              `}
+              >
                 <p className='absolute flex text-center items-center rounded-full h-[15px] w-[15px] text-black text-xs p-1 bg-red-500 ml-[-90px] mb-[-22px]'>1</p>
                 <IconBackpack className='mr-1' strokeWidth={2} size={32} />
                 Mochila
