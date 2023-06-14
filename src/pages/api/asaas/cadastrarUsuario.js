@@ -8,9 +8,7 @@ export default async function criarUsuarioAsaas(req, res) {
   
   bodyParser.json()(req, res, async () => {
     const novoUsuario = req.body;
-    const novoUsuarioObjeto = JSON.parse(novoUsuario)
-  
-
+    
     try {
       const consultar = await fetch(`${urlConsultar}${novoUsuarioObjeto.cpfCnpj}`, {
         method: 'GET',

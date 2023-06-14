@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Configuração de variavel de acesso(configuração do app no console) ++++ Função de login(documentacao)
 import { initializeApp } from "firebase/app";
  
 const firebaseConfig = {
@@ -10,6 +10,5 @@ const firebaseConfig = {
   appId: "1:235631388184:web:0b28b511711f2867b1856d",
   measurementId: "G-E2PJ1RN193"
 };
-
 
 export const app = initializeApp(firebaseConfig);

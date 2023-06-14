@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../../assets/img/logomaisnovo.png';
 import BotaoMenu from './BotaoMenu';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   IconNews,
   IconCertificate,
@@ -16,9 +16,10 @@ import {
   IconHome2
 } from '@tabler/icons-react';
 import BotaoMenuBolsas from './BotaoMenuBolsas';
+import { AutenticacaoContext } from '@/contexts/AuthGoogle';
 
 export default function MenuNavegacao(props) {
-  let autenticado = false;
+
   const [toggle, setToggle] = useState(false);
   const toggleMenu = () => {
     setToggle(!toggle);
@@ -31,6 +32,8 @@ export default function MenuNavegacao(props) {
     console.log(toggleBolsas);
   }
 
+  const {logar, signed, user} = useContext(AutenticacaoContext)
+  console.log(user)
   return (
     <div>
       <div className={`
@@ -74,15 +77,15 @@ export default function MenuNavegacao(props) {
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1' /> Teste Vocacional</BotaoMenu></Link>
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1' /> Blog</BotaoMenu></Link>
             </div>
-            <div className={`flex flex-row ${autenticado ? 'hidden' : 'flex'}`}>
-              <Link href="/login" className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
+            <div className={`flex flex-row ${signed ? 'flex ' : 'flex'}`}>
+              <button onClick={() => logar()} className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
                 <IconUser className='mr-1' />Entrar
-              </Link>
-              <Link href="/registro" className={`border ${props.esconderRegistro ? "hidden" : "flex"} border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center`}>
+              </button>
+              <button onClick={() => logar()} className={`border ${props.esconderRegistro ? "hidden" : "flex"} border-green-500 bg-white hover:bg-gray-300 active:bg-gray-400 text-blue-400 py-2 px-4 mx-2 font-semibold rounded-lg text-lg flex flex-row justify-center items-center`}>
                 <IconUserPlus className="mr-1" />Cadastro
-              </Link>
+              </button>
             </div>
-            <div className={`${autenticado ? 'flex' : 'hidden'}`}>
+            <div className={`${signed ? 'flex' : 'hidden'}`}>
               <button className={`
                 flex flex-row justify-center items-center
                 px-2 py-3 rounded-lg text-lg
