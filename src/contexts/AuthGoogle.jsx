@@ -14,7 +14,7 @@ export const AutenticacaoProvider = ({ children }) => {
       const sessionToken = sessionStorage.getItem("@AuthFirebase: token")
       const sessionUser = sessionStorage.getItem("@AuthFirebase: user")
       if (sessionToken && sessionUser) {
-        setUser(sessionUser)
+        setUser(JSON.parse(sessionUser))
       }
     }
     loadStorageAuth()

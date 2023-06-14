@@ -6,30 +6,12 @@ import { useRouter } from 'next/router'
 export default function Finalizar() {
   const { signed, user, Sair } = useContext(AutenticacaoContext)
   const router = useRouter()
-  let usuarioLogado = null;
-
-  if (signed && user) {
-    try {
-      usuarioLogado = JSON.parse(user);
-      usuarioLogado = {
-        uid: usuarioLogado.uid,
-        email: usuarioLogado.email,
-        emailVerified: usuarioLogado.emailVerified,
-        displayName: usuarioLogado.displayName,
-        photoURL: usuarioLogado.photoURL,
-      };
-    } catch (error) {
-      console.error('Erro ao converter o JSON em objeto:', error);
-    }
-  }
-
-  console.log(usuarioLogado);
-  
+  console.log(user)
   if(signed) {
     return (
       <div>
-        Pagina Privada
-        
+        Pagina Privada<br/>
+        Olá {user.displayName}!!!<br/>
         <button onClick={() => Sair()}>Sair</button>
       </div>
     )
