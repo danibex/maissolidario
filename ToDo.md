@@ -58,3 +58,23 @@
 
 # Refatorar
     1. mais procurados
+
+
+# Backend
+
+# Usuários
+## GET
+* /usuarios = criar
+* /usuarios/[id] = recuperar
+* /usuarios?nome=daniel&email=danielivam96@gmail = listar com filtro
+
+## POST
+* /usuarios/[id] = atualizar
+
+## DELETE
+* /usuarios/[id] = deletar
+
+# Pagamentos
+## POST
+* /pagamentos
+    * body (olhar documentação)
