@@ -1,13 +1,9 @@
-import { createTable } from '@/models/parceiros/criarTabela';
 import pool from '@/models/acess';
+import { listarParceiros } from '@/models/parceiros/retornaParceiros';
 export default async function handler(req, res) {
     if(req.method == "GET") {
         try {
-            // Criar a tabela se ainda não existir
-            await createTable();
-            // Consultar os dados da tabela
-            const { rows: parceiros } = await pool.query('SELECT * FROM parceiros;');
-            console.log(parceiros);
+            const parceiros = await listarParceiros();
             res.status(200).json(parceiros);
             } catch (error) {
             console.error(error);
