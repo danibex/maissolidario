@@ -32,13 +32,20 @@ export const AutenticacaoProvider = ({ children }) => {
         setUser(user)
         sessionStorage.setItem("@AuthFirebase: token", token)
         sessionStorage.setItem("@AuthFirebase: user", JSON.stringify(user))
-      }).catch((error) => {
+        
+      })
+      .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   }
+
+  useEffect(() => { // utilizar para persistência no banco de dados
+    console.log(user)
+  }, [user])
+  
 
   function Sair() {
     sessionStorage.clear()
