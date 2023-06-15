@@ -1,5 +1,5 @@
 import pool from '@/models/acess';
-import { createTable } from '@/models/criarTabela';
+import { createTable } from '@/models/parceiros/criarTabela';
 
 export default async function handler(req, res) {
   if(req.method == "GET") {

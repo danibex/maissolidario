@@ -1,11 +1,11 @@
 import pool from "@/models/acess";
-
 export const createTable = async () => {
   try {
     const createTableQuery = `
       CREATE TABLE IF NOT EXISTS parceiros (
         id SERIAL PRIMARY KEY,
-        nome VARCHAR(100)
+        nome VARCHAR(100),
+        imagem VARCHAR(100)
       )
     `;
     await pool.query(createTableQuery);
