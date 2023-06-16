@@ -72,14 +72,14 @@ function atualizarBairro(event) {
     setUsuario({...usuario, province: event.target.value })
 }
 return(
-<MenuNavegacao esconderRegistro>
+<MenuNavegacao>
 <div className="w-full flex justify-center items-center bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600">
         <div className="shadow-xl my-5 mb-5 flex flex-col justify-center items-center rounded-xl w-[80%] md:w-[50%]  bg-slate-200">
             <h1 className={`
             bg-gradient-to-br to-green-400 via-green-500 from-green-600
             rounded-t-xl p-2 mt-0 w-[100%] flex justify-center items-center text-center
             text-4xl text-white font-semibold
-            `}>Cadastro</h1> 
+            `}>Finalizar Compra</h1> 
             <form className={`flex flex-col justify-center items-center my-3 w-[90%]`}> 
                 <div className="flex flex-col md:flex-row items-center justify-center w-full">
                     <div className="flex flex-col items-center justify-center w-1/2">

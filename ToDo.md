@@ -25,7 +25,8 @@ CREATE TABLE compras (
   billing_type VARCHAR(20),
   value VARCHAR(10),
   due_date DATE,
-  description VARCHAR(100)
+  description VARCHAR(100),
+  curso VARCHAR(100),
 );
 
 CREATE TABLE cursos (
