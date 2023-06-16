@@ -16,6 +16,26 @@
 # (Done)Footer (pegar de site principal)
 
 
+# Usuário:
+## Google Auth:
+	displayName
+	email
+	uid
+## Asaas:
+	address
+	addressNumber
+	cpfCnpj
+	email
+	id
+	mobilePhone
+	name
+	postalCode
+	province //bairro
+	state //estado
+## Mais Solidário
+	curso
+	
+
 # Entidades
 * Parceiros
     * ID
@@ -48,6 +68,8 @@
     * Numero casa
     * CPF
     * CEP
+    * Curso (Quando Comprado)
+    * Boletos
 * Compra
     * ID
     * Usuário 

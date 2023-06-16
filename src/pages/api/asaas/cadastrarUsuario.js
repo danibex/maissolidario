@@ -8,17 +8,17 @@ export default async function criarUsuarioAsaas(req, res) {
   
   bodyParser.json()(req, res, async () => {
     const novoUsuario = req.body;
-    
+    const usuarioObjeto = JSON.parse(novoUsuario)
     try {
-      const consultar = await fetch(`${urlConsultar}${novoUsuarioObjeto.cpfCnpj}`, {
+      const consultar = await fetch(`${urlConsultar}${usuarioObjeto.cpfCnpj}`, {
         method: 'GET',
         headers: {
           'access_token': `$${token}`
         }
       })
       const dadosConsulta = await consultar.json();
-      console.log(`Dados da consulta ${dadosConsulta}`)
-      if(dadosConsulta.data.length >= 1) {
+
+      if(dadosConsulta.totalCount >= 1) {
         res.status(200).json({ resposta: "Usuário existente", usuario: true });
       } else {
         const criar = await fetch(urlCriar, {
@@ -35,10 +35,8 @@ export default async function criarUsuarioAsaas(req, res) {
       const data = await criar.json();
       console.log('Response:', data); 
       
-      res.status(200).json({ resposta: "Usuário não existe", resposta2: data, usuario: false });
+      res.status(200).json({ resposta: data });
     }
-    
-
     } catch (error) {
       console.error('Error:', error);
       res.status(500).json({ error: 'Internal Server Error' });
