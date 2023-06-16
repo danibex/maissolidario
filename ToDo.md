@@ -2,10 +2,11 @@
 
 ~~~sql
     CREATE TABLE usuarios (
-        id VARCHAR(50),
-        displayName VARCHAR(100),
-        email VARCHAR(100),
-        uid VARCHAR(20),
+        displayName VARCHAR(100), // Preenchido
+        email VARCHAR(100), // Preenchido
+        uid VARCHAR(20), // Preenchido
+        // Asaas (compra)
+        id VARCHAR(50), 
         address VARCHAR(200),
         addressNumber VARCHAR(10),
         cpfCnpj VARCHAR(20),
@@ -14,6 +15,7 @@
         postalCode VARCHAR(20),
         province VARCHAR(50),
         state VARCHAR(50),
+        // Mais Solidário
         curso VARCHAR(100)
     );
 

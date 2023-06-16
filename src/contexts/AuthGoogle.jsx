@@ -5,9 +5,7 @@ import { app } from '@/services/firebase/firebaseConfig';
 import { useRouter } from "next/router";
 import { consumirAPIdeInsercaoDeDados } from "@/models/usuarios/apiDeInsercaoDeDados";
 const provider = new GoogleAuthProvider();
-
 export const AutenticacaoContext = createContext({})
-
 export const AutenticacaoProvider = ({ children }) => {
   const [user, setUser] = useState({});
   // Alterando ifromações do user (useState) (Google)
@@ -34,7 +32,7 @@ export const AutenticacaoProvider = ({ children }) => {
         setUser(user)
         sessionStorage.setItem("@AuthFirebase: token", token)
         sessionStorage.setItem("@AuthFirebase: user", JSON.stringify(user))
-        
+
         consumirAPIdeInsercaoDeDados(user);
       })
       // Armazena informações google do usuário no banco de dados mais solidário 
@@ -46,20 +44,14 @@ export const AutenticacaoProvider = ({ children }) => {
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   }
-
   useEffect(() => { // utilizar para persistência no banco de dados
     console.log(user)
   }, [user])
-  
-
   function Sair() {
     sessionStorage.clear()
     setUser("")
     router.push(`/`)
   }
-
- 
-
   return (
     <AutenticacaoContext.Provider value={{ logar, signed: !!user.uid, user, Sair }}>
       {children}
