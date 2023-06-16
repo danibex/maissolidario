@@ -50,16 +50,23 @@ value // Valor
 dueDate // Data de Vencimento
 description // nome do curso
 
-# Parceiros
-id
-nome
-
 # Curso
+nome
 valor cheio
 porcentagem desconto
 valor com desconto
 economia total 
 salario medio
+parceiro
+id
+cidade
+modalidade
+sobre
+localizacao
+conheca
+duracao
+nivel
+turno
 
 
 # Entidades
