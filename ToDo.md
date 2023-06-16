@@ -1,5 +1,28 @@
 # DEFINIR INTERAÇÕES DO USUÁRIO COM A APLICAÇÃO PARA CRIAR FUNÇOES NO BACKEND
 
+~~~sql
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    displayName VARCHAR(100),
+    email VARCHAR(100),
+    uid VARCHAR(20),
+    address VARCHAR(200),
+    addressNumber VARCHAR(10),
+    cpfCnpj VARCHAR(20),
+    mobilePhone VARCHAR(20),
+    name VARCHAR(100),
+    postalCode VARCHAR(20),
+    province VARCHAR(50),
+    state VARCHAR(50),
+    curso VARCHAR(100)
+);
+
+// ACESSAR BANCO DE DADOS
+\c nome_do_banco_de_dados
+// LISTAR BANCO DE DADOS
+\l
+
+~~~
 
 # Usuário:
 ## Google Auth:
