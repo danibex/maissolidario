@@ -4,7 +4,7 @@
     CREATE TABLE usuarios (
         displayName VARCHAR(100), // Preenchido
         email VARCHAR(100), // Preenchido
-        uid VARCHAR(20), // Preenchido
+        uid VARCHAR(100), // Preenchido
         // Asaas (compra)
         id VARCHAR(50), 
         address VARCHAR(200),
