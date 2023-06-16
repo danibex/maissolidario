@@ -5,5 +5,5 @@ export async function listarParceiros() {
         return(parceiros)    
     } catch (error) {
         return(console.log(error))
-        }
+    }
 }

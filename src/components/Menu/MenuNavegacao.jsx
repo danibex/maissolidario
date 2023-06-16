@@ -31,7 +31,7 @@ export default function MenuNavegacao(props) {
     setToggleBolsas(!toggleBolsas);
   }
 
-  const {logar, signed, user} = useContext(AutenticacaoContext)
+  const {logar, signed, user, Sair} = useContext(AutenticacaoContext)
   return (
     <div>
       <div className={`
@@ -84,7 +84,7 @@ export default function MenuNavegacao(props) {
               </button>
             </div>
             <div className={`${signed ? 'flex' : 'hidden'}`}>
-              <button onClick={() => logar()}
+              <button onClick={() => Sair()}
               className={`
                 flex flex-row justify-center items-center
                 px-2 py-3 rounded-lg text-lg
