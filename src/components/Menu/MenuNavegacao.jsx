@@ -9,26 +9,30 @@ import {
   IconSchool,
   IconUser,
   IconUserPlus,
-  IconBackpack,
+  IconUserCircle,
   IconMenu2,
   IconX,
   IconChevronDown,
   IconHome2
 } from '@tabler/icons-react';
 import BotaoMenuBolsas from './BotaoMenuBolsas';
+import BotaoMenuUsuario from './BotaoMenuUsuario';
 import { AutenticacaoContext } from '@/contexts/AuthGoogle';
-
 export default function MenuNavegacao(props) {
-
   const [toggle, setToggle] = useState(false);
   const toggleMenu = () => {
     setToggle(!toggle);
   };
 
   const [toggleBolsas, setToggleBolsas] = useState(false);
-  function toggleBolsasDropdown(event) {
+  const [toggleUsuario, setToggleUsuario] = useState(false)
+  function toggleBolsasDropdownBolsas(event) {
     event.preventDefault();
     setToggleBolsas(!toggleBolsas);
+  }
+  function toggleBolsasDropdownUsuario(event) {
+    event.preventDefault();
+    setToggleUsuario(!toggleUsuario);
   }
 
   const {logar, signed, user, Sair} = useContext(AutenticacaoContext)
@@ -51,7 +55,7 @@ export default function MenuNavegacao(props) {
                 <div className='flex flex-col text-center self-center w-[100%] md:w-auto'>
                 <div className='w-[100%] flex justify-center items-center'>    
                     <button 
-                    onClick={toggleBolsasDropdown}
+                    onClick={toggleBolsasDropdownBolsas}
                     className={`md:w-auto w-[50%] my-2 
                     md:my-0 bg-blue-400 hover:bg-blue-500
                     active:bg-blue-600 p-2 rounded-lg text-white 
@@ -83,18 +87,25 @@ export default function MenuNavegacao(props) {
                 <IconUserPlus className="mr-1" />Cadastro
               </button>
             </div>
-            <div className={`${signed ? 'flex' : 'hidden'}`}>
-              <button onClick={() => Sair()}
-              className={`
-                flex flex-row justify-center items-center
-                px-2 py-3 rounded-lg text-lg
-                bg-green-500 hover:bg-green-600 active:bg-green-700 text-white mx-2 font-bold
-              `}
-              >
-                <p className='absolute flex text-center items-center rounded-full h-[15px] w-[15px] text-black text-xs p-1 bg-red-500 ml-[-90px] mb-[-22px]'>1</p>
-                <IconBackpack className='mr-1' strokeWidth={2} size={32} />
-                Mochila
-              </button>
+            <div className={`${signed ? 'flex' : 'hidden'} justify-center items-center flex-row`}>
+              <div className='flex flex-row justify-center items-center'>
+                <p className='whitespace-nowrap mr-3 font-semibold'>Olá, {user.displayName}!</p>
+                <button onClick={toggleBolsasDropdownUsuario}
+                className={`
+                  flex flex-row justify-center items-center
+                  rounded-full text-lg p-2
+                  bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold
+                `}
+                >
+                  <IconUserCircle className='' strokeWidth={2} size={32} />
+                </button>
+              </div>
+              <div className='flex w-[100%] justify-end items-start md:justify-end md:items-start mt-10'>
+                  <div className={`${toggleUsuario ? "absolute" : "hidden"} flex flex-col justify-center items-center w-[50%]  mt-2 py-2 md:w-[200px] bg-white rounded-lg shadow-lg z-10`}>
+                    <BotaoMenuUsuario href="/">Minha Bolsa</BotaoMenuUsuario>
+                    <button onClick={() => {Sair()}} className="hover:bg-green-400 hover:text-white hover:underline active:bg-green-500 active:no-underline  flex justify-center items-center w-full text-left px-4 py-2">Sair</button>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
