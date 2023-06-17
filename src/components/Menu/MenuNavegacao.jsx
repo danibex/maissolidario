@@ -37,7 +37,7 @@ export default function MenuNavegacao(props) {
 
   const {logar, signed, user, Sair} = useContext(AutenticacaoContext)
   return (
-    <div>
+    <div className={props.className}>
       <div className={`
         flex md:flex-row flex-col justify-between items-center p-4 border-b-2 border-green-100 shadow-lg
       `}>
@@ -102,7 +102,7 @@ export default function MenuNavegacao(props) {
               </div>
               <div className='flex w-[100%] justify-end items-start md:justify-end md:items-start mt-10'>
                   <div className={`${toggleUsuario ? "absolute" : "hidden"} flex flex-col justify-center items-center w-[50%]  mt-2 py-2 md:w-[200px] bg-white rounded-lg shadow-lg z-10`}>
-                    <BotaoMenuUsuario href="/">Minha Bolsa</BotaoMenuUsuario>
+                    <BotaoMenuUsuario href="/usuario/painel">Minha Bolsa</BotaoMenuUsuario>
                     <button onClick={() => {Sair()}} className="hover:bg-green-400 hover:text-white hover:underline active:bg-green-500 active:no-underline  flex justify-center items-center w-full text-left px-4 py-2">Sair</button>
                   </div>
                 </div>
