@@ -9,13 +9,10 @@ switch (metodo) {
    // res.status(200).json(usuarios); 
     break;
   case "POST": // inserindo dados de conta google de usuário em banco de dados da aplicação do mais solidário
-
   const user = req.body
   const userObj = JSON.parse(user)
   const { rows: usuariosEmail } = await pool.query('SELECT email FROM usuarios;');
   const usuarioExiste = usuariosEmail.filter((email) => email.email == userObj.email)
-     
-
     if(usuarioExiste.length == 0){
       try {
           // Execute a consulta de inserção
