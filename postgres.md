@@ -1,11 +1,12 @@
 
 ~~~sql
     CREATE TABLE usuarios (
-        displayName VARCHAR(100), // Preenchido
-        email VARCHAR(100), // Preenchido
-        uid VARCHAR(100), // Preenchido
-        // Asaas (compra)
-        id VARCHAR(50), 
+        -- Google
+        id VARCHAR(50) SERIAL PRIMARY KEY, 
+        displayName VARCHAR(100), -- Preenchido
+        email VARCHAR(100), -- Preenchido
+        uid VARCHAR(100), -- Preenchido
+        -- Asaas (compra)
         address VARCHAR(200),
         addressNumber VARCHAR(10),
         cpfCnpj VARCHAR(20),
@@ -14,11 +15,11 @@
         postalCode VARCHAR(20),
         province VARCHAR(50),
         state VARCHAR(50),
-        // Mais Solidário
+        -- Mais Solidário
         curso VARCHAR(100)
     );
 
-CREATE TABLE compras (
+CREATE TABLE compra (
   id_cobranca SERIAL PRIMARY KEY,
   id_cliente VARCHAR REFERENCES usuarios(id),
   billing_type VARCHAR(20),
@@ -45,6 +46,7 @@ CREATE TABLE cursos (
   duracao VARCHAR(50),
   nivel VARCHAR(50),
   turno VARCHAR(50)
+  urlImagem VARCHAR(100)
 );
 
 
