@@ -1,3 +1,5 @@
+// Agrega informações da conta google do usuário no banco de dados mais solidário 
+
 import pool from '@/models/acess';
 
 export default async function handler(req, res) {
