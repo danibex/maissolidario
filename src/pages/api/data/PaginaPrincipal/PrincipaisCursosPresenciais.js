@@ -1,13 +1,13 @@
 class Curso {
-    constructor(id, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio, url, width = "") {
-        this.id = id;
-        this.nomeDoCurso = nomeDoCurso;
-        this.precoCheio = precoCheio;
-        this.porcentagemDesconto = porcentagemDesconto;
-        this.valorComDesconto = valorComDesconto;
-        this.salarioMedio = salarioMedio;
-        this.url = url;
-    }
+constructor(id, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio, url, width = "") {
+    this.id = id;
+    this.nomeDoCurso = nomeDoCurso;
+    this.precoCheio = precoCheio;
+    this.porcentagemDesconto = porcentagemDesconto;
+    this.valorComDesconto = valorComDesconto;
+    this.salarioMedio = salarioMedio;
+    this.url = url;
+}
 }
 const direito = require("@/assets/img/Cursos/direito.png");
 const administracao = require("@/assets/img/Cursos/administracao.png");

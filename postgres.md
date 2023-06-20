@@ -2,11 +2,11 @@
 ~~~sql
     CREATE TABLE usuarios (
         -- Google
-        id VARCHAR(50) SERIAL PRIMARY KEY, 
         displayName VARCHAR(100), -- Preenchido
         email VARCHAR(100), -- Preenchido
         uid VARCHAR(100), -- Preenchido
         -- Asaas (compra)
+        id VARCHAR(50) SERIAL PRIMARY KEY, 
         address VARCHAR(200),
         addressNumber VARCHAR(10),
         cpfCnpj VARCHAR(20),
@@ -37,7 +37,6 @@ CREATE TABLE cursos (
   valor_com_desconto DECIMAL(10, 2),
   economia_total DECIMAL(10, 2),
   salario_medio DECIMAL(10, 2),
-  parceiro VARCHAR(100),
   cidade VARCHAR(100),
   modalidade VARCHAR(50),
   sobre TEXT,
@@ -46,6 +45,13 @@ CREATE TABLE cursos (
   duracao VARCHAR(50),
   nivel VARCHAR(50),
   turno VARCHAR(50)
+  urlImagem VARCHAR(100)
+  parceiro_id (chave estrangeira)
+);
+
+CREATE TABLE parceiros (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(100),
   urlImagem VARCHAR(100)
 );
 
