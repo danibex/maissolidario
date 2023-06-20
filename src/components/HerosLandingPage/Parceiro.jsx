@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
-
 
 export default function Parceiro(props) {
+  
   return (
     <div className="flex justify-center bg-white h-[200px] rounded-xl shadow-md p-3  flex-col  items-center">
       <div className="min-h-[160px] flex justify-center items-center">

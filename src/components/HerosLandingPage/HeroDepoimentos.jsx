@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
 import Depoimento from "./Depoimento"
-import { depoimentos } from "@/pages/api/data/PaginaPrincipal/Depoimentos"
+import { depoimentos } from '@/dataTemp/depoimentos/Depoimentos';
 export default function Depoimentos() {
     const Breakpoints = {
         0: {

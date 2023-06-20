@@ -8,10 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
-
-
-import {parceiros} from "@/pages/api/data/PaginaPrincipal/Parceiros"
-
+import { ParceirosTemporarios } from "@/dataTemp/parceiros/ParceirosTemp";
 const Breakpoints = {
     0: {
       slidesPerView: 1,
@@ -48,14 +45,11 @@ return(
         }}
         >
         <div className="flex flex-row justify-center items-center">
-            {parceiros.map(parceiro => {
+            {ParceirosTemporarios.map((parceiro, index) => {
                 return(
-                <SwiperSlide key={parceiro.id}>
+                <SwiperSlide key={index}>
                 <button className="hover:opacity-80 active:opacity-70">
-                    <Parceiro URLescudo={parceiro.URLescudo} 
-                    porcentagemMaxima={parceiro.porcentagemMaxima} 
-                    menorPreco={parceiro.menorPreco} 
-                    link={parceiro.link}/>
+                    <Parceiro URLescudo={parceiro.urlImage}/>
                 </button>
                 </SwiperSlide>
                 )

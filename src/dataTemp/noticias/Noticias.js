@@ -1,13 +1,4 @@
-class Noticia {
-    constructor(id, urlImage, titulo, resumo, noticia,) {
-        this.id = id;
-        this.urlImage = urlImage;
-        this.titulo = titulo;
-        this.resumo = resumo;
-        this.noticia = noticia;
-    }
-}
-
+import Noticia from "./NoticiasConstrutor"
 import estudanteDiploma from "@/assets/img/Noticias/estudanteDiploma.png"
 import alunosMaisVelhos from "@/assets/img/Noticias/alunosMaisVelhos.png"
 import superacao from "@/assets/img/Noticias/superacao.png"

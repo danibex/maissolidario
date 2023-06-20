@@ -1,14 +1,4 @@
-class Curso {
-constructor(id, nomeDoCurso, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio, url) {
-  this.id = id;
-  this.nomeDoCurso = nomeDoCurso;
-  this.precoCheio = precoCheio;
-  this.porcentagemDesconto = porcentagemDesconto;
-  this.valorComDesconto = valorComDesconto;
-  this.salarioMedio = salarioMedio;
-  this.url = url;
-}
-}
+import Curso from "./PricipaisCursosConstrutor";
 const pedagogia = require("@/assets/img/Cursos/pedagogia.png");
 const administracao = require("@/assets/img/Cursos/administracao.png");
 const logistica = require("@/assets/img/Cursos/logistica.png");
