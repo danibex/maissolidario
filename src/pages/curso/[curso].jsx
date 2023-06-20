@@ -6,21 +6,12 @@ import imagemOdonto from "@/assets/img/Cursos/odontologia.png"
 import imagemUniverso from "../../assets/img/Parceiros/Universo.png"
 import { useState } from "react";
 import { IconCash } from "@tabler/icons-react";
-import { Circles } from "react-loader-spinner";
+import Link from "next/link";
 export default function Curso() {
     const [activeSection, setActiveSection] = useState("conheca");
-    const [carregando, setCarregando] = useState(false)
     function mostrarDescricao(elemento) {
       setActiveSection(elemento);
     }
-
-    function ativarSpinner() {
-        setCarregando(true)
-        setTimeout(() => {
-            setCarregando(false);
-          }, 2000); 
-    }
-
 return(
 <MenuNavegacao>
 <div className={`flex-col-reverse w-full bg-slate-100 flex md:flex-row justify-center items-center md:justify-around md:items-start gap-4 p-4`}>
@@ -40,7 +31,6 @@ return(
                 <div className="my-2 flex flex-row justify-start items-center">
                     <h2 className="font-semibold text-lg">Duração:</h2>
                     <p className="border-blue-400 text-blue-400 font-semibold ml-4 border px-2 py-1 rounded-full">8 Semestres</p>
-                    <p className="border-blue-400 text-blue-400 font-semibold ml-1 border px-2 py-1 rounded-full">4 Anos</p>
                 </div>
                 <div className="my-2 flex flex-row justify-start items-center">
                     <h2 className="font-semibold text-lg">Nível:</h2>
@@ -92,19 +82,10 @@ return(
             <hr className="w-[95%] mt-6"/>
         </div>
         <div className="mt-6 mb-4 flex justify-center items-center">
-            
-            <button onClick={ativarSpinner} className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
-                <IconCash className={`mr-2 ${carregando ? "hidden" : "block"}`}/>
-                <div className={`${carregando ? "block" : "hidden"}`}>
-                    <Circles
-                        type="Puff"
-                        color="#4ade80"
-                        height={30}
-                        width={30}
-                        />
-                </div>
-                <p className={`${carregando ? "hidden" : "block"}`}>Garantir Esta Bolsa</p>
-            </button>
+            <Link href="/finalizar/finalizar" className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                <IconCash className={`mr-2`}/>
+                <p>Garantir Esta Bolsa</p>
+            </Link>
         </div> 
     </div>
 </div>

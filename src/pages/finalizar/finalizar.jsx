@@ -4,7 +4,8 @@ import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 import { IconUserPlus } from "@tabler/icons-react";
 import { useState } from "react";
 import {Circles} from 'react-loader-spinner';
-
+import { IconCash } from "@tabler/icons-react";
+import Link from "next/link";
 export default function Registro(props) {
     const [carregando, setCarregando] = useState(false);
     
@@ -73,7 +74,7 @@ function atualizarBairro(event) {
 }
 return(
 <MenuNavegacao>
-<div className="w-full flex justify-center items-center bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600">
+<div className="w-full md:flex-row flex-col gap-4 flex justify-center items-center bg-gradient-to-b from-blue-200 via-blue-300 to-green-400">
         <div className="shadow-xl my-5 mb-5 flex flex-col justify-center items-center rounded-xl w-[80%] md:w-[50%]  bg-slate-200">
             <h1 className={`
             bg-gradient-to-br to-green-400 via-green-500 from-green-600
@@ -82,72 +83,99 @@ return(
             `}>Finalizar Compra</h1> 
             <form className={`flex flex-col justify-center items-center my-3 w-[90%]`}> 
                 <div className="flex flex-col md:flex-row items-center justify-center w-full">
-                    <div className="flex flex-col items-center justify-center w-1/2">
+                    <div className="flex flex-col items-center justify-center w-[100%] md:w-1/2">
                         <input type={"text"} placeholder="Nome Completo"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.name}
                         onChange={atualizarNome}
                         />
                         <input type={"text"} placeholder="CPF"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.cpfCnpj}
                         onChange={atualizarCPF}
                         />
                         <input type={"text"} placeholder="E-mail"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.email}
                         onChange={atualizarEmail}
                         />
                         <input type={"text"} placeholder="Telefone"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.mobilePhone}
                         onChange={atualizarTelefone}
                         />  
                     </div>
-                    <div className="w-1/2 flex flex-col justify-center items-center">
+                    <div className="md:w-1/2 w-[100%] flex flex-col justify-center items-center">
                         <input type={"text"} placeholder="CEP"
-                            className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                            className={`p-2 m-2 rounded-2xl w-[95%]`}
                             value={usuario.postalCode}
                             onChange={atualizarCEP}
                             />
                         <input type={"text"} placeholder="Bairro"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.province}
                         onChange={atualizarBairro}
                         />
                         <input type={"text"} placeholder="Rua"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.address}
                         onChange={atualizarRua}
                         />
                         <input type={"text"} placeholder="Complemento"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.complement}
                         onChange={atualizarComplemento}
                         />
                     </div>
                 </div>
                         <input type={"text"} placeholder="Número da Casa"
-                        className={`p-2 m-2 rounded-2xl md:w-[95%]`}
+                        className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.addressNumber}
                         onChange={atualizarNumero}
                         />
                 <div className="w-auto md:w-[100%] flex justify-center items-center">
-                    <button onClick={cadastrar} className="w-[230px] h-[45px] px-4 py-2 my-2 text-xl flex flex-row justify-center items-center rounded-2xl bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white font-medium mx-1">
-                    <IconUserPlus className={`mr-2 ${carregando ? "hidden" : " "}`}/>
-                    <div className={`mr-2 ${carregando ? "block" : "hidden"}`}>
-                    <Circles
-                    type="Puff"
-                    color="#4ade80"
-                    height={30}
-                    width={30}
-                    />
-                    </div>
-                    <p className={`${carregando ? "hidden" : " "} whitespace-nowrap`}>Finalizar Cadastro</p>
-                    </button>
                 </div>
             </form>
         </div>
+        
+        <div className={`flex flex-col p-4 border h-[360px] md:w-[40%] w-[90%] rounded-xl bg-white`}>
+        <div>
+            Informações do curso
+            <div className="flex justify-center items-center"><hr className="w-[95%]"/></div>
+        </div>
+        <div>
+            <div className="flex flex-row justify-between items-center text-base text-blue-400 font-medium">
+                <p>Mensalidade Integral:</p>
+                <p className="line-through">R$ 2.200,00</p>
+            </div>
+            <div className="flex flex-row justify-between items-center text-lg text-green-500 font-semibold">
+                <p>Desconto do mais solidário:</p>
+                <p>R$ -1.760,00</p>
+            </div>
+            <div className="flex flex-row justify-between items-center text-xl text-green-700 font-semibold">
+                <p>Você pagará por mês:</p>
+                <p>R$ 440,00</p>
+            </div>
+            <div className="flex flex-row justify-between items-center text-lg  font-semibold">
+                <p>Economia Total: </p>
+                <p>R$ -84.480,00</p>
+            </div>
+            <div className="flex justify-center items-center">
+                <hr className="w-[95%] mt-6"/>
+            </div>
+        </div>
+        <div className="flex flex-row justify-center items-center">
+            <button>Boleto</button>
+            <button>PIX</button>
+            <button>Crédito</button>
+        </div>
+        <div className="mt-6 mb-4 flex justify-center items-center">
+            <Link href="/finalizar/finalizar" className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                <IconCash className={`mr-2`}/>
+                <p>Gerar Pagamento</p>
+            </Link>
+        </div> 
+    </div>
 </div>
     <Footer/>
     <BotaoWhatsapp/>
