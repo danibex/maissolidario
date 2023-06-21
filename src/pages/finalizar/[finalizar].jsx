@@ -187,6 +187,7 @@ return(
             <div className={`${check.passo2 ? "flex" : "hidden"} mb-8 flex-col justify-center items-center`}>
                 <h2 className="text-2xl font-medium text-blue-700 mb-8">Pagamento Gerado</h2> 
                 <div className="flex flex-row ">
+                    {/* REDIRECIONAR MARA MEU CURSO */}
                     <button className={`hover:bg-blue-700 mx-4 border bg-blue-600 text-white font-medium px-4 py-2 rounded-lg flex flex-row`}><IconQrcode/>Pagar Online</button>
                     <button className={`hover:bg-blue-700 mx-4 border bg-blue-600 text-white font-medium px-4 py-2 rounded-lg flex flex-row`}><IconFileText/>PDF</button>
                 </div>
