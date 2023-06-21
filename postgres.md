@@ -1,5 +1,6 @@
 
 ~~~sql
+  -- CRIAR NO BANCO DE DADOS EXATAMENTE COMO ESTÁ
     CREATE TABLE usuarios (
         -- Google
         displayName VARCHAR(100), -- Preenchido

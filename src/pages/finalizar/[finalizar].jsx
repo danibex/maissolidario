@@ -1,24 +1,29 @@
 import BotaoWhatsapp from "@/components/BotaoWhatsapp";
 import Footer from "@/components/Footer/Footer";
 import MenuNavegacao from "@/components/Menu/MenuNavegacao";
-import { IconQrcode, IconCreditCard, IconFileBarcode } from "@tabler/icons-react";
+import { IconQrcode, IconCreditCard, IconFileBarcode, IconFileText, IconCash, IconCheck, IconChevronsRight } from "@tabler/icons-react";
 import { useContext, useState } from "react";
-import { IconCash, IconCheck, IconChevronsRight } from "@tabler/icons-react";
 import { CompraContext } from "@/contexts/Compra";
 import { TailSpin } from "react-loader-spinner";
+import { AutenticacaoContext } from "@/contexts/AuthGoogle";
 export default function Registro(props) {
     const [carregando, setCarregando] = useState(false);
     const [togglePagamento, setPagamento] = useState({pix: false, boleto: false, cartao: false})
     const [check, setCheck] = useState({passo1: false, passo2: false})
     const [toggleFinalizar, setFinalizar] = useState(false)
     const {compra} = useContext(CompraContext) // Context de compra
+    const {signed} = useContext(AutenticacaoContext)
     const validarFormularioAsaas = (e) => {
         e.preventDefault(); 
         if(usuario.name && usuario.cpfCnpj && usuario.email && usuario.mobilePhone && usuario.postalCode){
             setCheck({...check, passo1: true}); 
             setFinalizar(true)
+            // cadastrar()
         } else {
-            window.alert("Atenção! Preencha todos os campos do formulário!")
+           // window.alert("Atenção! Preencha todos os campos do formulário!")
+           // Desativado temporariamente 
+           setCheck({...check, passo1: true}); 
+            setFinalizar(true)
         }
     }
     let novoUsuario = {
@@ -86,6 +91,7 @@ function atualizarNumero(event) {
 function atualizarBairro(event) {
     setUsuario({...usuario, province: event.target.value })
 }
+if(signed){
 return(
 <MenuNavegacao>
 <div className="w-full md:flex-row flex-col-reverse gap-4 flex justify-center items-center md:items-start bg-gradient-to-b from-blue-200 via-blue-300 to-green-400">
@@ -102,7 +108,7 @@ return(
                 <div className={`${check.passo2 ? "hidden" : "flex"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><TailSpin width={50} /></div>
                 <div className={`${check.passo2 ? "flex" : "hidden"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><IconCheck strokeWidth={3} size={50}/></div>
             </div>
-            <form className={`${toggleFinalizar ? "hidden" : "flex"} flex flex-col justify-center items-center my-3 w-[90%]`}> 
+            <form className={`${check.passo1 ? "hidden" : "flex"} flex flex-col justify-center items-center my-3 w-[90%]`}> 
                 <div className="flex flex-col md:flex-row items-center justify-center w-full">
                     <div className="flex flex-col items-center justify-center w-[100%] md:w-1/2">
                         <input type={"text"} placeholder="Nome Completo"
@@ -165,18 +171,25 @@ return(
                     <p>Próximo</p>
                 </button>
             </form>
-            <div className={`${toggleFinalizar ? "block" : "hidden"}`}>
+            <div className={`${check.passo1 && !check.passo2 ? "block" : "hidden"}  `}>
                 <div className="flex flex-row justify-center items-center mt-4 text-blue-500 font-medium">
                     <button onClick={() => {setPagamento({boleto:true, pix: false, cartao: false}); /*  */}} className={`${togglePagamento.boleto ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconFileBarcode className="mr-1"/>Boleto</button>
                     <button onClick={() => {setPagamento({boleto:false, pix: true, cartao: false});}} className={`${togglePagamento.pix ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconQrcode className="mr-1"/> PIX</button>
                     <button onClick={() => {setPagamento({boleto:false, pix: false, cartao: true});}} className={`${togglePagamento.cartao ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconCreditCard className="mr-1"/>Crédito</button>
                     </div>
                     <div className="mt-4 mb-4 flex justify-center items-center">
-                    <button className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                    <button onClick={() => {setCheck({...check, passo2: true});}} className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
                         <IconCash className={`mr-2`}/>
                         <p>Gerar Pagamento</p>
                     </button>
                 </div> 
+            </div>
+            <div className={`${check.passo2 ? "flex" : "hidden"} mb-8 flex-col justify-center items-center`}>
+                <h2 className="text-2xl font-medium text-blue-700 mb-8">Pagamento Gerado</h2> 
+                <div className="flex flex-row ">
+                    <button className={`hover:bg-blue-700 mx-4 border bg-blue-600 text-white font-medium px-4 py-2 rounded-lg flex flex-row`}><IconQrcode/>Pagar Online</button>
+                    <button className={`hover:bg-blue-700 mx-4 border bg-blue-600 text-white font-medium px-4 py-2 rounded-lg flex flex-row`}><IconFileText/>PDF</button>
+                </div>
             </div>
         </div>
         
@@ -213,5 +226,17 @@ return(
     <Footer/>
     <BotaoWhatsapp/>
 </MenuNavegacao>
+)} else {
+return(
+<MenuNavegacao>
+    <div className="w-full md:flex-row flex-col-reverse gap-4 flex justify-center items-center md:items-start bg-gradient-to-b from-blue-200 via-blue-300 to-green-400">
+        <div className="w-[80%] p-4 bg-slate-100 rounded-xl h-[300px] flex justify-center items-center m-12">
+            <h1 className="font-medium text-4xl">Faça o Login Para Continuar!!!</h1>
+        </div>
+    </div>
+<Footer/>
+<BotaoWhatsapp/>
+</MenuNavegacao>
 )
+}
 }

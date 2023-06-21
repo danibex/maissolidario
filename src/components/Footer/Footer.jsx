@@ -30,7 +30,7 @@ return(
             </div>
         </div>
         <div className="flex justify-center items-center text-center">
-            <p>© 2022 Todos os direitos reservados. Mais Solidário Bolsas de Estudo - CNPJ: 25.230.193/0001-06</p>
+            <p>© 2023 Todos os direitos reservados. Mais Solidário Bolsas de Estudo - CNPJ: 25.230.193/0001-06</p>
         </div>
     </div>
 )
