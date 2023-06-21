@@ -3,14 +3,24 @@ import Footer from "@/components/Footer/Footer";
 import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 import { IconQrcode, IconCreditCard, IconFileBarcode } from "@tabler/icons-react";
 import { useContext, useState } from "react";
-import { IconCash } from "@tabler/icons-react";
+import { IconCash, IconCheck, IconChevronsRight } from "@tabler/icons-react";
 import { CompraContext } from "@/contexts/Compra";
-
+import { TailSpin } from "react-loader-spinner";
 export default function Registro(props) {
     const [carregando, setCarregando] = useState(false);
     const [togglePagamento, setPagamento] = useState({pix: false, boleto: false, cartao: false})
-    const {compra} = useContext(CompraContext)
-    console.log(compra)
+    const [check, setCheck] = useState({passo1: false, passo2: false})
+    const [toggleFinalizar, setFinalizar] = useState(false)
+    const {compra} = useContext(CompraContext) // Context de compra
+    const validarFormularioAsaas = (e) => {
+        e.preventDefault(); 
+        if(usuario.name && usuario.cpfCnpj && usuario.email && usuario.mobilePhone && usuario.postalCode){
+            setCheck({...check, passo1: true}); 
+            setFinalizar(true)
+        } else {
+            window.alert("Atenção! Preencha todos os campos do formulário!")
+        }
+    }
     let novoUsuario = {
         name: "",
         email: "",
@@ -31,6 +41,7 @@ export default function Registro(props) {
     };
     const [usuario, setUsuario] = useState(novoUsuario)
     
+    // CADASTRAR NOVO USUÁRIO NA PLATAFORMA ASAAS ATRAVÉS DO BACKEND DA MINHA APLUICAÇÃO
     function cadastrar (e) {
         setCarregando(true);
         e.preventDefault()
@@ -45,7 +56,8 @@ export default function Registro(props) {
               setCarregando(false);
             }, 1000); // Atraso de 2 segundos (2000 milissegundos)
           })
-}
+    }
+    //
 
 function atualizarNome(event) {
     setUsuario({...usuario, name: event.target.value})
@@ -76,14 +88,21 @@ function atualizarBairro(event) {
 }
 return(
 <MenuNavegacao>
-<div className="w-full md:flex-row flex-col gap-4 flex justify-center items-center bg-gradient-to-b from-blue-200 via-blue-300 to-green-400">
+<div className="w-full md:flex-row flex-col-reverse gap-4 flex justify-center items-center md:items-start bg-gradient-to-b from-blue-200 via-blue-300 to-green-400">
         <div className="shadow-xl my-5 mb-5 flex flex-col justify-center items-center rounded-xl w-[80%] md:w-[50%]  bg-slate-200">
             <h1 className={`
             bg-gradient-to-br to-green-400 via-green-500 from-green-600
             rounded-t-xl p-2 mt-0 w-[100%] flex justify-center items-center text-center
             text-4xl text-white font-semibold
             `}>Finalizar Compra</h1> 
-            <form className={`flex flex-col justify-center items-center my-3 w-[90%]`}> 
+            <div className="flex flex-row justify-center w-[100%] items-center h-[60px] my-4 p-2 text-white">
+                <div className={`${check.passo1 ? "hidden" : "flex"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><TailSpin width={50} /></div>
+                <div className={`${check.passo1 ? "flex" : "hidden"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><IconCheck strokeWidth={3} size={50}/></div>
+                <div><hr className="mx-0 w-[160px] border-black"/></div>
+                <div className={`${check.passo2 ? "hidden" : "flex"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><TailSpin width={50} /></div>
+                <div className={`${check.passo2 ? "flex" : "hidden"} mx-0 rounded-full border bg-blue-400 flex justify-center items-center p-4 h-[60px] w-[60px]`}><IconCheck strokeWidth={3} size={50}/></div>
+            </div>
+            <form className={`${toggleFinalizar ? "hidden" : "flex"} flex flex-col justify-center items-center my-3 w-[90%]`}> 
                 <div className="flex flex-col md:flex-row items-center justify-center w-full">
                     <div className="flex flex-col items-center justify-center w-[100%] md:w-1/2">
                         <input type={"text"} placeholder="Nome Completo"
@@ -96,16 +115,19 @@ return(
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.cpfCnpj}
                         onChange={atualizarCPF}
+                        required
                         />
                         <input type={"text"} placeholder="E-mail"
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.email}
                         onChange={atualizarEmail}
+                        required
                         />
                         <input type={"text"} placeholder="Telefone"
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.mobilePhone}
                         onChange={atualizarTelefone}
+                        required
                         />  
                     </div>
                     <div className="md:w-1/2 w-[100%] flex flex-col justify-center items-center">
@@ -113,6 +135,7 @@ return(
                             className={`p-2 m-2 rounded-2xl w-[95%]`}
                             value={usuario.postalCode}
                             onChange={atualizarCEP}
+                            required
                             />
                         <input type={"text"} placeholder="Bairro"
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
@@ -135,17 +158,34 @@ return(
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.addressNumber}
                         onChange={atualizarNumero}
+                        required
                         />
-                <div className="w-auto md:w-[100%] flex justify-center items-center">
-                </div>
+                <button onClick={(e) => {validarFormularioAsaas(e)}} className="mt-2 w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                    <IconChevronsRight className={`mr-2`}/>
+                    <p>Próximo</p>
+                </button>
             </form>
+            <div className={`${toggleFinalizar ? "block" : "hidden"}`}>
+                <div className="flex flex-row justify-center items-center mt-4 text-blue-500 font-medium">
+                    <button onClick={() => {setPagamento({boleto:true, pix: false, cartao: false}); /*  */}} className={`${togglePagamento.boleto ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconFileBarcode className="mr-1"/>Boleto</button>
+                    <button onClick={() => {setPagamento({boleto:false, pix: true, cartao: false});}} className={`${togglePagamento.pix ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconQrcode className="mr-1"/> PIX</button>
+                    <button onClick={() => {setPagamento({boleto:false, pix: false, cartao: true});}} className={`${togglePagamento.cartao ? "bg-blue-700 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconCreditCard className="mr-1"/>Crédito</button>
+                    </div>
+                    <div className="mt-4 mb-4 flex justify-center items-center">
+                    <button className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+                        <IconCash className={`mr-2`}/>
+                        <p>Gerar Pagamento</p>
+                    </button>
+                </div> 
+            </div>
         </div>
         
-        <div className={`flex flex-col p-4 border min-h-[430px] md:w-[40%] md:min-w-[40%] min-w-[90%] rounded-xl bg-white mt-5`}>
+        <div className={`mt-5 flex flex-col p-4 border md:w-[40%] md:min-w-[40%] min-w-[90%] rounded-xl bg-white`}>
         <div className="mb-4">
             <div className="mb-2">
-                <h2 className="font-medium text-center text-xl mb-1">Odontologia na Universo</h2>
-                <div className="flex flex-row flex-wrap justify-center items-center whitespace-nowrap">   
+                <h2 className="font-medium text-center text-2xl mb-4">Odontologia na Universo</h2>
+                <div className="flex justify-center items-center"><hr className="w-[95%]"/></div>
+                <div className="flex flex-row flex-wrap justify-center items-center whitespace-nowrap my-5">   
                     <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">Presencial</p>
                     <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">8 Semestres</p>
                     <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">Graduação</p>
@@ -167,21 +207,7 @@ return(
                 <p>Você pagará por mês:</p>
                 <p>R$ 440,00</p>
             </div>
-            <div className="flex justify-center items-center">
-                <hr className="w-[95%] mt-6"/>
-            </div>
         </div>
-        <div className="flex flex-row justify-center items-center mt-4 text-blue-500 font-medium">
-            <button onClick={() => {setPagamento({boleto:true, pix: false, cartao: false}); /*  */}} className={`${togglePagamento.boleto ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconFileBarcode className="mr-1"/>Boleto</button>
-            <button onClick={() => {setPagamento({boleto:false, pix: true, cartao: false});}} className={`${togglePagamento.pix ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconQrcode className="mr-1"/> PIX</button>
-            <button onClick={() => {setPagamento({boleto:false, pix: false, cartao: true});}} className={`${togglePagamento.cartao ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconCreditCard className="mr-1"/>Crédito</button>
-        </div>
-        <div className="mt-4 mb-4 flex justify-center items-center">
-            <button href="/finalizar/finalizar" className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
-                <IconCash className={`mr-2`}/>
-                <p>Gerar Pagamento</p>
-            </button>
-        </div> 
     </div>
 </div>
     <Footer/>

@@ -4,8 +4,11 @@ import React from 'react';
 export const CompraContext = createContext({})
 
 export const CompraProvider = ({ children }) => {
-    const [compra, setCompra] = useState("Teste");
-    
+    let compraPadrao = {
+        
+    }
+    const [compra, setCompra] = useState({});
+
     return (
       <CompraContext.Provider value={{ compra }}>
         {children}
