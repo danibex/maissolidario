@@ -47,6 +47,7 @@ export const AutenticacaoProvider = ({ children }) => {
   useEffect(() => { // utilizar para persistência no banco de dados
     console.log(user)
   }, [user])
+  
   function Sair() {
     sessionStorage.clear()
     setUser("")

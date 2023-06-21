@@ -8,6 +8,7 @@ export default class Colegio {
         this.parceiro = parceiro;
         this.precoCheio = precoCheio;
         this.porcentagemDesconto = porcentagemDesconto;
+        this.economiaTotal = economiaTotal;
         this.valorComDesconto = precoCheio-(precoCheio * (porcentagemDesconto/100));
         this.campus = campus;
         this.sobre = sobre;

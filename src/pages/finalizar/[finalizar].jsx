@@ -2,12 +2,15 @@ import BotaoWhatsapp from "@/components/BotaoWhatsapp";
 import Footer from "@/components/Footer/Footer";
 import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 import { IconQrcode, IconCreditCard, IconFileBarcode } from "@tabler/icons-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IconCash } from "@tabler/icons-react";
+import { CompraContext } from "@/contexts/Compra";
+
 export default function Registro(props) {
     const [carregando, setCarregando] = useState(false);
     const [togglePagamento, setPagamento] = useState({pix: false, boleto: false, cartao: false})
-    
+    const {compra} = useContext(CompraContext)
+    console.log(compra)
     let novoUsuario = {
         name: "",
         email: "",
