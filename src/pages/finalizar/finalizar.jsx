@@ -1,13 +1,12 @@
 import BotaoWhatsapp from "@/components/BotaoWhatsapp";
 import Footer from "@/components/Footer/Footer";
 import MenuNavegacao from "@/components/Menu/MenuNavegacao";
-import { IconUserPlus } from "@tabler/icons-react";
+import { IconQrcode, IconCreditCard, IconFileBarcode } from "@tabler/icons-react";
 import { useState } from "react";
-import {Circles} from 'react-loader-spinner';
 import { IconCash } from "@tabler/icons-react";
-import Link from "next/link";
 export default function Registro(props) {
     const [carregando, setCarregando] = useState(false);
+    const [togglePagamento, setPagamento] = useState({pix: false, boleto: false, cartao: false})
     
     let novoUsuario = {
         name: "",
@@ -88,6 +87,7 @@ return(
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
                         value={usuario.name}
                         onChange={atualizarNome}
+                        required
                         />
                         <input type={"text"} placeholder="CPF"
                         className={`p-2 m-2 rounded-2xl w-[95%]`}
@@ -138,9 +138,17 @@ return(
             </form>
         </div>
         
-        <div className={`flex flex-col p-4 border h-[360px] md:w-[40%] w-[90%] rounded-xl bg-white`}>
-        <div>
-            Informações do curso
+        <div className={`flex flex-col p-4 border min-h-[430px] md:w-[40%] md:min-w-[40%] min-w-[90%] rounded-xl bg-white mt-5`}>
+        <div className="mb-4">
+            <div className="mb-2">
+                <h2 className="font-medium text-center text-xl mb-1">Odontologia na Universo</h2>
+                <div className="flex flex-row flex-wrap justify-center items-center whitespace-nowrap">   
+                    <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">Presencial</p>
+                    <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">8 Semestres</p>
+                    <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">Graduação</p>
+                    <p className="border-blue-400 text-blue-400 font-semibold border px-2 py-1 mx-1 my-1 rounded-full">Noturno</p>
+                </div>
+            </div>
             <div className="flex justify-center items-center"><hr className="w-[95%]"/></div>
         </div>
         <div>
@@ -156,24 +164,20 @@ return(
                 <p>Você pagará por mês:</p>
                 <p>R$ 440,00</p>
             </div>
-            <div className="flex flex-row justify-between items-center text-lg  font-semibold">
-                <p>Economia Total: </p>
-                <p>R$ -84.480,00</p>
-            </div>
             <div className="flex justify-center items-center">
                 <hr className="w-[95%] mt-6"/>
             </div>
         </div>
-        <div className="flex flex-row justify-center items-center">
-            <button>Boleto</button>
-            <button>PIX</button>
-            <button>Crédito</button>
+        <div className="flex flex-row justify-center items-center mt-4 text-blue-500 font-medium">
+            <button onClick={() => {setPagamento({boleto:true, pix: false, cartao: false}); /*  */}} className={`${togglePagamento.boleto ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconFileBarcode className="mr-1"/>Boleto</button>
+            <button onClick={() => {setPagamento({boleto:false, pix: true, cartao: false});}} className={`${togglePagamento.pix ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconQrcode className="mr-1"/> PIX</button>
+            <button onClick={() => {setPagamento({boleto:false, pix: false, cartao: true});}} className={`${togglePagamento.cartao ? "bg-blue-600 text-white" : ""} active:bg-blue-600 hover:bg-blue-400 hover:text-white bg-slate-100 m-2 border border-blue-400 px-4 py-2 rounded-xl flex flex-row`}><IconCreditCard className="mr-1"/>Crédito</button>
         </div>
-        <div className="mt-6 mb-4 flex justify-center items-center">
-            <Link href="/finalizar/finalizar" className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:underline hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
+        <div className="mt-4 mb-4 flex justify-center items-center">
+            <button href="/finalizar/finalizar" className="w-[250px] h-[55px] flex flex-row border p-4 text-xl font-bold text-white bg-blue-400 rounded-xl hover:bg-blue-500 active:bg-blue-600 justify-center items-center">
                 <IconCash className={`mr-2`}/>
                 <p>Gerar Pagamento</p>
-            </Link>
+            </button>
         </div> 
     </div>
 </div>
