@@ -4,7 +4,7 @@ export default function CardCurso(props) {
 return(
 <Link
 href="/curso/odontologia"
-    class={`
+    className={`
          pb-4 rounded-xl bg-white
         flex flex-col justify-center items-center
         shadow-xl hover:opacity-90 active:opacity-100

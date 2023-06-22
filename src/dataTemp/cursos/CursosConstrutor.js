@@ -1,35 +1,39 @@
-export default class Usuarios {
+export default class Curso {
     constructor(
-        uid, 
-        displayName, 
-        email, 
-        id, 
-        address, 
-        addressNumber, 
-        cpfCnpj, 
-        mobilePhone, 
-        name,
-        postalCode,
-        province,
-        state,
-        curso_id
-        ) {
-            this.uid = uid; // Google
-            this.displayName = displayName;
-            this.email = email;
-            //
-            this.id = id; //ASAAS
-            this.address = address;
-            this.addressNumber = addressNumber;
-            this.cpfCnpj = cpfCnpj;
-            this.mobilePhone = mobilePhone;
-            this.name = name;
-            this.postalCode = postalCode;
-            this.province = province;
-            this.state = state;
-            //
-            this.curso_id = curso_id;
-        }
+    id,
+    nome,
+    valor_cheio,
+    porcentagem_desconto,
+    valor_com_desconto,
+    economia_total,
+    salario_medio,
+    cidade,
+    modalidade,
+    sobre,
+    localizacao,
+    conheca,
+    duracao,
+    nivel,
+    turno,
+    urlImagem,
+    parceiro_id
+    ) {
+    this.id = id;
+    this.nome = nome;
+    this.valor_cheio = valor_cheio;
+    this.porcentagem_desconto = porcentagem_desconto;
+    this.valor_com_desconto = valor_com_desconto;
+    this.economia_total = economia_total;
+    this.salario_medio = salario_medio;
+    this.cidade = cidade;
+    this.modalidade = modalidade;
+    this.sobre = sobre;
+    this.localizacao = localizacao;
+    this.conheca = conheca;
+    this.duracao = duracao;
+    this.nivel = nivel;
+    this.turno = turno;
+    this.urlImagem = urlImagem;
+    this.parceiro_id = parceiro_id;
     }
-    
-    
+    }

@@ -4,13 +4,38 @@ import MenuNavegacao from "@/components/Menu/MenuNavegacao";
 import Image from "next/image";
 import imagemOdonto from "@/assets/img/Cursos/odontologia.png"
 import imagemUniverso from "../../assets/img/Parceiros/Universo.png"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IconCash } from "@tabler/icons-react";
 import Link from "next/link";
+import { CompraContext } from "@/contexts/Compra";
 export default function Curso() {
+    let compraPadrao = {
+        customer: "{CUSTOMER_ID}", 
+        billingType: "BOLETO", // BOLETO | CREDIT_CARD | PIX
+        dueDate: "2017-06-10", // Data(string)
+        value: 0, // preço
+        description: "Odontologia na Universo",
+        externalReference: "",
+        discount: {
+          value: 0,
+          dueDateLimitDays: 0
+        },
+        fine: { // juros
+          value: 0
+        },
+        interest: {
+          value: 0
+        },
+        postalService: false
+      }
     const [activeSection, setActiveSection] = useState("conheca");
+    const [compra, setCompra] = useState(compraPadrao) 
     function mostrarDescricao(elemento) {
       setActiveSection(elemento);
+    }
+    const { atualizarCompra } = useContext(CompraContext)
+    function setarCompra(curso){
+        atualizarCompra(curso)
     }
 return(
 <MenuNavegacao>

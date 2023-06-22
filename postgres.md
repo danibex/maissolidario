@@ -1,3 +1,24 @@
+~~~ json
+{
+  "customer": "{CUSTOMER_ID}",
+  "billingType": "BOLETO",
+  "dueDate": "2017-06-10",
+  "value": 100,
+  "description": "Pedido 056984",
+  "externalReference": "056984",
+  "discount": {
+    "value": 10,
+    "dueDateLimitDays": 0
+  },
+  "fine": {
+    "value": 1
+  },
+  "interest": {
+    "value": 2
+  },
+  "postalService": false
+}
+~~~
 
 ~~~sql
   -- CRIAR NO BANCO DE DADOS EXATAMENTE COMO ESTÁ
