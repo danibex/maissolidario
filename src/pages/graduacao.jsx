@@ -11,6 +11,28 @@ import { useState, useEffect } from "react"
 import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 
 export default function Bolsas() {
+  const [filtro, setFiltro] = useState(
+    {
+    modalidade: true,
+    cidade: false, 
+    nome: false, 
+    faculdade: false, 
+    })
+
+  const [parceiros, setParceiros] = useState([])
+    
+  function atualizarCidadeFiltro(ativo) { // Funcão acionada ao selecionar modalidade
+    setFiltro({modalidade: true, nome: false, faculdade:false, cidade: ativo})
+  }
+  function atualizarNomeFiltro(ativo) {
+    setFiltro({modalidade: true, nome: ativo, faculdade: false,cidade: true})
+  }
+  function atualizarFaculdadeFiltro(ativo) {
+    setFiltro({...filtro, faculdade: ativo})
+  }
+  // Valores do filtro
+  const [valoresFiltro, setValores] = useState({modalidade: "Todas", cidade: "Todas", nome: "Todos", faculdade: "Todas"})
+  // Paginação e rederização de cursos
   const [paginacao, setPaginacao] = useState(1)
   const [dados, setDados] =useState({cursos: [], limite: 0})
   function carregarDados() {
@@ -23,8 +45,20 @@ export default function Bolsas() {
       console.error('Erro ao carregar os dados:', error);
     });
   }
+  function carregarParceiros() {
+    fetch(`api/filtro/parceiros`)
+    .then((response) => response.json())
+    .then((data) => {
+      setParceiros(data.parceiros);
+    })
+    .catch((error) => {
+      console.error('Erro ao carregar os dados:', error);
+    });
+  }
+
   useEffect(() => {
     carregarDados()
+    carregarParceiros()
   }, []);
 
   useEffect(() => {
@@ -40,23 +74,12 @@ return(
 <MenuNavegacao>
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
     <Filtro>
-      <ItemFiltro titulo="Nome do Curso:" selectNome="Curso">
-        
-        <option value="Todos">Todos</option>
-        <option value="Direito">Direito</option>
-        <option value="Enfermagem">Enfermagem</option>
+      <ItemFiltro onChange={(e) => {atualizarCidadeFiltro(true); setValores({...valoresFiltro ,modalidade: e.target.value})}} titulo="Modalidade" selectNome="Modalidade" disabled={filtro.modalidade ? false : true}>
+          <option value="Todas">Todas</option>
+          <option value="Presencial">Presencial</option>
+          <option value="EAD">EAD</option>
       </ItemFiltro>
-      <ItemFiltro titulo="Faculdade:" selectNome="Faculdade">
-        <option value="Todas">Todas</option>
-        <option value="UNIFTC">UNIFTC</option>
-        <option value="Universo Salvador">Universo Salvador</option>
-        <option value="UNIFATECIE">UNIFATECIE</option>
-        <option value="Faculdade Santíssimo">Faculdade Santíssimo</option>
-        <option value="FATEC">FATEC</option>
-        <option value="Colégio Acadêmico">Colégio Acadêmico</option>
-        <option value="+Edutec">+Edutec</option>
-      </ItemFiltro>
-      <ItemFiltro titulo="Cidade:" selectNome="Cidade">
+      <ItemFiltro onChange={(e) => {atualizarNomeFiltro(true);setValores({...valoresFiltro ,cidade: e.target.value})}} titulo="Cidade:" selectNome="Cidade" disabled={filtro.cidade ? false : true}>
         <option value="Todas">Todas</option>
         <option value="Alagoinhas">Alagoinhas</option>
         <option value="Feira de Santana">Feira de Santana</option>
@@ -68,10 +91,21 @@ return(
         <option value="Salvador">Salvador</option>
         <option value="Vitória da Conquista">Vitória da Conquista</option>
       </ItemFiltro>
-      <ItemFiltro titulo="Modalidade" selectNome="Modalidade">
-          <option value="Todas">Todas</option>
-          <option value="Presencial">Presencial</option>
-          <option value="EAD">EAD</option>
+      <ItemFiltro onChange={(e) => {atualizarFaculdadeFiltro(true);setValores({...valoresFiltro ,nome: e.target.value})}} titulo="Nome do Curso:" selectNome="Curso" disabled={filtro.nome ? false : true}>
+        <option value="Todos">Todos</option>
+        {dados.cursos.map(curso => {
+          return(
+            <option value={curso.nome}>{curso.nome}</option>
+            )
+        })}
+      </ItemFiltro>
+      <ItemFiltro onChange={(e) => {setValores({...valoresFiltro ,faculdade: e.target.value})}} titulo="Faculdade:" selectNome="Faculdade" disabled={filtro.faculdade ? false : true}>
+      <option value="Todas">Todas</option>
+      {parceiros.map(parceiro => {
+        return(
+          <option value={parceiro.nome}>{parceiro.nome}</option>
+          )
+      })}
       </ItemFiltro>
       <div className="flex justify-center items-center my-2 mr-4">
           <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
