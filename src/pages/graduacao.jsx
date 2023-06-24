@@ -18,7 +18,7 @@ export default function Bolsas() {
     .then((response) => response.json())
     .then((data) => {
       setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9) });
-      console.log(dados.cursos); // Verificar se os dados estão sendo retornados corretamente
+      console.log(data.cursos); // Verificar se os dados estão sendo retornados corretamente
     })
     .catch((error) => {
       console.error('Erro ao carregar os dados:', error);
