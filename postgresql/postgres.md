@@ -32,7 +32,7 @@ CREATE TABLE cursos (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(100),
   valor_cheio DECIMAL(10, 2),
-  8DECIMAL(5, 2),
+  porcentagem_desconto DECIMAL(5, 2),
   valor_com_desconto DECIMAL(10, 2),
   economia_total DECIMAL(10, 2),
   salario_medio DECIMAL(10, 2),
@@ -48,9 +48,9 @@ CREATE TABLE cursos (
   parceiro_id INTEGER REFERENCES parceiros (id)
 );
 
--- Criar tabela usuários
+-- Criar tabela usuarios
 CREATE TABLE usuarios (
-    id SERIAL PRIMARY KEY,--Asaas 
+    id VARCHAR(100), -- Asaas 
     -- Google
     displayName VARCHAR(100),
     email VARCHAR(100),
@@ -67,6 +67,38 @@ CREATE TABLE usuarios (
     -- Mais Solidário
     curso VARCHAR(100)
 );
+
+-- Criar tabela compra
+CREATE TABLE compra (
+  id SERIAL PRIMARY KEY,
+  customer VARCHAR(100),
+  billingType VARCHAR(20),
+  dueDate VARCHAR(15),
+  value DECIMAL(10, 2),
+  description VARCHAR(100),
+  usuario_id VARCHAR(100) REFERENCES usuarios(id)
+);
+~~~
+~~~ json
+{
+  "customer": "{CUSTOMER_ID}",
+  "billingType": "BOLETO",
+  "dueDate": "2017-06-10",
+  "value": 100,
+  "description": "Pedido 056984",
+  "externalReference": "056984",
+  "discount": {
+    "value": 10,
+    "dueDateLimitDays": 0
+  },
+  "fine": {
+    "value": 1
+  },
+  "interest": {
+    "value": 2
+  },
+  "postalService": false
+}
 ~~~
 
 ~~~ sql
