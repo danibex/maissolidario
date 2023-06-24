@@ -1,3 +1,14 @@
+> Atualizar filtros seguintes
+
+> armazenar valores do filtro em um estado e passar como parametro atraves da url para uma requisição no backend do tipo GET
+
+
+
+
+
+
+
+
 # DEFINIR INTERAÇÕES DO USUÁRIO COM A APLICAÇÃO PARA CRIAR FUNÇOES NO BACKEND
 
 # Usuário:
