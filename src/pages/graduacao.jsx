@@ -18,7 +18,6 @@ export default function Bolsas() {
     .then((response) => response.json())
     .then((data) => {
       setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9) });
-      console.log(data.cursos); // Verificar se os dados estão sendo retornados corretamente
     })
     .catch((error) => {
       console.error('Erro ao carregar os dados:', error);
@@ -31,20 +30,18 @@ export default function Bolsas() {
   useEffect(() => {
     carregarDados();
   }, [paginacao]);
-
   function proximaPagina() {
     setPaginacao(prevPaginacao => prevPaginacao + 1)
   }
-
   function paginaAnterior() {
     setPaginacao(prevPaginacao => prevPaginacao - 1)
   }
-
 return(
 <MenuNavegacao>
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
     <Filtro>
       <ItemFiltro titulo="Nome do Curso:" selectNome="Curso">
+        
         <option value="Todos">Todos</option>
         <option value="Direito">Direito</option>
         <option value="Enfermagem">Enfermagem</option>

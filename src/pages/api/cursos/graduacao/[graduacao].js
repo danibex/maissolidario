@@ -8,7 +8,6 @@ const paginacao = req.query.graduacao - 1;
 const camposGraduacao = 'id, nome, valor_cheio, porcentagem_desconto, valor_com_desconto, economia_total, salario_medio, urlImagem'
 switch (metodo) {
   case "GET":
-   // const { rows: usuarios } = await pool.query('SELECT email FROM usuarios;');
    const { rows: cursos } = await pool.query(`SELECT ${camposGraduacao} FROM cursos LIMIT 9 OFFSET ${paginacao * 9};`)
    const consultarLinhas = await pool.query(`SELECT COUNT(*) FROM cursos;`)
    const limite = consultarLinhas.rows[0].count;
