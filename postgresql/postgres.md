@@ -1,6 +1,6 @@
 # Principais Ubuntu
 ~~~ cmd
-sudo -u postgres psql  
+sudo -u postgres psql -d mais_solidario
 ou
 psql -U nome_de_usuario -d nome_do_banco
 ~~~
@@ -32,7 +32,7 @@ CREATE TABLE cursos (
   id SERIAL PRIMARY KEY,
   nome VARCHAR(100),
   valor_cheio DECIMAL(10, 2),
-  porcentagem_desconto DECIMAL(5, 2),
+  8DECIMAL(5, 2),
   valor_com_desconto DECIMAL(10, 2),
   economia_total DECIMAL(10, 2),
   salario_medio DECIMAL(10, 2),
@@ -118,7 +118,12 @@ VALUES (
 );
 ~~~
 
-
+## Atualizar valor na tabela
+~~~ sql
+UPDATE cursos
+SET urlImagem = '/images/direito.png'
+WHERE nome = 'Curso qualquer';
+~~~
 
 
 

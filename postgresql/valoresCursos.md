@@ -76,12 +76,30 @@ VALUES
 
 ~~~
 
-ADMINISTRAÇÃO EAD	 
-CONTABILIDADE - EAD	 
-AGRONEGÓCIOS - EAD	 
-EDIFICAÇÕES - EAD	 
-MARKETING - EAD Formação 6 Meses	 
-MEIO AMBIENTE EAD Formação 6 meses 
-TÉCNICO EM SECRETARIADO - EAD Formação em 6 meses	 
-SEGURANÇA DO TRABALHO - EAD Formação em 6 meses	 
-TRANSAÇÕES IMOBILIÁRIAS -EAD
+## Colégio Acadêmico
+~~~ sql
+INSERT INTO cursos (nome, cidade, turno, parceiro_id)
+VALUES ('E. Infantil - G03 ao G05', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('1ª ao 5º ano Ens. Fud. I', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('6º ano Ens. Fud. II', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('7 ao 9º ano Ens. Fud. II', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('1º e 2º Série Ens. Médio', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('3º Série Ens. Médio', 'LAURO DE FREITAS - BA', 'MANHÃ', 4),
+       ('E. Infantil - G03 ao G05', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('1ª ao 5º ano Ens. Fud. I', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('6º ano Ens. Fud. II', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('7 ao 9º ano Ens. Fud. II', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('1º e 2º Série Ens. Médio', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('3º Série Ens. Médio', 'LAURO DE FREITAS - BA', 'TARDE', 4),
+       ('1ª ao 5º ano Ens. Fud. I', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('6º ano Ens. Fud. II', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('7 ao 9º ano Ens. Fud. II', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('1º e 2º Série Ens. Médio', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('3º Série Ens. Médio', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('1ª ao 5º ano Ens. Fud. I', 'SALVADOR - BA', 'TARDE', 4),
+       ('6º ano Ens. Fud. II', 'SALVADOR - BA', 'TARDE', 4),
+       ('7 ao 9º ano Ens. Fud. II', 'SALVADOR - BA', 'TARDE', 4),
+       ('1º e 2º Série Ens. Médio', 'SALVADOR - BA', 'MANHÃ', 4),
+       ('3º Série Ens. Médio', 'SALVADOR - BA', 'TARDE', 4);
+
+~~~
