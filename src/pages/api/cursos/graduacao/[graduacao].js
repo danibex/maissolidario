@@ -4,15 +4,17 @@ import pool from '@/models/acess';
 
 export default async function handler(req, res) {
 const metodo = req.method; 
-
+const paginacao = req.query.graduacao - 1;
+const camposGraduacao = 'id, nome, valor_cheio, porcentagem_desconto, valor_com_desconto, economia_total, salario_medio'
 switch (metodo) {
   case "GET":
    // const { rows: usuarios } = await pool.query('SELECT email FROM usuarios;');
-   res.status(200).json("Funcionando!!!"); 
+   const { rows: cursos } = await pool.query(`SELECT ${camposGraduacao} FROM cursos LIMIT 9 OFFSET ${paginacao * 9};`)
+   res.status(200).send({cursos: cursos}); 
     break;
   case "POST": // inserindo dados de conta google de usuário em banco de dados da aplicação do mais solidário
 
-  
+
   const user = req.body
   const userObj = JSON.parse(user)
   const { rows: usuariosEmail } = await pool.query('SELECT email FROM usuarios;');
