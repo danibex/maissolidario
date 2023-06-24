@@ -155,6 +155,10 @@ VALUES (
 UPDATE cursos
 SET urlImagem = '/images/direito.png'
 WHERE nome = 'Curso qualquer';
+
+UPDATE cursos
+SET urlImagem = '/images/Cursos/direito.png'
+WHERE id>= 1;
 ~~~
 
 

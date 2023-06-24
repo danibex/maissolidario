@@ -5,31 +5,32 @@ import Footer from "@/components/Footer/Footer"
 import style from "@/styles/heroPrincipal.module.css"
 import ItemFiltro from "@/components/HerosBolsas/ItemFiltro"
 import { IconSearch, IconChevronsRight, IconChevronsLeft } from "@tabler/icons-react"
-import BotaoPaginacao from "@/components/HerosBolsas/BotaoPaginacao"
 import CursosEcommerce from "@/components/HerosBolsas/CursosEcommerce"
 import CardCurso from "@/components/HerosBolsas/CardCurso"
-import { useRouter } from 'next/router';
 import { useState, useEffect } from "react"
-import odonto from "@/assets/img/Cursos/odontologia.png"
 import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 
 export default function Bolsas() {
   const [paginacao, setPaginacao] = useState(1)
-/* 1. utilização (sem array recarrega a cada atualização) 
-2. chama a fução cada vez que o componente passado no array final for atualizado
-3. array vazio (roda a função apenas uma vez (geralmente utilizado para fazer chamadas ajax)) */
-  /* useEffect(() => { // chama a função cada vez que um componente que utiliza a paginação for atualizado
-    router.push(`/graduacao/${paginacao}`)
-  }, [paginacao]) */
   const [dados, setDados] =useState({cursos: [], limite: 0})
-  useEffect(() => {
+  function carregarDados() {
     fetch(`api/cursos/graduacao/${paginacao}`)
-    .then(e => e.json())
-    .then(e => setDados({cursos: e.cursos, limite: Math.ceil(e.limite/9)}))
-    .then(console.log(dados))
-    console.log(paginacao)
-  }, [paginacao])
+    .then((response) => response.json())
+    .then((data) => {
+      setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9) });
+      console.log(dados.cursos); // Verificar se os dados estão sendo retornados corretamente
+    })
+    .catch((error) => {
+      console.error('Erro ao carregar os dados:', error);
+    });
+  }
+  useEffect(() => {
+    carregarDados()
+  }, []);
 
+  useEffect(() => {
+    carregarDados();
+  }, [paginacao]);
 
   function proximaPagina() {
     setPaginacao(prevPaginacao => prevPaginacao + 1)
@@ -82,15 +83,18 @@ return(
   </CabecalhoFiltro>
   <CursosEcommerce>
     {/* url, nome, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio */}
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
-    <CardCurso economia="84.480" url={odonto} nome="Odontologia" precoCheio="2.200" porcentagemDesconto="80" valorComDesconto="440" salarioMedio="4.126"/>
+    {dados.cursos.map(curso => {
+      return(
+      <CardCurso 
+        economia={curso.economia_total} 
+        url={curso.urlimagem} 
+        nome={curso.nome} 
+        precoCheio={curso.valor_cheio} 
+        porcentagemDesconto={curso.porcentagem_desconto} 
+        valorComDesconto={curso.valor_com_desconto}
+        salarioMedio={curso.salario_medio}/>
+      )
+    })}
   </CursosEcommerce>
   <div className="text-xl font-medium flex flex-row items-center justify-center w-full bg-slate-100 py-8">
       {/* REFATORAR BOTÃO */}

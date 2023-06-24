@@ -5,7 +5,7 @@ import pool from '@/models/acess';
 export default async function handler(req, res) {
 const metodo = req.method; 
 const paginacao = req.query.graduacao - 1;
-const camposGraduacao = 'id, nome, valor_cheio, porcentagem_desconto, valor_com_desconto, economia_total, salario_medio'
+const camposGraduacao = 'id, nome, valor_cheio, porcentagem_desconto, valor_com_desconto, economia_total, salario_medio, urlImagem'
 switch (metodo) {
   case "GET":
    // const { rows: usuarios } = await pool.query('SELECT email FROM usuarios;');
