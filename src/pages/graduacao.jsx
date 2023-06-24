@@ -14,16 +14,22 @@ import odonto from "@/assets/img/Cursos/odontologia.png"
 import BotaoWhatsapp from "@/components/BotaoWhatsapp"
 
 export default function Bolsas() {
-  const router = useRouter();
   const [paginacao, setPaginacao] = useState(1)
 /* 1. utilização (sem array recarrega a cada atualização) 
 2. chama a fução cada vez que o componente passado no array final for atualizado
 3. array vazio (roda a função apenas uma vez (geralmente utilizado para fazer chamadas ajax)) */
-  useEffect(() => { // chama a função cada vez que um componente que utiliza a paginação for atualizado
-    fetch('api/cursos/graduacao/1')
-    .then()
-    .then(router.push(`/graduacao/${paginacao}`))
+  /* useEffect(() => { // chama a função cada vez que um componente que utiliza a paginação for atualizado
+    router.push(`/graduacao/${paginacao}`)
+  }, [paginacao]) */
+  const [dados, setDados] =useState({cursos: [], limite: 0})
+  useEffect(() => {
+    fetch(`api/cursos/graduacao/${paginacao}`)
+    .then(e => e.json())
+    .then(e => setDados({cursos: e.cursos, limite: Math.ceil(e.limite/9)}))
+    .then(console.log(dados))
+    console.log(paginacao)
   }, [paginacao])
+
 
   function proximaPagina() {
     setPaginacao(prevPaginacao => prevPaginacao + 1)
@@ -90,13 +96,14 @@ return(
       {/* REFATORAR BOTÃO */}
       <button 
       onClick={paginaAnterior}
-      disabled={router.query.graduacao == 1 ? true : false} 
-      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${router.query.graduacao == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
+      disabled={paginacao == 1 ? true : false} 
+      className={`py-2 pl-1 pr-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${paginacao == 1  ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"}  shadow-xl`}
       >
         <IconChevronsLeft size={30}/>Anterior
       </button>
-      <button 
-      className={`py-2 pr-1 pl-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white hover:underline active:shadow-none shadow-xl`}
+      <button
+      disabled={paginacao == dados.limite ? true : false} 
+      className={`py-2 pr-1 pl-4 flex flex-row justify-center items-center m-3 border border-blue-500 text-blue-500 rounded-full ${paginacao == dados.limite ? "opacity-50" : "hover:bg-blue-500 hover:text-white hover:underline active:shadow-none"} shadow-xl`}
       onClick={proximaPagina}
       >
         Próximo<IconChevronsRight size={30}/>
