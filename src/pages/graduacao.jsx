@@ -113,17 +113,17 @@ return(
       </ItemFiltro>
       <ItemFiltro onChange={(e) => {atualizarFaculdadeFiltro(true);setValores({...valoresFiltro ,nome: e.target.value})}} titulo="Nome do Curso:" selectNome="Curso" disabled={filtro.nome ? false : true}>
         <option value="Todos">Todos</option>
-        {dados.cursos.map(curso => {
+        {dados.cursos.map((curso, index) => {
           return(
-            <option value={curso.nome}>{curso.nome}</option>
+            <option key={index} value={curso.nome}>{curso.nome}</option>
             )
         })}
       </ItemFiltro>
       <ItemFiltro onChange={(e) => {setValores({...valoresFiltro ,faculdade: e.target.value})}} titulo="Faculdade:" selectNome="Faculdade" disabled={filtro.faculdade ? false : true}>
       <option value="Todas">Todas</option>
-      {parceiros.map(parceiro => {
+      {parceiros.map((parceiro, index) => {
         return(
-          <option value={parceiro.nome}>{parceiro.nome}</option>
+          <option key={index} value={parceiro.nome}>{parceiro.nome}</option>
           )
       })}
       </ItemFiltro>
@@ -134,9 +134,10 @@ return(
   </CabecalhoFiltro>
   <CursosEcommerce>
     {/* url, nome, precoCheio, porcentagemDesconto, valorComDesconto, salarioMedio */}
-    {dados.cursos.map(curso => {
+    {dados.cursos.map((curso, index) => {
       return(
-      <CardCurso 
+      <CardCurso
+        key={index} 
         economia={curso.economia_total} 
         url={curso.urlimagem ? curso.urlimagem : "/"} 
         nome={curso.nome} 
