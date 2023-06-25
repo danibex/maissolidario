@@ -87,6 +87,7 @@ export default function Bolsas() {
     if(cidade != "Todas") {
       setCursosFiltrados(cursosFiltrados.filter( curso => curso.cidade == cidade ))
     }
+    // const cidadesUnicas = Array.from(new Set(cidades))
   }
   // apenas em fase de teste
   useEffect(() => {
