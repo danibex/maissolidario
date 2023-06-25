@@ -81,7 +81,8 @@ export default function Bolsas() {
     } else {
       setCursosFiltrados(dados.cursos.filter( curso => curso.modalidade == modalidade ))
       setCidades(cursosFiltrados.map(curso => {return(curso.cidade)}));
-  }   
+  } 
+}
   function filtrarCidade(cidade) {
     if(cidade != "Todas") {
       setCursosFiltrados(cursosFiltrados.filter( curso => curso.cidade == cidade ))
