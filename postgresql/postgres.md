@@ -79,6 +79,14 @@ CREATE TABLE compra (
   usuario_id VARCHAR(100) REFERENCES usuarios(id)
 );
 ~~~
+~~~ sql
+-- JOIN CURSOS / PARCEIROS
+SELECT c.id, c.nome, p.nome AS parceiro_id
+FROM cursos AS c
+JOIN parceiros AS p ON c.parceiro_id = p.id;
+
+~~~
+
 ~~~ json
 {
   "customer": "{CUSTOMER_ID}",

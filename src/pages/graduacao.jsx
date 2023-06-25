@@ -18,8 +18,8 @@ export default function Bolsas() {
     nome: false, 
     faculdade: false, 
     })
-
   const [parceiros, setParceiros] = useState([])
+
     
   function atualizarCidadeFiltro(ativo) { // Funcão acionada ao selecionar modalidade
     setFiltro({modalidade: true, nome: false, faculdade:false, cidade: ativo})
@@ -35,11 +35,13 @@ export default function Bolsas() {
   // Paginação e rederização de cursos
   const [paginacao, setPaginacao] = useState(1)
   const [dados, setDados] =useState({cursos: [], limite: 0})
+  const [cursosFiltrados, setCursosFiltrados] = useState([])
   function carregarDados() {
     fetch(`api/cursos/graduacao/${paginacao}`)
     .then((response) => response.json())
     .then((data) => {
-      setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9) });
+      setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9)});
+      setCursosFiltrados(dados.cursos)
     })
     .catch((error) => {
       console.error('Erro ao carregar os dados:', error);
@@ -70,26 +72,43 @@ export default function Bolsas() {
   function paginaAnterior() {
     setPaginacao(prevPaginacao => prevPaginacao - 1)
   }
+
+  // FILTRO
+  const [cidades, setCidades] = useState([])
+  function filtrarModalidade(modalidade) {
+    if(modalidade == "Todas") {
+      setCursosFiltrados(dados.cursos)
+    } else {
+      setCursosFiltrados(dados.cursos.filter( curso => curso.modalidade == modalidade ))
+      setCidades(cursosFiltrados.map(curso => {return(curso.cidade)}));
+  }   
+  function filtrarCidade(cidade) {
+    if(cidade != "Todas") {
+      setCursosFiltrados(cursosFiltrados.filter( curso => curso.cidade == cidade ))
+    }
+  }
+  // apenas em fase de teste
+  useEffect(() => {
+    console.log(cursosFiltrados)
+  }, [cursosFiltrados]);
+  
 return(
 <MenuNavegacao>
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
     <Filtro>
-      <ItemFiltro onChange={(e) => {atualizarCidadeFiltro(true); setValores({...valoresFiltro ,modalidade: e.target.value})}} titulo="Modalidade" selectNome="Modalidade" disabled={filtro.modalidade ? false : true}>
+      <ItemFiltro onChange={(e) => {atualizarCidadeFiltro(true); setValores(prevValores => ({...prevValores, modalidade: e.target.value}));filtrarModalidade(e.target.value);}} titulo="Modalidade" selectNome="Modalidade" disabled={filtro.modalidade ? false : true}>
           <option value="Todas">Todas</option>
           <option value="Presencial">Presencial</option>
           <option value="EAD">EAD</option>
       </ItemFiltro>
       <ItemFiltro onChange={(e) => {atualizarNomeFiltro(true);setValores({...valoresFiltro ,cidade: e.target.value})}} titulo="Cidade:" selectNome="Cidade" disabled={filtro.cidade ? false : true}>
         <option value="Todas">Todas</option>
-        <option value="Alagoinhas">Alagoinhas</option>
-        <option value="Feira de Santana">Feira de Santana</option>
-        <option value="Jequié">Jequié</option>
-        <option value="Juazeiro">Juazeiro</option>
-        <option value="Itabuna">Itabuna</option>
-        <option value="Lauro de Freitas">Lauro de Freitas</option>
-        <option value="Petrolina">Petrolina</option>
-        <option value="Salvador">Salvador</option>
-        <option value="Vitória da Conquista">Vitória da Conquista</option>
+        
+        {/* {cidadeUnica.map(cidade => {
+          return(
+            <option value={cidade}>{cidade}</option>
+          )
+        })} */}
       </ItemFiltro>
       <ItemFiltro onChange={(e) => {atualizarFaculdadeFiltro(true);setValores({...valoresFiltro ,nome: e.target.value})}} titulo="Nome do Curso:" selectNome="Curso" disabled={filtro.nome ? false : true}>
         <option value="Todos">Todos</option>
@@ -118,7 +137,7 @@ return(
       return(
       <CardCurso 
         economia={curso.economia_total} 
-        url={curso.urlimagem} 
+        url={curso.urlimagem ? curso.urlimagem : "/"} 
         nome={curso.nome} 
         precoCheio={curso.valor_cheio} 
         porcentagemDesconto={curso.porcentagem_desconto} 
