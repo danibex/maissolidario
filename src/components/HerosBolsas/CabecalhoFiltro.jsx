@@ -14,7 +14,7 @@ return (
     </Slider>*/}
 <div className={`border h-fit w-[95%] rounded-2xl bg-slate-100`}>
     <div className="flex flex-col md:flex-row justify-center items-center md:justify-around bg-green-400 rounded-t-2xl">
-    <BotaoFiltro active={props.graduacao} href="/graduacao/1">
+    <BotaoFiltro active={props.graduacao} href="/graduacao">
         Graduação
     </BotaoFiltro>
     <BotaoFiltro active={props.pos} href="/posgraduacao/1">
