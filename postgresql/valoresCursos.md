@@ -26,13 +26,13 @@ VALUES
 
 ## Universo
 ~~~ sql
-INSERT INTO cursos (nome, cidade, turno, nivel, duracao, parceiro_id)
+INSERT INTO cursos (nome, cidade, turno, nivel, duracao, parceiro_id, urlImagem)
 VALUES
-  ('Direito', 'Salvador', 'Noite', 'Graduação', '5 anos', 14),
-  ('Enfermagem', 'Salvador', 'Noite', 'Graduação', '4 anos', 14),
-  ('Odontologia', 'Salvador', 'Integral', 'Graduação', '5 anos', 14),
-  ('Fisioterapia', 'Salvador', 'Noite', 'Graduação', '4 anos', 14),
-  ('Psicologia', 'Salvador', 'Noite', 'Graduação', '5 anos', 14);
+  ('Direito', 'Salvador', 'Noite', 'Graduação', '5 anos', 14, '/img/Cursos/administracao.png'),
+  ('Enfermagem', 'Salvador', 'Noite', 'Graduação', '4 anos', 14, '/img/Cursos/administracao.png'),
+  ('Odontologia', 'Salvador', 'Integral', 'Graduação', '5 anos', 14, '/img/Cursos/administracao.png'),
+  ('Fisioterapia', 'Salvador', 'Noite', 'Graduação', '4 anos', 14, '/img/Cursos/administracao.png'),
+  ('Psicologia', 'Salvador', 'Noite', 'Graduação', '5 anos', 14, '/img/Cursos/administracao.png');
 ~~~
 
 ## Santíssimo Sacramento

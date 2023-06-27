@@ -18,12 +18,10 @@ export default function Bolsas() {
     nome: false, 
     faculdade: false, 
     })
-  const [parceiros, setParceiros] = useState([])
-
     
   function atualizarCidadeFiltro(ativo) { // Funcão acionada ao selecionar modalidade
     setFiltro({modalidade: true, nome: false, faculdade:false, cidade: ativo})
-    setDados(dados.cursos.filter((curso, index) => {curso.modalidade == filtro.modalidade}))
+
   }
   function atualizarNomeFiltro(ativo) {
     setFiltro({modalidade: true, nome: ativo, faculdade: false,cidade: true})
@@ -42,7 +40,9 @@ export default function Bolsas() {
     .then((response) => response.json())
     .then((data) => {
       setDados({ cursos: data.cursos, limite: Math.ceil(data.limite / 9)});
+      console.log(data.cursos)
     })
+      
     .catch((error) => {
       console.error('Erro ao carregar os dados:', error);
     });
@@ -73,10 +73,31 @@ export default function Bolsas() {
     setPaginacao(prevPaginacao => prevPaginacao - 1)
   }
 
+// Filtro (agora vai)
+const [cidades, setCidades] = useState([])
+const [parceiros, setParceiros] = useState([])
+
+function atualizarCidades() {
+  if(valoresFiltro.modalidade == "EAD") {
+    setCidades(["Brasil"])   
+  } else {
+    setCidades([...new Set(dados.cursos.map(curso => curso.cidade))])  
+  }
+} 
+function atualizarParceiros() {
+  setParceiros([...new Set(dados.cursos.map(curso => curso.parceiro_id))])
+}
+
 useEffect(()=> {
+  atualizarCidades()
+  atualizarParceiros()
   console.log(valoresFiltro)
 }, [valoresFiltro])
   
+useEffect(() => {
+  console.log(parceiros)
+}, [parceiros])
+
 return(
 <MenuNavegacao>
   <CabecalhoFiltro graduacao fundo={style.fundoBolsaGraduacao}>
@@ -86,26 +107,34 @@ return(
           <option value="Presencial">Presencial</option>
           <option value="EAD">EAD</option>
       </ItemFiltro>
-      <ItemFiltro onChange={(e) => {atualizarNomeFiltro(true);setValores({...valoresFiltro ,cidade: e.target.value})}} titulo="Cidade:" selectNome="Cidade" disabled={filtro.cidade ? false : true}>
+      <ItemFiltro onChange={(e) => {atualizarNomeFiltro(true); setValores(prevValores => ({...prevValores, cidade: e.target.value}))}} titulo="Cidade:" selectNome="Cidade" disabled={filtro.cidade ? false : true}>
         <option value="Todas">Todas</option>
-        <option value="Todas">Todas</option>
-
+        {cidades.map(cidade => <option value={cidade}>{cidade}</option>)}
       </ItemFiltro>
-      <ItemFiltro onChange={(e) => {atualizarFaculdadeFiltro(true);setValores({...valoresFiltro ,nome: e.target.value})}} titulo="Nome do Curso:" selectNome="Curso" disabled={filtro.nome ? false : true}>
+      <ItemFiltro onChange={(e) => {atualizarFaculdadeFiltro(true);setValores(prevValores => ({...prevValores, nome: e.target.value}))}} titulo="Nome do Curso:" selectNome="Curso" disabled={filtro.nome ? false : true}>
         <option value="Todos">Todos</option>
         {dados.cursos.map((curso, index) => {
-          return(
-            <option key={index} value={curso.nome}>{curso.nome}</option>
-            )
+          if(curso.cidade == valoresFiltro.cidade) {
+            return(
+              <option key={index} value={curso.nome}>{curso.nome}</option>
+              )
+          }
         })}
       </ItemFiltro>
-      <ItemFiltro onChange={(e) => {setValores({...valoresFiltro ,faculdade: e.target.value})}} titulo="Faculdade:" selectNome="Faculdade" disabled={filtro.faculdade ? false : true}>
+      <ItemFiltro onChange={(e) => {setValores(prevValores => ({...prevValores, faculdade: e.target.value}))}} titulo="Faculdade:" selectNome="Faculdade" disabled={filtro.faculdade ? false : true}>
       <option value="Todas">Todas</option>
       {parceiros.map((parceiro, index) => {
+        
+        return( 
+          <option key={index} value={parceiro[0]}>{parceiro[0]}</option>
+        )
+        
+      })}
+      {/* {parceiros.map((parceiro, index) => {
         return(
           <option key={index} value={parceiro.nome}>{parceiro.nome}</option>
           )
-      })}
+      })}*/}
       </ItemFiltro>
       <div className="flex justify-center items-center my-2 mr-4">
           <button className="justify-center items-center flex flex-row p-2 bg-blue-400 hover:bg-blue-500 active:bg-blue-600 text-white rounded-lg text-lg font-semibold"><IconSearch className="mr-2"/>Procurar</button>
