@@ -6,21 +6,22 @@ return(
             <div className="h-[200px] flex flex-col justify-center items-center">
                 <h2 className="mb-2 text-xl font-bold">Contatos</h2>
                 <div className="flex flex-col justify-center items-center">
-                    <Link href="/" className="hover:underline hover:text-slate-200 active:text-slate-400">contato@maissolidario.com.br</Link>
-                    <Link href="/" className="hover:underline hover:text-slate-200 active:text-slate-400">maissolidarioadm@gmail.com</Link>
-                    <Link href="/" className="hover:underline hover:text-slate-200 active:text-slate-400">(71) 9 9259-2363</Link>
-                    <Link href="/" className="hover:underline hover:text-slate-200 active:text-slate-400">(71) 9 8761-2190</Link>
+                    <p>contato@maissolidario.com.br</p>
+                    <p>maissolidarioadm@gmail.com</p>
+                    <p>(71) 9 9259-2363</p>
+                    <p>(71) 9 8761-2190</p>
                 </div>
             </div>
             <div className="h-[150px] flex flex-col justify-center items-center">
                 <h2 className="mb-2 text-xl font-bold">Bolsas de Estudo</h2>
                 <div className="flex flex-col justify-center items-center">
-                <Link href="/graduacao/1" className="hover:underline hover:text-slate-200 active:text-slate-400">Graduação</Link>
-                <Link href="/posgraduacao/1" className="hover:underline hover:text-slate-200 active:text-slate-400">Pós-Graduação</Link>
-                <Link href="/tecnico/1" className="hover:underline hover:text-slate-200 active:text-slate-400">Técnico</Link>
-                <Link href="/colegio/1" className="hover:underline hover:text-slate-200 active:text-slate-400">Colégio</Link>
+                <p>Graduação</p>
+                <p>Pós-Graduação</p>
+                <p>Técnico</p>
+                <p>Colégio</p>
                 </div> 
             </div>
+            {/* 
             <div className="h-[150px] flex flex-col justify-center items-center">
                 <h2 className="mb-2 text-xl font-bold">Links Úteis</h2>
                 <div className="flex flex-col justify-center items-center">
@@ -28,6 +29,7 @@ return(
                 <Link href="/" className="hover:underline hover:text-slate-200 active:text-slate-400">Blog</Link>
                 </div>
             </div>
+            */}
         </div>
         <div className="flex justify-center items-center text-center">
             <p>© 2023 Todos os direitos reservados. Mais Solidário Bolsas de Estudo - CNPJ: 25.230.193/0001-06</p>

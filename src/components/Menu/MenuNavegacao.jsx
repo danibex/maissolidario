@@ -47,10 +47,12 @@ export default function MenuNavegacao(props) {
             <button onClick={() => { toggleMenu() }}>{toggle ? <IconX size={40} /> : <IconMenu2 size={40} />}</button>
           </div>
         </div>
-        <div className={`${toggle ? "flex" : "hidden"} w-[100%] flex-col md:flex md:flex-row justify-center items-center`}>
+        <div className={`${toggle ? "flex" : "hidden"}  flex-col md:flex md:flex-row justify-center items-center`}>
           <div className='w-[100%] flex flex-col md:flex-row justify-center items-center'>
-            <div className='w-[100%] flex flex-col md:flex-row my-3 justify-center items-center'>
                 <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/"><BotaoMenu><IconHome2 className='mr-1' />Início</BotaoMenu></Link>
+              {/* 
+            <div className='w-[100%] flex flex-col md:flex-row my-3 justify-center items-center'>
+              
               <div className='w-[100%] md:w-auto flex flex-col justify-center items-center'>
                 <div className='flex flex-col text-center self-center w-[100%] md:w-auto'>
                 <div className='w-[100%] flex justify-center items-center'>    
@@ -76,9 +78,13 @@ export default function MenuNavegacao(props) {
                 </div>
                 </div>
               </div>
+
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/vocacional"><BotaoMenu><IconCertificate className='mr-1' /> Teste Vocacional</BotaoMenu></Link>
               <Link className='w-[100%] md:w-auto flex justify-center items-center' href="/blog"><BotaoMenu><IconNews className='mr-1' /> Blog</BotaoMenu></Link>
             </div>
+              */}
+
+{/* 
             <div className={`flex flex-row ${signed ? 'hidden' : 'flex'}`}>
               <button onClick={() => logar()} className="bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-lg py-2 px-4 text-white mx-2 font-bold text-lg flex flex-row justify-center items-center">
                 <IconUser className='mr-1' />Entrar
@@ -87,6 +93,7 @@ export default function MenuNavegacao(props) {
                 <IconUserPlus className="mr-1" />Cadastro
               </button>
             </div>
+
             <div className={`${signed ? 'flex' : 'hidden'} justify-center items-center flex-row`}>
               <div className='flex flex-row justify-center items-center'>
                 <p className='whitespace-nowrap mr-3 font-semibold'>Olá, {user.displayName}!</p>
@@ -107,6 +114,9 @@ export default function MenuNavegacao(props) {
                   </div>
                 </div>
             </div>
+*/}
+
+
           </div>
         </div>
       </div>

@@ -87,16 +87,13 @@ export default function Parceiros() {
                 return (
                   <div key={index} className="w-[100%] flex items-center justify-center">
                   <SwiperSlide style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  <button className="shadow-xl w-[250px] h-[345px] bg-white justify-between flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
+                  <div className="text-center shadow-xl w-[250px] bg-white justify-between flex flex-col border rounded-lg pb-3">
                     <MaisProcurado
                       url={curso.url}
                       nome={curso.nomeDoCurso}
-                      precoCheio={curso.precoCheio}
-                      porcentagemDesconto={curso.porcentagemDesconto}
-                      valorComDesconto={curso.valorComDesconto}
-                      salarioMedio={curso.salarioMedio}
+                    
                     />
-                    </button>
+                    </div>
                   </SwiperSlide>
                   </div>
                 );
@@ -122,14 +119,11 @@ export default function Parceiros() {
               {PrincipaisCursosEad.map((curso, index) => {
                 return (
                   <SwiperSlide key={index} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                  <button  className="items-center shadow-xl w-[250px] h-[345px] bg-white justify-center flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
+                  <button  className="items-center shadow-xl w-[250px]  bg-white justify-center flex flex-col border rounded-lg pb-3 hover:opacity-80 active:opacity-70">
                     <MaisProcurado
                       url={curso.url}
                       nome={curso.nomeDoCurso}
-                      precoCheio={curso.precoCheio}
-                      porcentagemDesconto={curso.porcentagemDesconto}
-                      valorComDesconto={curso.valorComDesconto}
-                      salarioMedio={curso.salarioMedio}
+                     
                     />
                   </button>
                   </SwiperSlide>
@@ -138,14 +132,14 @@ export default function Parceiros() {
             </div>
           </Swiper>
         </div>
-
+{/**
         <div className="flex justify-center items-center mt-8">
           <Link href="/bolsas" className="flex flex-row justify-center items-center active:bg-blue-700 hover:bg-blue-600 bg-blue-500 p-3 rounded-2xl font-bold text-2xl text-white">
             Consulte Mais
             <IconChevronsRight className="ml-2" size={35}/>
           </Link>
         </div>
-
+ */}
       </div>
   
   );
