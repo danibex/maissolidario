@@ -46,9 +46,9 @@ export default function Parceiros() {
           <div className="w-auto flex items-center justify-center border p-0 border-[#6BCA91] bg-slate-100 rounded-full">
             <button
               className={`
-                hover:bg-[#458A64] hover:text-white active:bg-green-900 
-                rounded-3xl p-2 text-2xl font-medium text-[#458A64]
-                ${painel ? "" : "bg-[#6BCA91] text-[#fff]"}
+               text-[#6BCA91] hover:bg-[#458A64] active:bg-green-900 
+                rounded-3xl p-2 text-2xl font-medium 
+                ${painel ? "" : " text-[#fff] bg-[#6BCA91] "}
                 m-1
                 `}
               onClick={() => alternarPainel(false)}
@@ -57,10 +57,10 @@ export default function Parceiros() {
             </button>
             <button
               className={`
-                hover:bg-[#458A64] hover:text-white active:bg-green-900 
-                rounded-3xl p-2 m-1 text-2xl font-medium text-[#458A64]
+               text-[#6BCA91] hover:bg-[#458A64] active:bg-green-900 
+                rounded-3xl p-2 m-1 text-2xl font-medium 
                 whitespace-nowrap
-                ${painel ? "bg-[#6BCA91] text-white" : ""}
+                ${painel ? " text-[#fff] bg-[#6BCA91] " : ""}
                 
                 `}
               onClick={() => alternarPainel(true)}
