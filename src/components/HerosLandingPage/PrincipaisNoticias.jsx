@@ -67,8 +67,8 @@ export default function PrincipaisNoticias() {
     </div>
  */}
     
-    <div className="bg-green-400 w-[100%] h-auto p-4 shadow-lg">
-        <h1 className="text-3xl font-bold mb-4 text-blue-800 text-center">Nossos Selos</h1>
+    <div className="bg-slate-100 w-[100%] h-auto p-4 shadow-lg py-6">
+        <h1 className="text-3xl font-bold mb-4 text-[#147BA7] text-center">Nossos Selos</h1>
         <div className="w-[100%] sm:flex-row flex-col flex justify-around items-center gap-5 text-center">
           <div  className="bg-white rounded-lg shadow-xl p-1">
             <Image width={250} height={250} alt="Selo de Qualidade" src="/images/Selos/selo1.png"/>

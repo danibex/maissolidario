@@ -42,13 +42,13 @@ export default function Parceiros() {
   return (
       <div className="w-[100%] pt-2 pb-8 bg-slate-100 shadow-xl">
         <div className="flex flex-col justify-center items-center w-[100%] py-4">
-          <h1 className="text-3xl font-bold text-blue-800 mb-4">Cursos Top 10:</h1>
-          <div className="w-auto flex items-center justify-center border p-0 border-blue-500 bg-slate-100 rounded-full">
+          <h1 className="text-3xl font-bold text-[#147BA7] mb-4">Cursos Top 10:</h1>
+          <div className="w-auto flex items-center justify-center border p-0 border-[#147BA7] bg-slate-100 rounded-full">
             <button
               className={`
-                hover:bg-blue-500 hover:text-white active:bg-blue-600 
-                rounded-3xl p-2 text-2xl font-medium text-blue-600 
-                ${painel ? "" : "bg-blue-500 text-white"}
+                hover:bg-[#147BA7] hover:text-white active:bg-blue-900 
+                rounded-3xl p-2 text-2xl font-medium text-[#147BA7]
+                ${painel ? "" : "bg-[#147BA7] text-[#ffff]"}
                 m-1
                 `}
               onClick={() => alternarPainel(false)}
@@ -57,10 +57,10 @@ export default function Parceiros() {
             </button>
             <button
               className={`
-                hover:bg-blue-500 hover:text-white active:bg-blue-600 
-                rounded-3xl p-2 m-1 text-2xl font-medium text-blue-600 
+                hover:bg-[#147BA7] hover:text-white active:bg-blue-900 
+                rounded-3xl p-2 m-1 text-2xl font-medium text-[#147BA7]
                 whitespace-nowrap
-                ${painel ? "bg-blue-500 text-white" : ""}
+                ${painel ? "bg-[#147BA7] text-[#ffff]" : ""}
                 
                 `}
               onClick={() => alternarPainel(true)}

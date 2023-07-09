@@ -8,6 +8,7 @@ import HeroDepoimentos from '../components/HerosLandingPage/HeroDepoimentos'
 import Footer from '@/components/Footer/Footer'
 import Head from 'next/head'
 import BotaoWhatsapp from '@/components/BotaoWhatsapp'
+import { Element } from 'react-scroll';
 export default function Home() {
   return (
     <div className='h-full w-full'>
@@ -15,12 +16,22 @@ export default function Home() {
       <Head>
         <title>Mais Solidário</title>
       </Head>
-        <HeroPrincipal/>
-        <HeroParceiros/>
         <HeroSobre/>
-        <HeroMaisProcurados/>
-        <PrincipaisNoticias/>
-        <HeroDepoimentos/>
+        <Element name="cursos" className="cursos">
+          <HeroMaisProcurados/>
+        </Element>
+        <Element name="formulario" className="formulario">
+          <HeroPrincipal/>
+        </Element>
+        <Element name="parceiros" className="parceiros">
+          <HeroParceiros/>
+        </Element>
+        <Element name="depoimentos" className="depoimentos">
+          <HeroDepoimentos/>
+        </Element>
+        <Element name="selos" className="selos">
+          <PrincipaisNoticias/>
+        </Element>
       <Footer/>
       <BotaoWhatsapp/>
       </MenuNavegacao>

@@ -22,8 +22,8 @@ export default function Depoimentos() {
         }
       };
     return(
-    <div className="w-[100%] bg-slate-100 p-4 shadow-xl pb-10">
-    <h1 className="pb-4 text-3xl font-bold text-blue-800">Depoimentos de Sucesso</h1>
+    <div className="w-[100%] p-4 shadow-xl pb-10 bg-[#458A64]">
+    <h1 className="pb-4 text-3xl font-bold text-slate-100">Depoimentos de Sucesso</h1>
     <div className="flex flex-row gap-2 justify-around items-center">
         <Swiper
             modules={[Navigation, Pagination, A11y, Autoplay]}
@@ -41,7 +41,7 @@ export default function Depoimentos() {
         {depoimentos.map((depoimento, index) => {
             return(
             <SwiperSlide key={index} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-            <Depoimento className={`${index % 2 == 0 ? "bg-blue-300" : "bg-green-300"}`} src={depoimento.urlImage} nome={depoimento.nome} profissao={depoimento.profissao} depoimento={depoimento.depoimento}/>
+            <Depoimento className={`${index % 2 == 0 ? "bg-[#147BA7] text-slate-100" : "bg-slate-100"}`} src={depoimento.urlImage} nome={depoimento.nome} profissao={depoimento.profissao} depoimento={depoimento.depoimento}/>
             </SwiperSlide>
             )
         })}

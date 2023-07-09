@@ -31,7 +31,7 @@ export default function Parceiros() {
 return(
     <div className="w-[100%] flex justify-center items-center">
     <div className="w-[100%] bg-slate-100 py-4 px-0 text-center h-[300px] shadow-lg">
-        <h1 className="text-3xl font-bold mb-3 text-blue-800">Melhores Instituições</h1>
+        <h1 className="text-3xl font-bold mb-3 text-[#147BA7]">Melhores Instituições</h1>
         <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
         spaceBetween={20}
@@ -47,7 +47,7 @@ return(
         <div className="flex flex-row justify-center items-center">
             {ParceirosTemporarios.map((parceiro, index) => {
                 return(
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                 <div className="w-[200px]">
                     <Parceiro URLescudo={parceiro.urlImage}/>
                 </div>
