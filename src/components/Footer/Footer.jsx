@@ -1,7 +1,7 @@
 import Link from "next/link"
 export default function Footer() {
 return(
-    <div className="bg-[#458A64] w-[100%] h-auto p-4 shadow-lg text-slate-100 flex justify-center items-center flex-col">
+    <div className="bg-[#189ED7] w-[100%] h-auto p-4 shadow-lg text-slate-100 flex justify-center items-center flex-col">
         <div className="flex md:flex-row flex-col justify-around items-center w-full md:w-[80%]">
             <div className="h-[200px] flex flex-col justify-center items-center">
                 <h2 className="mb-2 text-xl font-bold">Contatos</h2>
